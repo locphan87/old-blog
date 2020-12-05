@@ -1,12 +1,18 @@
 require(`dotenv`).config({
   path: `.env`,
-})
+});
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `Loc Phan`,
+    siteTitleAlt: `Loc Phan's Blog`,
+    siteHeadline: `Loc Phan's Blog`,
+    siteUrl: `https://locphan87.github.io`,
+    siteDescription: `Personal blog of Loc Phan`,
+    siteLanguage: `en`,
+    author: `Loc Phan`,
   },
   plugins: [
     {
@@ -19,18 +25,22 @@ module.exports = {
             slug: `/blog`,
           },
           {
+            title: `Resume`,
+            slug: `/resume`,
+          },
+          {
             title: `About`,
             slug: `/about`,
           },
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            name: `Github`,
+            url: `https://github.com/locphan87`,
           },
           {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/in/loc-phan/`,
           },
         ],
       },
@@ -77,4 +87,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};
