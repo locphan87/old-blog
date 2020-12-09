@@ -5,9 +5,14 @@ import React from "react";
 import Layout from "./layout";
 import ItemTags from "./item-tags";
 import SEO from "./seo";
+import { Toc, InnerScroll } from "./toc";
 
 type PostProps = {
   data: {
+    mdx: {
+      slug: string;
+      tableOfContents?: any;
+    };
     post: {
       slug: string;
       title: string;
@@ -35,10 +40,11 @@ type PostProps = {
 const px = [`32px`, `16px`, `8px`, `4px`];
 const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
 
-const Post = ({ data: { post } }: PostProps) => {
+const Post = ({ data: { post, mdx } }: PostProps) => {
   const bannerSrc = post.banner
     ? post.banner.childImageSharp.resize.src
     : undefined;
+  const { tableOfContents } = mdx || {};
   return (
     <Layout>
       <SEO
@@ -79,6 +85,19 @@ const Post = ({ data: { post } }: PostProps) => {
           variant: `layout.content`,
         }}
       >
+        <Toc>
+          <InnerScroll>
+            <h2>Table of contents</h2>
+            {tableOfContents &&
+              tableOfContents.items.map((i) => (
+                <li key={i.url}>
+                  <a href={i.url} key={i.url}>
+                    {i.title}
+                  </a>
+                </li>
+              ))}
+          </InnerScroll>
+        </Toc>
         <MDXRenderer>{post.body}</MDXRenderer>
       </section>
     </Layout>

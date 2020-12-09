@@ -30,7 +30,10 @@ type PostsProps = {
   [key: string]: any;
 };
 
-const Homepage = ({ posts }: PostsProps) => {
+const Homepage = ({ data }: PostsProps) => {
+  const {
+    allPost: { nodes: posts },
+  } = data;
   const { basePath, blogPath } = useMinimalBlogConfig();
   const { siteTitle } = useSiteMetadata();
 
