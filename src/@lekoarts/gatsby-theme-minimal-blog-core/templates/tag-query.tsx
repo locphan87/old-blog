@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import TagComponent from "../../gatsby-theme-minimal-blog/components/tag";
+import TagComponent from "../components/tag";
 
 export default TagComponent;
 

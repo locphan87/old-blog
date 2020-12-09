@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import HomepageComponent from "../../gatsby-theme-minimal-blog/components/homepage";
+import HomepageComponent from "../components/homepage";
 
 export default HomepageComponent;
 

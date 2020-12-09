@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import PostComponent from "../../gatsby-theme-minimal-blog/components/post";
+import PostComponent from "../components/post";
 
 export default PostComponent;
 

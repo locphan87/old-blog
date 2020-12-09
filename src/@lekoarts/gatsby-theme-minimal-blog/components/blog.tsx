@@ -24,10 +24,7 @@ type PostsProps = {
   [key: string]: any;
 };
 
-const Blog = ({ data }: PostsProps) => {
-  const {
-    allPost: { nodes: posts },
-  } = data;
+const Blog = ({ posts }: PostsProps) => {
   const { tagsPath, basePath } = useMinimalBlogConfig();
 
   return (
