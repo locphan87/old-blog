@@ -3,9 +3,9 @@
 <url> <loc>https://locphan87.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/functional-programming-in-java-script</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/fp-js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/functional-programming</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
