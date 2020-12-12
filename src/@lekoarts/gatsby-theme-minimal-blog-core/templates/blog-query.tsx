@@ -1,7 +1,7 @@
-import { graphql } from "gatsby";
-import BlogComponent from "../components/blog";
+import { graphql } from 'gatsby'
+import BlogComponent from '../components/blog'
 
-export default BlogComponent;
+export default BlogComponent
 
 export const query = graphql`
   query($formatString: String!) {
@@ -20,4 +20,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

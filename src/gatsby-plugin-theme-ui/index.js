@@ -1,6 +1,6 @@
-import { merge } from "theme-ui";
-import { tailwind } from "@theme-ui/presets";
-import originalTheme from "@lekoarts/gatsby-theme-minimal-blog/src/gatsby-plugin-theme-ui/index";
+import { merge } from 'theme-ui'
+import { tailwind } from '@theme-ui/presets'
+import originalTheme from '@lekoarts/gatsby-theme-minimal-blog/src/gatsby-plugin-theme-ui/index'
 
 const colorModes = {
   dark: {
@@ -23,15 +23,15 @@ const colorModes = {
     divide: tailwind.colors.gray[4],
     muted: tailwind.colors.gray[3],
   },
-};
+}
 const theme = merge(originalTheme, {
-  initialColorModeName: "light",
+  initialColorModeName: 'light',
   colors: {
     ...colorModes.dark,
     modes: {
       light: colorModes.light,
     },
   },
-});
+})
 
-export default theme;
+export default theme

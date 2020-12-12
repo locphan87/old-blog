@@ -1,9 +1,9 @@
-import { tint } from "@theme-ui/color"
+import { tint } from '@theme-ui/color'
 
 const code = {
   "[data-name='live-editor']": {
     fontSize: 1,
-    "textarea, pre": {
+    'textarea, pre': {
       padding: (t: any) => `${t.space[3]} !important`,
     },
   },
@@ -11,7 +11,7 @@ const code = {
     padding: (t: any) => `calc(${t.space[2]} + 10px) !important`,
     backgroundColor: tint(`primary`, 0.7),
   },
-  ".prism-code": {
+  '.prism-code': {
     fontSize: [1, 1, 2],
     padding: `2rem 1rem 1rem 1rem`,
     webkitOverflowScrolling: `touch`,
@@ -21,38 +21,38 @@ const code = {
     mt: 0,
     overflow: `auto`,
     '&[data-linenumber="false"]': {
-      ".token-line": {
+      '.token-line': {
         pl: 3,
       },
     },
   },
   ".gatsby-highlight[data-language=''], .gatsby-highlight[data-language='noLineNumbers']": {
-    ".prism-code": {
+    '.prism-code': {
       pt: `1rem`,
     },
   },
-  ".token": {
+  '.token': {
     display: `inline-block`,
   },
-  "p > code, li > code": {
+  'p > code, li > code': {
     bg: `gray.2`,
     color: `gray.8`,
     px: 2,
     py: 1,
     borderRadius: `2px`,
   },
-  ".gatsby-highlight": {
+  '.gatsby-highlight': {
     fontSize: [1, 1, 2],
     position: `relative`,
     webkitOverflowScrolling: `touch`,
     bg: `rgb(1, 22, 39)`,
     borderRadius: `2px`,
     mx: [0, 0, 0, -3],
-    ".token-line": {
+    '.token-line': {
       mx: -3,
       minWidth: `100%`,
     },
-    "pre code": {
+    'pre code': {
       float: `left`,
       minWidth: `100%`,
     },
@@ -168,17 +168,17 @@ const code = {
     tabSize: 4,
     hyphens: `none`,
   },
-  ".gatsby-highlight pre::-webkit-scrollbar": {
+  '.gatsby-highlight pre::-webkit-scrollbar': {
     width: 2,
     height: 2,
   },
-  ".gatsby-highlight pre::-webkit-scrollbar-thumb": {
+  '.gatsby-highlight pre::-webkit-scrollbar-thumb': {
     backgroundColor: `primary`,
   },
-  ".gatsby-highlight pre::-webkit-scrollbar-track": {
+  '.gatsby-highlight pre::-webkit-scrollbar-track': {
     background: `rgb(1, 22, 39)`,
   },
-  ".line-number-style": {
+  '.line-number-style': {
     display: `inline-block`,
     width: `3em`,
     userSelect: `none`,
@@ -186,7 +186,7 @@ const code = {
     textAlign: `center`,
     position: `relative`,
   },
-  ".code-title": {
+  '.code-title': {
     backgroundColor: tint(`primary`, 0.7),
     color: `black`,
     fontSize: 0,
@@ -199,22 +199,22 @@ const code = {
     mx: [0, 0, 0, -3],
     fontSize: [1, 1, 2],
   },
-  ".token-line": {
+  '.token-line': {
     pr: 3,
   },
-  ".highlight-line": {
+  '.highlight-line': {
     backgroundColor: `rgb(2, 55, 81)`,
     borderLeft: `4px solid rgb(2, 155, 206)`,
-    ".line-number-style": {
+    '.line-number-style': {
       width: `calc(3em - 4px)`,
       opacity: 0.5,
       left: `-2px`,
     },
   },
-  ".react-live-wrapper": {
+  '.react-live-wrapper': {
     position: `relative`,
   },
-  ".react-live-wrapper .code-copy-button": {
+  '.react-live-wrapper .code-copy-button': {
     right: [0, 0, 0, -3],
   },
 }

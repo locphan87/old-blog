@@ -1,38 +1,38 @@
-import * as React from "react"
+import * as React from 'react'
 
 export type Language =
-  | "markup"
-  | "bash"
-  | "clike"
-  | "c"
-  | "cpp"
-  | "css"
-  | "javascript"
-  | "jsx"
-  | "coffeescript"
-  | "actionscript"
-  | "css-extr"
-  | "diff"
-  | "git"
-  | "go"
-  | "graphql"
-  | "handlebars"
-  | "json"
-  | "less"
-  | "makefile"
-  | "markdown"
-  | "objectivec"
-  | "ocaml"
-  | "python"
-  | "reason"
-  | "sass"
-  | "scss"
-  | "sql"
-  | "stylus"
-  | "tsx"
-  | "typescript"
-  | "wasm"
-  | "yaml"
+  | 'markup'
+  | 'bash'
+  | 'clike'
+  | 'c'
+  | 'cpp'
+  | 'css'
+  | 'javascript'
+  | 'jsx'
+  | 'coffeescript'
+  | 'actionscript'
+  | 'css-extr'
+  | 'diff'
+  | 'git'
+  | 'go'
+  | 'graphql'
+  | 'handlebars'
+  | 'json'
+  | 'less'
+  | 'makefile'
+  | 'markdown'
+  | 'objectivec'
+  | 'ocaml'
+  | 'python'
+  | 'reason'
+  | 'sass'
+  | 'scss'
+  | 'sql'
+  | 'stylus'
+  | 'tsx'
+  | 'typescript'
+  | 'wasm'
+  | 'yaml'
 
 type Token = {
   types: string[]
@@ -48,16 +48,35 @@ type LanguageDict = { [lang in Language]: PrismGrammar }
 
 type PrismLib = {
   languages: LanguageDict
-  tokenize: (code: string, grammar: PrismGrammar, language: Language) => PrismToken[] | string[]
+  tokenize: (
+    code: string,
+    grammar: PrismGrammar,
+    language: Language
+  ) => PrismToken[] | string[]
   highlight: (code: string, grammar: PrismGrammar, language: Language) => string
 }
 
 type PrismThemeEntry = {
   color?: string
   backgroundColor?: string
-  fontStyle?: "normal" | "italic"
-  fontWeight?: "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"
-  textDecorationLine?: "none" | "underline" | "line-through" | "underline line-through"
+  fontStyle?: 'normal' | 'italic'
+  fontWeight?:
+    | 'normal'
+    | 'bold'
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+  textDecorationLine?:
+    | 'none'
+    | 'underline'
+    | 'line-through'
+    | 'underline line-through'
   opacity?: number
   [styleKey: string]: string | number | void
 }

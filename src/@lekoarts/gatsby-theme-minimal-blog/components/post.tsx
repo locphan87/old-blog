@@ -1,46 +1,46 @@
 /** @jsx jsx */
-import { jsx, Heading } from "theme-ui";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import React from "react";
-import Layout from "./layout";
-import ItemTags from "./item-tags";
-import SEO from "./seo";
-import { Toc } from "./toc";
+import { jsx, Heading } from 'theme-ui'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from 'react'
+import Layout from './layout'
+import ItemTags from './item-tags'
+import SEO from './seo'
+import { Toc } from './toc'
 
 type PostProps = {
   data: {
     mdx: {
-      slug: string;
-      tableOfContents?: any;
-    };
+      slug: string
+      tableOfContents?: any
+    }
     post: {
-      slug: string;
-      title: string;
-      date: string;
+      slug: string
+      title: string
+      date: string
       tags?: {
-        name: string;
-        slug: string;
-      }[];
-      description?: string;
-      canonicalUrl?: string;
-      body: string;
-      excerpt: string;
-      timeToRead?: number;
+        name: string
+        slug: string
+      }[]
+      description?: string
+      canonicalUrl?: string
+      body: string
+      excerpt: string
+      timeToRead?: number
       banner?: {
         childImageSharp: {
           resize: {
-            src: string;
-          };
-        };
-      };
-    };
-  };
-};
+            src: string
+          }
+        }
+      }
+    }
+  }
+}
 
-const px = [`32px`, `16px`, `8px`, `4px`];
-const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
+const px = [`32px`, `16px`, `8px`, `4px`]
+const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`)
 const renderItem = (item: any) => {
-  const { url, title, items } = item;
+  const { url, title, items } = item
   return (
     <li key={url}>
       <a href={url} key={url}>
@@ -48,14 +48,14 @@ const renderItem = (item: any) => {
       </a>
       {items && <ul>{items.map(renderItem)}</ul>}
     </li>
-  );
-};
+  )
+}
 
 const Post = ({ data: { post, mdx } }: PostProps) => {
   const bannerSrc = post.banner
     ? post.banner.childImageSharp.resize.src
-    : undefined;
-  const { tableOfContents } = mdx || {};
+    : undefined
+  const { tableOfContents } = mdx || {}
   return (
     <Layout>
       <SEO
@@ -89,7 +89,7 @@ const Post = ({ data: { post, mdx } }: PostProps) => {
       <section
         sx={{
           my: 5,
-          ".gatsby-resp-image-wrapper": {
+          '.gatsby-resp-image-wrapper': {
             my: [4, 4, 5],
             boxShadow: shadow.join(`, `),
           },
@@ -105,7 +105,7 @@ const Post = ({ data: { post, mdx } }: PostProps) => {
         <MDXRenderer>{post.body}</MDXRenderer>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post

@@ -14,6 +14,7 @@
     "deploy": "gatsby build && gh-pages -d public -b master",
     "start": "gatsby develop",
     "serve": "gatsby serve",
+    "format": "prettier {src,content}/**/*.{js,jsx,ts,tsx,json} --write",
     "clean": "gatsby clean"
   },
   "dependencies": {
@@ -32,6 +33,19 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "husky": "^4.3.5",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "prettier --write"
+    ]
   }
 }

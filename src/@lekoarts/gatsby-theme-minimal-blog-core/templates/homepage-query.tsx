@@ -1,7 +1,7 @@
-import { graphql } from "gatsby";
-import HomepageComponent from "../components/homepage";
+import { graphql } from 'gatsby'
+import HomepageComponent from '../components/homepage'
 
-export default HomepageComponent;
+export default HomepageComponent
 
 export const query = graphql`
   query($formatString: String!) {
@@ -20,4 +20,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

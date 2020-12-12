@@ -1,13 +1,13 @@
 /** @jsx jsx */
-import React from "react"
-import { Global } from "@emotion/core"
-import { Box, Container, jsx } from "theme-ui"
-import "typeface-ibm-plex-sans"
-import SEO from "./seo"
-import Header from "./header"
-import Footer from "./footer"
-import CodeStyles from "../styles/code"
-import SkipNavLink from "./skip-nav"
+import React from 'react'
+import { Global } from '@emotion/core'
+import { Box, Container, jsx } from 'theme-ui'
+import 'typeface-ibm-plex-sans'
+import SEO from './seo'
+import Header from './header'
+import Footer from './footer'
+import CodeStyles from '../styles/code'
+import SkipNavLink from './skip-nav'
 
 type LayoutProps = { children: React.ReactNode; className?: string }
 
@@ -15,7 +15,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
   <React.Fragment>
     <Global
       styles={(theme) => ({
-        "*": {
+        '*': {
           boxSizing: `inherit`,
         },
         html: {
@@ -28,10 +28,10 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           fontFamily: `monospace`,
           fontSize: `1em`,
         },
-        "[hidden]": {
+        '[hidden]': {
           display: `none`,
         },
-        "::selection": {
+        '::selection': {
           backgroundColor: theme.colors.text,
           color: theme.colors.background,
         },

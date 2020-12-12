@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from 'theme-ui'
 
 type Props = {
   isDark: boolean
@@ -30,7 +30,7 @@ const ColorModeToggle = ({ isDark, toggle }: Props) => (
       cursor: `pointer`,
       padding: 0,
       appearance: `none`,
-      "&:hover, &:focus": { opacity: 1 },
+      '&:hover, &:focus': { opacity: 1 },
     }}
   >
     <div
@@ -44,8 +44,9 @@ const ColorModeToggle = ({ isDark, toggle }: Props) => (
         transform: isDark ? `scale(0.55)` : `scale(1)`,
         transition: `all 0.45s ease`,
         overflow: isDark ? `visible` : `hidden`,
-        boxShadow: (t) => (isDark ? `none` : `inset 8px -8px 0px 0px ${t.colors.toggleIcon}`),
-        "&:before": {
+        boxShadow: (t) =>
+          isDark ? `none` : `inset 8px -8px 0px 0px ${t.colors.toggleIcon}`,
+        '&:before': {
           content: `""`,
           position: `absolute`,
           right: `-9px`,
@@ -58,7 +59,7 @@ const ColorModeToggle = ({ isDark, toggle }: Props) => (
           opacity: isDark ? 0 : 1,
           transition: `transform 0.45s ease`,
         },
-        "&:after": {
+        '&:after': {
           content: `""`,
           width: `8px`,
           height: `8px`,

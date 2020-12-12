@@ -1,12 +1,12 @@
 /* eslint react/destructuring-assignment: 0 */
-import React from "react"
-import Highlight, { defaultProps } from "prism-react-renderer"
-import loadable from "@loadable/component"
-import theme from "prism-react-renderer/themes/nightOwl"
+import React from 'react'
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import loadable from '@loadable/component'
+import theme from 'prism-react-renderer/themes/nightOwl'
 
-import Copy from "./copy"
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
-import { Language } from "../types"
+import Copy from './copy'
+import useMinimalBlogConfig from '../hooks/use-minimal-blog-config'
+import { Language } from '../types'
 
 type CodeProps = {
   codeString: string
@@ -76,17 +76,28 @@ const Code = ({
   const [language, { title = `` }] = getParams(blockClassName)
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
 
-  const hasLineNumbers = !noLineNumbers && language !== `noLineNumbers` && showLineNumbers
+  const hasLineNumbers =
+    !noLineNumbers && language !== `noLineNumbers` && showLineNumbers
 
   if (props[`react-live`]) {
     return (
       <div className="react-live-wrapper">
-        <LazyLiveProvider code={codeString} noInline theme={theme} showCopyButton={showCopyButton} />
+        <LazyLiveProvider
+          code={codeString}
+          noInline
+          theme={theme}
+          showCopyButton={showCopyButton}
+        />
       </div>
     )
   }
   return (
-    <Highlight {...defaultProps} code={codeString} language={language} theme={theme}>
+    <Highlight
+      {...defaultProps}
+      code={codeString}
+      language={language}
+      theme={theme}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <React.Fragment>
           {title && (
@@ -95,7 +106,11 @@ const Code = ({
             </div>
           )}
           <div className="gatsby-highlight" data-language={language}>
-            <pre className={className} style={style} data-linenumber={hasLineNumbers}>
+            <pre
+              className={className}
+              style={style}
+              data-linenumber={hasLineNumbers}
+            >
               {showCopyButton && <Copy content={codeString} fileName={title} />}
               <code className={`language-${language}`}>
                 {tokens.map((line, i) => {
@@ -107,7 +122,9 @@ const Code = ({
 
                   return (
                     <div {...lineProps}>
-                      {hasLineNumbers && <span className="line-number-style">{i + 1}</span>}
+                      {hasLineNumbers && (
+                        <span className="line-number-style">{i + 1}</span>
+                      )}
                       {line.map((token, key) => (
                         <span {...getTokenProps({ token, key })} />
                       ))}

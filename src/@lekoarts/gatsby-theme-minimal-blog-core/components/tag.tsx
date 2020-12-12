@@ -1,24 +1,24 @@
-import React from "react";
-import Tag from "../../gatsby-theme-minimal-blog/components/tag";
+import React from 'react'
+import Tag from '../../gatsby-theme-minimal-blog/components/tag'
 
 type Props = {
   data: {
-    allPost: any;
-    [key: string]: any;
-  };
+    allPost: any
+    [key: string]: any
+  }
   pageContext: {
-    isCreatedByStatefulCreatePages: boolean;
-    slug: string;
-    name: string;
-    [key: string]: any;
-  };
-  [key: string]: any;
-};
+    isCreatedByStatefulCreatePages: boolean
+    slug: string
+    name: string
+    [key: string]: any
+  }
+  [key: string]: any
+}
 
 export default function MinimalBlogCoreTag({ ...props }: Props) {
   const {
     data: { allPost },
-  } = props;
+  } = props
 
-  return <Tag posts={allPost.nodes} {...props} />;
+  return <Tag posts={allPost.nodes} {...props} />
 }

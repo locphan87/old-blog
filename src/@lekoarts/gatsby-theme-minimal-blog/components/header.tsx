@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx, useColorMode } from "theme-ui"
-import { Flex } from "@theme-ui/components"
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
-import ColorModeToggle from "./colormode-toggle"
-import Navigation from "./navigation"
-import HeaderTitle from "./header-title"
-import HeaderExternalLinks from "./header-external-links"
+import { jsx, useColorMode } from 'theme-ui'
+import { Flex } from '@theme-ui/components'
+import useMinimalBlogConfig from '../hooks/use-minimal-blog-config'
+import ColorModeToggle from './colormode-toggle'
+import Navigation from './navigation'
+import HeaderTitle from './header-title'
+import HeaderExternalLinks from './header-external-links'
 
 const Header = () => {
   const { navigation: nav } = useMinimalBlogConfig()
@@ -31,7 +31,7 @@ const Header = () => {
           justifyContent: `space-between`,
           mt: 3,
           color: `secondary`,
-          a: { color: `secondary`, ":hover": { color: `heading` } },
+          a: { color: `secondary`, ':hover': { color: `heading` } },
           flexFlow: `wrap`,
         }}
       >
