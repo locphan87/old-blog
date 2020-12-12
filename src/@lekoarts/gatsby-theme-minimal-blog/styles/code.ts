@@ -211,6 +211,9 @@ const code = {
       left: `-2px`,
     },
   },
+  '.anchor': {
+    display: 'none',
+  },
   '.react-live-wrapper': {
     position: `relative`,
   },

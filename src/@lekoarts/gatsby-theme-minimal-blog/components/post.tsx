@@ -96,7 +96,7 @@ const Post = ({ data: { post, mdx } }: PostProps) => {
           variant: `layout.content`,
         }}
       >
-        {tableOfContents && (
+        {tableOfContents && tableOfContents.items && (
           <Toc>
             <h2>Contents</h2>
             {tableOfContents.items.map(renderItem)}

@@ -3,10 +3,6 @@ import styled from 'styled-components'
 
 const Toc = styled.ul`
   background-color: #f9f6f7;
-  color: ${(props) => {
-    console.log(props)
-    return 'red'
-  }};
   padding: 1.5rem;
   list-style: none;
   h2 {
