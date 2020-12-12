@@ -5,7 +5,7 @@ import React from "react";
 import Layout from "./layout";
 import ItemTags from "./item-tags";
 import SEO from "./seo";
-import { Toc, InnerScroll } from "./toc";
+import { Toc } from "./toc";
 
 type PostProps = {
   data: {
@@ -39,6 +39,17 @@ type PostProps = {
 
 const px = [`32px`, `16px`, `8px`, `4px`];
 const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
+const renderItem = (item: any) => {
+  const { url, title, items } = item;
+  return (
+    <li key={url}>
+      <a href={url} key={url}>
+        {title}
+      </a>
+      {items && <ul>{items.map(renderItem)}</ul>}
+    </li>
+  );
+};
 
 const Post = ({ data: { post, mdx } }: PostProps) => {
   const bannerSrc = post.banner
@@ -85,19 +96,12 @@ const Post = ({ data: { post, mdx } }: PostProps) => {
           variant: `layout.content`,
         }}
       >
-        <Toc>
-          <InnerScroll>
-            <h2>Table of contents</h2>
-            {tableOfContents &&
-              tableOfContents.items.map((i) => (
-                <li key={i.url}>
-                  <a href={i.url} key={i.url}>
-                    {i.title}
-                  </a>
-                </li>
-              ))}
-          </InnerScroll>
-        </Toc>
+        {tableOfContents && (
+          <Toc>
+            <h2>Contents</h2>
+            {tableOfContents.items.map(renderItem)}
+          </Toc>
+        )}
         <MDXRenderer>{post.body}</MDXRenderer>
       </section>
     </Layout>
