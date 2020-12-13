@@ -4,8 +4,8 @@ import PostComponent from '../components/post'
 export default PostComponent
 
 export const query = graphql`
-  query($slug: String!, $formatString: String!) {
-    mdx(frontmatter: { slug: { eq: $slug } }) {
+  query($id: String!, $slug: String!, $formatString: String!) {
+    mdx(children: { elemMatch: { id: { eq: $id } } }) {
       slug
       tableOfContents(maxDepth: 3)
     }

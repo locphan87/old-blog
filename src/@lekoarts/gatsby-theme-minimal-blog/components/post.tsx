@@ -5,7 +5,7 @@ import React from 'react'
 import Layout from './layout'
 import ItemTags from './item-tags'
 import SEO from './seo'
-import { Toc } from './toc'
+import { TocContainer } from './toc'
 
 type PostProps = {
   data: {
@@ -39,17 +39,6 @@ type PostProps = {
 
 const px = [`32px`, `16px`, `8px`, `4px`]
 const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`)
-const renderItem = (item: any) => {
-  const { url, title, items } = item
-  return (
-    <li key={url}>
-      <a href={url} key={url}>
-        {title}
-      </a>
-      {items && <ul>{items.map(renderItem)}</ul>}
-    </li>
-  )
-}
 
 const Post = ({ data: { post, mdx } }: PostProps) => {
   const bannerSrc = post.banner
@@ -96,12 +85,7 @@ const Post = ({ data: { post, mdx } }: PostProps) => {
           variant: `layout.content`,
         }}
       >
-        {tableOfContents && tableOfContents.items && (
-          <Toc>
-            <h2>Contents</h2>
-            {tableOfContents.items.map(renderItem)}
-          </Toc>
-        )}
+        <TocContainer data={tableOfContents} />
         <MDXRenderer>{post.body}</MDXRenderer>
       </section>
     </Layout>
