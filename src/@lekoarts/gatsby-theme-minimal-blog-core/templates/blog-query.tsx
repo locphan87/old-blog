@@ -5,7 +5,10 @@ export default BlogComponent
 
 export const query = graphql`
   query($formatString: String!) {
-    allPost(sort: { fields: date, order: DESC }) {
+    allPost(
+      filter: { display: { ne: HIDDEN } }
+      sort: { fields: date, order: DESC }
+    ) {
       nodes {
         slug
         title

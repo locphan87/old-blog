@@ -5,7 +5,11 @@ export default HomepageComponent
 
 export const query = graphql`
   query($formatString: String!) {
-    allPost(sort: { fields: date, order: DESC }, limit: 3) {
+    allPost(
+      filter: { display: { ne: HIDDEN } }
+      sort: { fields: date, order: DESC }
+      limit: 5
+    ) {
       nodes {
         slug
         title
