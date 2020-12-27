@@ -5,6 +5,290 @@ tags:
 - aws
 - solution-architect
 - study-guide
+- summary
 ---
 
+## Introduction
+This study guide covers the basics of AWS services and concepts within the scope of the AWS Certified Solutions Architect - Associate exam.
+
+Domain | Percentage of Exam
+-------|-------------------
+Designing highly available, cost-efficient, fault-tolerant, scalable systems | 60
+Implementation/Deployment | 10
+Data Security | 20
+Troubleshooting | 10
+
+## Chapter 1: Introduction to AWS
+This chapter provides an introduction to the AWS Cloud computing platform. It discusses the advantages of cloud computing and the fundamentals of AWS
+
+### What's Cloud Computing?
+- pay-as-you-go pricing
+- easy way to access servers, storage, databases and other services
+
+Advantages of cloud computing
+1. Variable vs Capital Expense
+1. Economies of Scale
+1. Stop Guessing Capacity
+1. Increase Speed and Agility
+1. Focus on Business Differentiators
+1. Go Global in Minutes
+
+Cloud computing deployment models
+- all-in: fully deployed, all components running in the cloud
+- hybrid: between the cloud and existing on-premise infrastructure
+
+### AWS Fundamentals
+Using AWS resources instead of your own is like purchasing electricity from a power company instead of running your own generator.
+
+Key advantages of cloud computing:
+- capacity exactly matches your need,
+- you pay only for what you use,
+- economies of scale result in lower costs,
+- and the service is provided by a vendor experienced in running large-scale networks.
+
+Key foundational concepts:
+- AWS global infrastructure
+- AWS approach to security and compliance
+
+### AWS Cloud Computing Platform
+*Figure 1.2: AWS Cloud computing platform*
+![AWS Cloud computing platform](https://learning.oreilly.com/library/view/aws-certified-solutions/9781119138556/images/ec01f002.jpg)
+
+Accessing the platform
+- AWS Management Console
+- AWS CLI
+- AWS SDK
+
+Compute and networking services
+- Amazon Elastic Compute Cloud (Amazon EC2)
+- AWS Lambda
+- Auto Scaling
+- Elastic Load Balancing
+- AWS Elastic Beanstalk
+- Amazon Virtual Private Cloud (Amazon VPC)
+- AWS Direct Connect
+- Amazon Route 53
+
+Storage and content delivery
+- Amazon Simple Storage Service (Amazon S3)
+- Amazon Glacier
+- Amazon Elastic Block Store (Amazon EBS)
+- AWS Storage Gateway
+- Amazon CloudFront
+
+Database services
+- Amazon Relational Database Service (Amazon RDS)
+- Amazon DynamoDB
+- Amazon Redshift
+- Amazon ElastiCache
+
+Management tools
+- Amazon CloudWatch
+- AWS CloudFormation
+
+*Figure 1.4: AWS CloudFormation workflow summary*
+![AWS CloudFormation workflow summary](https://learning.oreilly.com/library/view/aws-certified-solutions/9781119138556/images/ec01f004.jpg)
+- AWS CloudTrail
+- AWS Config
+
+Security and identity
+- AWS Identity and Access Management (IAM)
+- AWS Key Management Service (KMS)
+- AWS Directory Service
+- AWS Certificate Manager
+- AWS Web Application Firewall (WAF)
+
+Application services
+- Amazon API Gateway
+- Amazon Elastic Transcoder
+- Amazon Simple Notification Service (Amazon SNS)
+- Amazon Simple Workflow Service (Amazon SWF)
+- Amazon Simple Queue Service (Amazon SQS)
+
+### Exam Essentials
+Topics | Description
+-------|------------
+Understand the global infrastructure | Highly available infrastructure with multiple locations. Locations = regions + Availability Zones
+Understand regions | independent, isolated from the other regions. Resources aren't replicated across regions
+Understand Availability Zones | data centers, isolated from failures in other Availability Zones
+Understand the hybrid deployment model | between cloud-based resources and existing resources that are not located in the cloud
+
+### Review Questions
+Q | A
+--|--
+1 | 4 - region
+2 | 1 - Availability Zones
+3 | 2 - Hybrid deployment
+4 | 3 - Amazon CloudWatch
+5 | 2 - Amazon DynamoDB
+6 | 1 - Auto Scaling
+7 | ~~3 - AWS Storage Gateway~~ -> 4. CloudFront
+8 | ~~3 - Amazon Glacier~~ -> 1. EBS
+9 | 3 - VPC
+10 | 2 - SQS
+
+## Chapter 2: Amazon Simple Storage Service (Amazon S3) and Amazon Glacier Storage
+### Exam Essentials
+Topics | Description
+-------|------------
+Know what amazon S3 is and what it is commonly used for | secure, durable, and highly scalable cloud storage. Common use cases include backup and archive, content storage and distribution, big data analytics, static website hosting, cloud-native application hosting, and disaster recovery.
+Understand how object storage differs from block and file storage | cloud object storage manages data at the application level as objects using a REST API built on HTTP. Block storage manages data at the operating system level as numbered addressable blocks. File storage manages data as shared files
+Understand the basics of Amazon S3 | S3 stores data in objects that contain data and metadata. Objects are identified by a user-defined key and are stored in a simple flat folder called a bucket
+Understand the durability, availability, and data consistency model of Amazon S3 | Amazon S3 standard storage is designed for 11 nines durability and four nines availability of objects over a year. S3 is eventually consistent, but offers read-after-write consistency for PUTs to new objects.
+Know how to enable static website hosting on Amazon S3 | create a bucket with the website hostname, upload your static content and make it public, enable static website hosting on the bucket, and indicate the index and error page objects.
+Know how to protect your data on Amazon S3 | Encrypt data in flight using HTTPS and at rest using SSE or client-side encryption. Enable versioning to keep multiple versions of an object in a bucket. Enable MFA Delete to protect against accidental deletion. Use ACLs Amazon S3 bucket policies and AWS IAM policies for access control. Use pre-signed URLs for time-limited download access. Use cross-region replication to automatically replicate data to another region.
+Know the use case for each of the Amazon S3 storage classes | Standard - high durability, high performance, and low latency access. Standard-IA - less frequently accessed, but that needs the same performance and availability when accessed. RRS - lower durability at lower cost for easily replicated data. Glacier - storing rarely accessed archival data at lowest cost, when three- to five-hour retrieval time is acceptable.
+Know how to use lifecycle configuration rules | Lifecycle configuration rules define actions to transition objects from one storage class to another based on time.
+Know how to use Amazon S3 event notifications | set at the bucket level and can trigger a message in Amazon SNS or Amazon SQS or an action in AWS Lambda in response to an upload or a delete of an object.
+Know the basics of amazon glacier as a standalone service | Data is stored in encrypted archives that can be as large as 40TB. Archives typically contain TAR or ZIP files. Vaults are containers for archives, and vaults can be locked for compliance.
+
+### Exercises
+ID | Exercise | Status
+---|----------|-------
+2.1 | Create an Amazon Simple Storage Service (Amazon S3) Bucket | DONE
+2.2 | Upload, Make Public, Rename, and Delete Objects in Your Bucket | DONE
+2.3 | Enable Version Control | DONE
+2.4 | Delete an Object and Then Restore It | DONE
+2.5 | Lifecycle Management | DONE
+2.6 | Enable Static Hosting on Your Bucket | DONE
+
+### Review Questions
+Q | A
+--|--
+1 | 4, 5
+2 | 2, 4
+3 | 1, 2, 4
+4 | 2, 3, 5
+5 | 1, 5 -> 3, 5
+6 | 3
+7 | 2
+8 | 3
+9 | 5 -> 3
+10 | 1, 2 -> 2, 3
+11 | 3
+12 | 2
+13 | 1, 4
+14 | 2
+15 | 2, 3, 5
+16 | 2, 3
+17 | 4, 1, 2
+18 | 2
+19 | 1, 3
+20 | 3, 4, 5
+
+## Chapter 3: Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Elastic Block Store (Amazon EBS)
+### Exam Essentials
+**Know the basics of launching an Amazon EC2 instance.**
+To launch an instance, you must specify an AMI, which defines the software on the instance at launch, and an instance type, which defines the virtual hardware supporting the instance (memory, vCPUs, and so on).
+
+**Know what architectures are suited for what Amazon EC2 pricing options.**
+Spot Instances are best suited for workloads that can accommodate interruption. Reserved Instances are best for consistent, long-term compute needs. On-Demand Instances provide flexible compute to respond to scaling needs.
+
+**Know how to combine multiple pricing options that result in cost optimization and scalability.**
+On-Demand Instances can be used to scale up a web application running on Reserved Instances in response to a temporary traffic spike. For a workload with several Reserved Instances reading from a queue, it’s possible to use Spot Instances to alleviate heavy traffic in a cost-effective way. These are just two of countless examples where a workload may use different pricing options.
+
+**Know the benefits of enhanced networking.**
+Enhanced networking enables you to get significantly higher PPS performance, lower network jitter, and lower latencies.
+
+**Know the capabilities of VM import/export.**
+VM Import/Export allows you to import existing VMs to AWS as Amazon EC2 instances or AMIs. Amazon EC2 instances that were imported through VM Import/Export can also be exported back to a virtual environment.
+
+**Know the methods for accessing an instance over the internet.**
+You can access an Amazon EC2 instance over the web via public IP address, elastic IP address, or public DNS name. There are additional ways to access an instance within an Amazon VPC, including private IP addresses and ENIs.
+
+**Know the lifetime of an instance store.**
+Data on an instance store is lost when the instance is stopped or terminated. Instance store data survives an OS reboot.
+
+**Know the properties of the Amazon EC2 pricing options.**
+On-Demand Instances require no up-front commitment, can be launched any time, and are billed by the hour. Reserved Instances require an up-front commitment and vary in cost depending on whether they are paid all up front, partially up front, or not up front. Spot Instances are launched when your bid price exceeds the current spot price. Spot Instances will run until the spot price exceeds your bid price, in which case the instance will get a two-minute warning and terminate.
+
+**Know what determines network performance.**
+Every instance type is rated for low, moderate, high, or 10 Gbps network performance, with larger instance types generally having higher ratings. Additionally, some instance types offer enhanced networking, which provides additional improvement in network performance.
+
+**Know what instance metadata is and how it’s obtained.**
+Metadata is information about an Amazon EC2 instance, such as instance ID, instance type, and security groups, that is available from within the instance. It can be obtained through an HTTP call to a specific IP address.
+
+**Know how security groups protect instances.**
+Security groups are virtual firewalls controlling traffic in and out of your Amazon EC2 instances. They are deny by default, and you can allow traffic by adding rules specifying traffic direction, port, protocol, and destination address (via Classless Inter-Domain Routing [CIDR] block). They are applied at the instance level, meaning that traffic between instances in the same security group must adhere to the rules of that security group. They are stateful, meaning that an outgoing rule will allow the response without a correlating incoming rule.
+
+**Know how to interpret the effect of security groups.**
+When an instance is a member of multiple security groups, the effect is a union of all the rules in all the groups.
+
+**Know the different Amazon EBS volume types, their characteristics, and their appropriate workloads.**
+Magnetic volumes provide an average performance of 100 IOPS and can be provisioned up to 1 TB. They are good for cold and infrequently accessed data. General-purpose SSD volumes provide three IOPS/GB up to 10,000 IOPS, with smaller volumes able to burst 3,000 IOPS. They can be provisioned up to 16 TB and are appropriate for dev/test environments, small databases, and so forth. Provisioned IOPS SSD can provide up to 20,000 consistent IOPS for volumes up to 16 TB. They are the best choice for workloads such as large databases executing many transactions.
+
+**Know how to encrypt an Amazon EBS volume.**
+Any volume type can be encrypted at launch. Encryption is based on AWS KMS and is transparent to applications on the attached instances.
+
+**Understand the concept and process of snapshots.**
+Snapshots provide a point-in-time backup of an Amazon EBS volume and are stored in Amazon S3. Subsequent snapshots are incremental—they only store deltas. When you request a snapshot, the point-in-time snapshot is created immediately and the volume may continue to be used, but the snapshot may remain in pending status until all the modified blocks have been transferred to Amazon S3. Snapshots may be copied between regions.
+
+**Know how Amazon EBS-optimized instances affect Amazon EBS performance.**
+In addition to the IOPS that control the performance in and out of the Amazon EBS volume, use Amazon EBS-optimized instances to ensure additional, dedicated capacity for Amazon EBS I/O.
+
+### Exercises
+ID | Exercise
+---|----------
+3.1 | Launch and Connect to a Linux Instance
+3.2 | Launch a Windows Instance with Bootstrapping
+3.3 | Confirm That Instance Stores Are Lost When an Instance Is Stopped
+3.4 | Launch a Spot Instance
+3.5 | Access Metadata
+3.6 | Create an Amazon EBS Volume and Show That It Remains After the Instance Is Terminated
+3.7 | Take a Snapshot and Restore
+3.8 | Launch an Encrypted Volume
+3.9 | Detach a Boot Drive and Reattach to Another Instance
+
+### Review Questions
+1.
+2.
+3.
+4.
+5.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+
+## Chapter 4: Amazon Virtual Private Cloud (Amazon VPC)
+
+## Chapter 5: Elastic Load Balancing, Amazon CloudWatch, and Auto Scaling
+
+## Chapter 6: AWS Identity and Access Management (IAM)
+
+## Chapter 7: Databases and AWS
+
+## Chapter 8: SQS, SWF, and SNS
+
+## Chapter 9: Domain Name System (DNS) and Amazon Route 53
+
+## Chapter 10: Amazon ElastiCache
+
+## Chapter 11: Additional Key Services
+
+## Chapter 12: Security on AWS
+
+## Chapter 13: AWS Risk and Compliance
+
+## Chapter 14: Architecture Best Practices
+
 ## References
+1. [Getting started with Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html)
+1. [Set up a static website](http://docs.aws.amazon.com/AmazonS3/latest/dev/HostingWebsiteOnS3Setup.html)
+1. [Using versioning](http://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html)
+1. [Object Lifecycle Management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html)
+1. [Amazon EC2 Linux](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+1. [Amazon EC2 Windows](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html)
+1. [Amazon EBS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)

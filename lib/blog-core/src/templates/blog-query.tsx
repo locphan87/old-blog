@@ -1,17 +1,11 @@
-import { graphql } from 'gatsby'
-import BlogComponent from '../components/blog'
+import { graphql } from "gatsby"
+import BlogComponent from "../components/blog"
 
 export default BlogComponent
 
 export const query = graphql`
   query($formatString: String!) {
-    allPost(
-      filter: {
-        display: { ne: HIDDEN }
-        tags: { elemMatch: { slug: { nin: ["project", "summary"] } } }
-      }
-      sort: { fields: date, order: DESC }
-    ) {
+    allPost(sort: { fields: date, order: DESC }) {
       nodes {
         slug
         title
