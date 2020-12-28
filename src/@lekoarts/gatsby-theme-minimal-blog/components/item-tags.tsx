@@ -16,17 +16,19 @@ const ItemTags = ({ tags }: TagsProps) => {
 
   return (
     <React.Fragment>
-      {tags.map((tag, i) => (
-        <React.Fragment key={tag.slug}>
-          {!!i && `, `}
-          <TLink
-            as={Link}
-            to={replaceSlashes(`/${basePath}/${tagsPath}/${tag.slug}`)}
-          >
-            {tag.name}
-          </TLink>
-        </React.Fragment>
-      ))}
+      {tags
+        .filter((x) => !['project', 'summary'].includes(x.slug))
+        .map((tag, i) => (
+          <React.Fragment key={tag.slug}>
+            {!!i && `, `}
+            <TLink
+              as={Link}
+              to={replaceSlashes(`/${basePath}/${tagsPath}/${tag.slug}`)}
+            >
+              {tag.name}
+            </TLink>
+          </React.Fragment>
+        ))}
     </React.Fragment>
   )
 }
