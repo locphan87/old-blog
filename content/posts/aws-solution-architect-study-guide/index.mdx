@@ -262,6 +262,396 @@ ID | Exercise
 19.
 20.
 
+## Chapter 5
+### Exam Essentials
+#### Understand what the Elastic Load Balancing service provides.
+Elastic Load Balancing is a highly available service that distributes traffic across Amazon EC2 instances and includes options that provide flexibility and control of incoming requests to Amazon EC2 instances.
+
+#### Know the types of load balancers the Elastic Load Balancing service provides and when to use each one.
+An **Internet-facing** load balancer is, as the name implies, a load balancer that takes requests from clients over the Internet and distributes them to Amazon EC2 instances that are registered with the load balancer.
+
+An **internal** load balancer is used to route traffic to your Amazon EC2 instances in VPCs with private subnets.
+
+An **HTTPS** load balancer is used when you want to encrypt data between your load balancer and the clients that initiate HTTPS sessions and for connections between your load balancer and your back-end instances.
+
+#### Know the types of listeners the Elastic Load Balancing service provides and the use case and requirements for using each one.
+A listener is a process that checks for connection requests. It is configured with a protocol and a port for front-end (client to load balancer) connections and a protocol and a port for back-end (load balancer to back-end instance) connections.
+
+#### Understand the configuration options for Elastic Load Balancing.
+Elastic Load Balancing allows you to configure many aspects of the load balancer, including
+- idle connection timeout,
+- cross-zone load balancing,
+- connection draining,
+- proxy protocol,
+- sticky sessions,
+- and health checks.
+
+#### Know what an Elastic Load Balancing health check is and why it is important.
+Elastic Load Balancing supports health checks to test the status of the Amazon EC2 instances behind an Elastic Load Balancing load balancer.
+
+#### Understand what the amazon CloudWatch service provides and what use cases there are for using it.
+Amazon CloudWatch is a service that you can use to
+- monitor your AWS resources and your applications in real time
+- collect and track metrics,
+- create alarms that send notifications,
+- and make changes to the resources being monitored based on rules you define.
+
+#### Know the differences between the two types of monitoring—basic and detailed—for Amazon CloudWatch.
+Amazon CloudWatch offers basic or detailed monitoring for supported AWS products.
+
+**Basic** monitoring sends data points to Amazon CloudWatch every five minutes for a limited number of preselected metrics at no charge.
+
+**Detailed** monitoring sends data points to Amazon CloudWatch every minute and allows data aggregation for an additional charge. If you want to use detailed monitoring, you must enable it—basic is the default.
+
+#### Understand Auto Scaling and why it is an important advantage of the AWS Cloud.
+A distinct advantage of deploying applications to the cloud is the ability to launch and then release servers in response to variable workloads. Provisioning servers on demand and then releasing them when they are no longer needed can provide significant **cost savings** for workloads that are not steady state.
+
+#### Know when and why to use Auto Scaling.
+Auto Scaling is a service that allows you to scale your Amazon EC2 capacity automatically by scaling out and scaling in according to criteria that you define. With Auto Scaling, you can ensure that the number of running Amazon EC2 instances increases during demand spikes or peak demand periods to maintain application performance and decreases automatically during demand lulls or troughs to minimize costs.
+
+#### Know the supported Auto Scaling plans.
+Auto Scaling has several schemes or plans that you can use to control how you want Auto Scaling to perform. The Auto Scaling plans are named
+- Maintain Current Instant Levels,
+- Manual Scaling,
+- Scheduled Scaling,
+- and Dynamic Scaling.
+
+#### Understand how to build an Auto Scaling launch configuration and an Auto Scaling group and what each is used for.
+A launch configuration is the **template** that Auto Scaling uses to create new instances and is composed of the configuration name, AMI, Amazon EC2 instance type, security group, and instance key pair.
+
+#### Know what a scaling policy is and what use cases to use it for.
+A scaling policy is used by Auto Scaling with CloudWatch alarms to **determine when** your Auto Scaling group should scale out or scale in. Each CloudWatch alarm watches a single metric and sends messages to Auto Scaling when the metric breaches a threshold that you specify in your policy.
+
+#### Understand how Elastic Load Balancing, amazon CloudWatch, and Auto Scaling are used together to provide dynamic scaling.
+Elastic Load Balancing, Amazon CloudWatch, and Auto Scaling can be used together to create a highly available application with a resilient architecture on AWS.
+
+### Exercises
+References
+- [Elastic Load Balancing Developer Guide](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html)
+- [Amazon CloudWatch Developer Guide](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html)
+- [Auto Scaling User Guide](http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html)
+
+ID | Exercise
+---|---------
+5.1 | Create an Elastic Load Balancing Load Balancer
+5.2 | Use an Amazon CloudWatch Metric
+5.3 | Create a Custom Amazon CloudWatch Metric
+5.4 | Create a Launch Configuration and Auto Scaling Group
+5.5 | Create a Scaling Policy
+5.6 | Create a Web Application That Scales
+
+### Review Questions
+Q | A
+--|--
+1 | 3, 4 -> 1,4
+2 | 2
+3 | 4
+4 | 3 -> 1
+5 | 2
+6 | 3
+7 | 4
+8 | 3 -> 1
+9 | 3
+10 | 2 -> 4
+11 | 3
+12 | 1 -> 2
+13 | 1,2,6 -> 2,4,5
+14 | 4
+15 | 1,5 -> 1,3
+16 | 1,6
+17 | 1,3,5 -> 1,3,4
+18 | 2,5 -> 2,3
+19 | 2,5,6
+20 | 2,4,5
+
+## Chapter 6 - IAM
+### Summary
+IAM is a powerful service that gives you the ability to control which people and applications can access your AWS account at a very granular level. Because the root user in an AWS account cannot be limited, you should set up IAM users and temporary security tokens for your people and processes to interact with AWS.
+
+Policies define what actions can and cannot be taken. Policies are associated with IAM users either directly or through group membership. A temporary security token is associated with a policy by assuming an IAM role. You can write your own policies or use one of the managed policies provided by AWS.
+
+Common use cases for IAM roles include federating identities from external IdPs, assigning privileges to an Amazon EC2 instance where they can be assumed by applications running on the instance, and cross-account access.
+
+IAM user accounts can be further secured by rotating keys, implementing MFA, and adding conditions to policies. MFA ensures that authentication is based on something you have in addition to something you know, and conditions can add further restrictions such as limiting client IP address ranges or setting a particular time interval.
+
+### Exam Essentials
+
+Know the different principals in IAM. The three principals that can authenticate and interact with AWS resources are the root user, IAM users, and roles. The root user is associated with the actual AWS account and cannot be restricted in any way. IAM users are persistent identities that can be controlled through IAM. Roles allow people or processes the ability to operate temporarily with a different identity. People or processes assume a role by being granted a temporary security token that will expire after a specified period of time.
+
+Know how principals are authenticated in IAM. When you log in to the AWS Management Console as an IAM user or root user, you use a user name/password combination. A program that accesses the API with an IAM user or root user uses a two-part access key. A temporary security token authenticates with an access key plus an additional session token unique to that temporary security token.
+
+Know the parts of a policy. A policy is a JSON document that defines one or more permissions to interact with AWS resources. Each permission includes the effect, service, action, and resource. It may also include one or more conditions. AWS makes many predefined policies available as managed policies.
+
+Know how a policy is associated with a principal. An authenticated principal is associated with zero to many policies. For an IAM user, these policies may be attached directly to the user account or attached to an IAM group of which the user account is a member. A temporary security token is associated with policies by assuming an IAM role.
+
+Understand MFA. MFA increases the security of an AWS account by augmenting the password (something you know) with a rotating OTP from a small device (something you have), ensuring that anyone authenticating the account has both knowledge of the password and possession of the device. AWS supports both Gemalto hardware MFA devices and a number of virtual MFA apps.
+
+Understand key rotation. To protect your AWS infrastructure, access keys should be rotated regularly. AWS allows two access keys to be valid simultaneously to make the rotation process straightforward: Generate a new access key, configure your application to use the new access key, test, disable the original access key, test, delete the original access key, and test again.
+
+Understand IAM roles and federation. IAM roles are prepackaged sets of permissions that have no credentials. Principals can assume a role and then use the associated permissions. When a temporary security token is created, it assumes a role that defines the permissions assigned to the token. When an Amazon EC2 instance is associated with an IAM role, SDK calls acquire a temporary security token based on the role associated with the instance and use that token to access AWS resources.
+
+Roles are the basis for federating external IdPs with AWS. You configure an IAM IdP to interact with the external IdP, the authenticated identity from the IdP is mapped to a role, and a temporary security token is returned that has assumed that role. AWS supports both SAML and OIDC IdPs.
+
+Know how to resolve conflicting permissions. Resolving multiple permissions is relatively straightforward. If an action on a resource has not been explicitly allowed by a policy, it is denied. If two policies contradict each other; that is, if one policy allows an action on a resource and another policy denies that action, the action is denied. While this sounds improbable, it may occur due to scope differences in a policy. One policy may expose an entire fleet of Amazon EC2 instances, and a second policy may explicitly lock down one particular instance.
+
+### Exercises
+References
+- [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
+
+1 | Create an IAM Group
+2 | Create a Customized Sign-In Link and Password Policy
+3 | Create an IAM User
+4 | Create and Use an IAM Role
+5 | Rotate Keys
+6 | Set Up MFA
+7 | Resolve Conflicting Permissions
+
+### Review Questions
+1 | 1
+2 | 1
+3 | 1
+4 | 1
+5 | 1
+6 | 1
+7 | 1
+8 | 1
+9 | 1
+10 | 1
+
+## Chapter 7 - AWS databases
+### Summary
+In this chapter, you learned the basic concepts of relational databases, data warehouses, and NoSQL databases. You also learned about the benefits and features of AWS managed database services Amazon RDS, Amazon Redshift, and Amazon DynamoDB.
+
+Amazon RDS manages the heavy lifting involved in administering a database infrastructure and software and lets you focus on building the relational schemas that best fit your use case and the performance tuning to optimize your queries.
+
+Amazon RDS supports popular open-source and commercial database engines and provides a consistent operational model for common administrative tasks. Increase your availability by running a master-slave configuration across Availability Zones using Multi-AZ deployment. Scale your application and increase your database read performance using read replicas.
+
+Amazon Redshift allows you to deploy a data warehouse cluster that is optimized for analytics and reporting workloads within minutes. Amazon Redshift distributes your records using columnar storage and parallelizes your query execution across multiple compute nodes to deliver fast query performance. Amazon Redshift clusters can be scaled up or down to support large, petabyte-scale databases using SSD or magnetic disk storage.
+
+Connect to Amazon Redshift clusters using standard SQL clients with JDBC/ODBC drivers and execute SQL queries using many of the same analytics and ETL tools that you use today. Load data into your Amazon Redshift clusters using the COPY command to bulk import flat files stored in Amazon S3, then run standard SELECT commands to search and query the table.
+
+Back up both your Amazon RDS databases and Amazon Redshift clusters using automated and manual snapshots to allow for point-in-time recovery. Secure your Amazon RDS and Amazon Redshift databases using a combination of IAM, database-level access control, network-level access control, and data encryption techniques.
+
+Amazon DynamoDB simplifies the administration and operations of a NoSQL database in the cloud. Amazon DynamoDB allows you to create tables quickly that can scale to an unlimited number of items and configure very high levels of provisioned read and write capacity.
+
+Amazon DynamoDB tables provide a flexible data storage mechanism that only requires a primary key and allows for one or more attributes. Amazon DynamoDB supports both simple scalar data types like String and Number, and also more complex structures using List and Map. Secure your Amazon DynamoDB tables using IAM and restrict access to items and attributes using fine-grained access control.
+
+Amazon DynamoDB will handle the difficult task of cluster and partition management and provide you with a highly available database table that replicates data across Availability Zones for increased durability. Track and process recent changes by tapping into Amazon DynamoDB Streams.
+
+### Exam Essentials
+Know what a relational database is. A relational database consists of one or more tables. Communication to and from relational databases usually involves simple SQL queries, such as “Add a new record,” or “What is the cost of product x?” These simple queries are often referred to as OLTP.
+
+Understand which databases are supported by Amazon RDS. Amazon RDS currently supports six relational database engines:
+
+Microsoft SQL Server
+MySQL Server
+Oracle
+PostgreSQL
+MariaDB
+Amazon Aurora
+Understand the operational benefits of using Amazon RDS. Amazon RDS is a managed service provided by AWS. AWS is responsible for patching, antivirus, and management of the underlying guest OS for Amazon RDS. Amazon RDS greatly simplifies the process of setting a secondary slave with replication for failover and setting up read replicas to offload queries.
+
+Remember that you cannot access the underlying OS for Amazon RDS DB instances. You cannot use Remote Desktop Protocol (RDP) or SSH to connect to the underlying OS. If you need to access the OS, install custom software or agents, or want to use a database engine not supported by Amazon RDS, consider running your database on Amazon EC2 instead.
+
+Know that you can increase availability using Amazon RDS Multi-AZ deployment. Add fault tolerance to your Amazon RDS database using Multi-AZ deployment. You can quickly set up a secondary DB Instance in another Availability Zone with Multi-AZ for rapid failover.
+
+Understand the importance of RPO and RTO. Each application should set RPO and RTO targets to define the amount of acceptable data loss and also the amount of time required to recover from an incident. Amazon RDS can be used to meet a wide range of RPO and RTO requirements.
+
+Understand that Amazon RDS handles Multi-AZ failover for you. If your primary Amazon RDS Instance becomes unavailable, AWS fails over to your secondary instance in another Availability Zone automatically. This failover is done by pointing your existing database endpoint to a new IP address. You do not have to change the connection string manually; AWS handles the DNS change automatically.
+
+Remember that Amazon RDS read replicas are used for scaling out and increased performance. This replication feature makes it easy to scale out your read-intensive databases. Read replicas are currently supported in Amazon RDS for MySQL, PostgreSQL, and Amazon Aurora. You can create one or more replicas of a database within a single AWS Region or across multiple AWS Regions. Amazon RDS uses native replication to propagate changes made to a source DB Instance to any associated read replicas. Amazon RDS also supports cross-region read replicas to replicate changes asynchronously to another geography or AWS Region.
+
+Know what a NoSQL database is. NoSQL databases are non-relational databases, meaning that you do not have to have an existing table created in which to store your data. NoSQL databases come in the following formats:
+
+Document databases
+Graph stores
+Key/value stores
+Wide-column stores
+Remember that Amazon DynamoDB is AWS NoSQL service. You should remember that for NoSQL databases, AWS provides a fully managed service called Amazon DynamoDB. Amazon DynamoDB is an extremely fast NoSQL database with predictable performance and high scalability. You can use Amazon DynamoDB to create a table that can store and retrieve any amount of data and serve any level of request traffic. Amazon DynamoDB automatically spreads the data and traffic for the table over a sufficient number of partitions to handle the request capacity specified by the customer and the amount of data stored, while maintaining consistent and fast performance.
+
+Know what a data warehouse is. A data warehouse is a central repository for data that can come from one or more sources. This data repository would be used for query and analysis using OLAP. An organization’s management typically uses a data warehouse to compile reports on specific data. Data warehouses are usually queried with highly complex queries.
+
+Remember that Amazon Redshift is AWS data warehouse service. You should remember that Amazon Redshift is Amazon’s data warehouse service. Amazon Redshift organizes the data by column instead of storing data as a series of rows. Because only the columns involved in the queries are processed and columnar data is stored sequentially on the storage media, column-based systems require far fewer I/Os, which greatly improves query performance. Another advantage of columnar data storage is the increased compression, which can further reduce overall I/O.
+
+### Exercises
+1 | Create a MySQL Amazon RDS Instance
+2 | Simulate a Failover from One AZ to Another
+3 | Create a Read Replica
+4 | Read and Write from a DynamoDB Table
+5 | Launch a Redshift Cluster
+
+### Review Questions
+1 | 1
+2 | 1
+3 | 1
+4 | 1
+5 | 1
+6 | 1
+7 | 1
+8 | 1
+9 | 1
+10 | 1
+11 | 1
+12 | 1
+13 | 1
+14 | 1
+15 | 1
+16 | 1
+17 | 1
+18 | 1
+19 | 1
+20 | 1
+
+## Chapter 8 - SNS, SQS, SWF
+### Summary
+In this chapter, you learned about the core application and mobile services that you will be tested on in your AWS Certified Solutions Architect – Associate exam.
+
+Amazon SQS is a unique service designed by Amazon to help you decouple your infrastructure. Using Amazon SQS, you can store messages on reliable and scalable infrastructure as they travel between distributed components of your applications that perform different tasks, without losing messages or requiring each component to be continuously available.
+
+Understand Amazon SQS queue operations, unique IDs, and metadata. Be familiar with queue and message identifiers such as queue URLs, message IDs, and receipt handles. Understand related concepts such as delay queues, message attributes, long polling, message timers, dead letter queues, access control, and the overall message lifecycle.
+
+Amazon SWF allows you to create applications that coordinate work across distributed components. Amazon SWF is driven by tasks, which are logical units of work that different components of your application perform. To manage tasks across your application, you need to be aware of inter-task dependencies, scheduling of tasks, and using tasks concurrently. Amazon SWF simplifies the coordination of workflow tasks, giving you full control over their implementation without worrying about underlying complexities such as tracking their progress and maintaining their state.
+
+You must be familiar with the following Amazon SWF components and the lifecycle of a workflow execution:
+
+Workers, starters, and deciders
+Workflows
+Workflow history
+Actors
+Tasks
+Domains
+Object identifiers
+Task lists
+Workflow execution closure
+Long polling
+Amazon SNS is a push notification service that lets you send individual or multiple messages to large numbers of recipients. Amazon SNS consists of two types of clients: publishers and subscribers (sometimes known as producers and consumers). Publishers communicate to subscribers asynchronously by sending a message to a topic. A topic is simply a logical access point/communication channel that contains a list of subscribers and the methods used to communicate to them. When you send a message to a topic, it is automatically forwarded to each subscriber of that topic using the communication method configured for that subscriber.
+
+Amazon SNS can support a wide variety of needs, including monitoring applications, workflow systems, time-sensitive information updates, mobile applications, and any other application that generates or consumes notifications. Understand some common Amazon SNS scenarios, including:
+
+Fanout
+Application and system alerts
+Push email and text messaging
+Mobile push notifications
+
+### Exam Essentials
+Know how to use Amazon SQS. Amazon SQS is a unique service designed by Amazon to help you to decouple your infrastructure. Using Amazon SQS, you can store messages on reliable and scalable infrastructure as they travel between your servers. This allows you to move data between distributed components of your applications that perform different tasks without losing messages or requiring each component always to be available.
+
+Understand Amazon SQS visibility timeouts. Visibility timeout is a period of time during which Amazon SQS prevents other components from receiving and processing a message because another component is already processing it. By default, the message visibility timeout is set to 30 seconds, and the maximum that it can be is 12 hours.
+
+Know how to use Amazon SQS long polling. Long polling allows your Amazon SQS client to poll an Amazon SQS queue. If nothing is there, ReceiveMessage waits between 1 and 20 seconds. If a message arrives in that time, it is returned to the caller as soon as possible. If a message does not arrive in that time, you need to execute the ReceiveMessage function again. This helps you avoid polling in tight loops and prevents you from burning through CPU cycles, keeping costs low.
+
+Know how to use Amazon SWF. Amazon SWF allows you to make applications that coordinate work across distributed components. Amazon SWF is driven by tasks, which are logical units of work that part of your application performs. To manage tasks across your application, you need to be aware of inter-task dependencies, scheduling of tasks, and using tasks concurrently. This is where Amazon SWF can help you. It gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.
+
+Know the basics of an Amazon SWF workflow. A workflow is a collection of activities (coordinated by logic) that carry out a specific goal. For example, a workflow receives a customer order and takes whatever actions are necessary to fulfill it. Each workflow runs in an AWS resource called a domain, which controls the scope of the workflow. An AWS account can have multiple domains, each of which can contain multiple workflows, but workflows in different domains cannot interact.
+
+Understand the different Amazon SWF actors. Amazon SWF interacts with a number of different types of programmatic actors. Actors can be activity workers, workflow starters, or deciders.
+
+Understand Amazon SNS basics. Amazon SNS is a push notification service that lets you send individual or multiple messages to large numbers of recipients. Amazon SNS consists of two types of clients: publishers and subscribers (sometimes known as producers and consumers). Publishers communicate to subscribers asynchronously by sending a message to a topic.
+
+Know the different protocols used with Amazon SNS. You can use the following protocols with Amazon SNS: HTTP, HTTPS, SMS, email, email-JSON, Amazon SQS, and AWS Lambda.
+
+### Exercises
+1 | Create an Amazon SNS Topic
+2 | Create a Subscription to Your Topic
+3 | Publish to a Topic
+4 | Create Queue
+5 | Subscribe Queue to SNS Topic
+
+### Review Questions
+1 | 1
+2 | 1
+3 | 1
+4 | 1
+5 | 1
+6 | 1
+7 | 1
+8 | 1
+9 | 1
+10 | 1
+11 | 1
+12 | 1
+13 | 1
+14 | 1
+15 | 1
+16 | 1
+17 | 1
+18 | 1
+19 | 1
+20 | 1
+
+## Chapter 14 - AWS Best practices
+### Summary
+Typically, production systems come with defined or implicit requirements in terms of uptime. A system is highly available when it can withstand the failure of an individual or multiple components. If you design architectures around the assumption that any component will eventually fail, systems won’t fail when an individual component does.
+
+Traditional infrastructure generally necessitates predicting the amount of computing resources your application will use over a period of several years. If you underestimate, your applications will not have the horsepower to handle unexpected traffic, potentially resulting in customer dissatisfaction. If you overestimate, you’re wasting money with superfluous resources. The on-demand and elastic nature of the cloud enables the infrastructure to be closely aligned with the actual demand, thereby increasing overall utilization and reducing cost. While cloud computing provides virtually unlimited on-demand capacity, system architectures need to be able to take advantage of those resources seamlessly. There are generally two ways to scale an IT architecture: vertically and horizontally.
+
+The AWS Cloud provides governance capabilities that enable continuous monitoring of configuration changes to your IT resources. Because AWS assets are programmable resources, your security policy can be formalized and embedded with the design of your infrastructure. With the ability to spin up temporary environments, security testing can now become part of your continuous delivery pipeline. Solutions Architects can leverage a plethora of native AWS security and encryption features that can help achieve higher levels of data protection and compliance at every layer of cloud architectures.
+
+Because AWS makes parallelization effortless, Solutions Architects need to internalize the concept of parallelization when designing architectures in the cloud. It is advisable not only to implement parallelization wherever possible, but also to automate it because the cloud allows you to create a repeatable process very easily.
+
+As application complexity increases, a desirable characteristic of an IT system is that it can be broken into smaller, loosely coupled components. Solutions Architects should design systems in a way that reduces interdependencies, so that a change or a failure in one component does not cascade to other components.
+
+When organizations try to map their existing system specifications to those available in the cloud, they notice that the cloud might not have the exact specification of the resource that they have on-premises. Organizations should not be afraid and feel constrained when using cloud resources. Even if you might not get an exact replica of your hardware in the cloud environment, you have the ability to get more of those resources in the cloud to compensate.
+
+By focusing on concepts and best practices—like designing for failure, decoupling the application components, understanding and implementing elasticity, combining it with parallelization, and integrating security in every aspect of the application architecture—Solutions Architects can understand the design considerations necessary for building highly scalable cloud applications.
+
+As each use case is unique, Solutions Architects need to remain diligent in evaluating how best practices and patterns can be applied to each implementation. The topic of cloud computing architectures is broad and continuously evolving.
+
+### Exam Essentials
+Understand highly available architectures. A system is highly available when it can withstand the failure of an individual or multiple components. If you design architectures around the assumption that any component will eventually fail, systems won’t fail when an individual component does.
+
+Understand redundancy. Redundancy can be implemented in either standby or active mode. When a resource fails in standby redundancy, functionality is recovered on a secondary resource using a process called failover. The failover will typically require some time before it is completed, and during that period the resource remains unavailable. In active redundancy, requests are distributed to multiple redundant compute resources, and when one of them fails, the rest can simply absorb a larger share of the workload. Compared to standby redundancy, active redundancy can achieve better utilization and affect a smaller population when there is a failure.
+
+Understand elasticity. Elastic architectures can support growth in users, traffic, or data size with no drop in performance. It is important to build elastic systems on top of a scalable architecture. These architectures should scale in a linear manner, where adding extra resources results in at least a proportional increase in ability to serve additional system load. The growth in resources should introduce economies of scale, and cost should follow the same dimension that generates business value out of that system. There are generally two ways to scale an IT architecture: vertically and horizontally.
+
+Understand vertical scaling. Scaling vertically takes place through an increase in the specifications of an individual resource (for example, upgrading a server with a larger hard drive or a faster CPU). This way of scaling can eventually hit a limit, and it is not always a cost efficient or highly available approach.
+
+Understand horizontal scaling. Scaling horizontally takes place through an increase in the number of resources. This is a great way to build Internet-scale applications that leverage the elasticity of cloud computing. It is important to understand the impact of stateless and stateful architectures before implementing horizontal scaling.
+
+Understand stateless applications. A stateless application needs no knowledge of the previous interactions and stores no session information. A stateless application can scale horizontally because any request can be serviced by any of the available system compute resources.
+
+Understand loose coupling. As application complexity increases, a desirable characteristic of an IT system is that it can be broken into smaller, loosely coupled components. This means that IT systems should be designed as “black boxes” to reduce interdependencies so that a change or a failure in one component does not cascade to other components. The more loosely system components are coupled, the larger they scale.
+
+Understand the different storage options in AWS. AWS offers a broad range of storage choices for backup, archiving, and disaster recovery, as well as block, file, and object storage to suit a plethora of use cases. It is important from a cost, performance, and functional aspect to leverage different storage options available in AWS for different types of datasets.
+
+### Exercises
+1 | Create a Custom Amazon VPC
+2 | Create an Internet Gateway for Your Custom Amazon VPC
+3 | Update the Main Route Table for Your Custom Amazon VPC
+4 | Create Public Subnets for Your Custom Amazon VPC
+5 | Create a NAT Gateway for Your Custom Amazon VPC
+6 | Create a Private Route Table for Your Custom Amazon VPC
+7 | Create Private Subnets for Your Custom Amazon VPC
+8 | Create Security Groups for Each Application Tier
+9 | Create a MySQL Multi-AZ Amazon RDS Instance
+10 | Create an Elastic Load Balancer (ELB)
+11 | Create a Web Server Auto Scaling Group
+12 | Create a Route 53 Hosted Zone
+13 | Create an Alias A Record
+14 | Test Your Configuration
+
+### Review Questions
+1 | 1
+2 | 1
+3 | 1
+4 | 1
+5 | 1
+6 | 1
+7 | 1
+8 | 1
+9 | 1
+10 | 1
+11 | 1
+12 | 1
+13 | 1
+14 | 1
+15 | 1
+16 | 1
+17 | 1
+18 | 1
+19 | 1
+20 | 1
+
 ## Chapter 4: Amazon Virtual Private Cloud (Amazon VPC)
 
 ## Chapter 5: Elastic Load Balancing, Amazon CloudWatch, and Auto Scaling
