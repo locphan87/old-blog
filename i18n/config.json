@@ -1,0 +1,18 @@
+[
+  {
+    "code": "en",
+    "hrefLang": "en-US",
+    "name": "English",
+    "localName": "English",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY"
+  },
+  {
+    "code": "vi",
+    "hrefLang": "vi-VN",
+    "name": "Vietnamese",
+    "localName": "Tieng Viet",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY"
+  }
+]

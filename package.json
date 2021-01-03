@@ -27,6 +27,7 @@
     "gatsby-plugin-sitemap": "^2.5.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
     "gatsby-remark-autolink-headers": "^2.7.0",
+    "gatsby-theme-i18n": "^1.0.4",
     "ramda": "^0.27.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
