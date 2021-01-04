@@ -8,6 +8,8 @@ tags:
 - summary
 ---
 
+[[toc]]
+
 ## Introduction
 This study guide covers the basics of AWS services and concepts within the scope of the AWS Certified Solutions Architect - Associate exam.
 
@@ -18,6 +20,15 @@ Implementation/Deployment | 10
 Data Security | 20
 Troubleshooting | 10
 
+## My Score
+Chapter | Round 1 | Round 2
+--------|---------|--------
+1 | 8/10 | 10/10
+2 | 18/20 | 18.5/20
+3 | 14.5/20 | 16.5/20
+4 | 10.5/20 | 17/20
+5 | 13.5/20 | 18.2/20
+
 ## Chapter 1: Introduction to AWS
 This chapter provides an introduction to the AWS Cloud computing platform. It discusses the advantages of cloud computing and the fundamentals of AWS
 
@@ -25,7 +36,7 @@ This chapter provides an introduction to the AWS Cloud computing platform. It di
 - pay-as-you-go pricing
 - easy way to access servers, storage, databases and other services
 
-Advantages of cloud computing
+Advantages of cloud computing:
 1. Variable vs Capital Expense
 1. Economies of Scale
 1. Stop Guessing Capacity
@@ -33,9 +44,9 @@ Advantages of cloud computing
 1. Focus on Business Differentiators
 1. Go Global in Minutes
 
-Cloud computing deployment models
-- all-in: fully deployed, all components running in the cloud
-- hybrid: between the cloud and existing on-premise infrastructure
+Cloud computing deployment models:
+- **all-in**: fully deployed, all components running in the cloud
+- **hybrid**: between the cloud and existing on-premise infrastructure
 
 ### AWS Fundamentals
 Using AWS resources instead of your own is like purchasing electricity from a power company instead of running your own generator.
@@ -105,87 +116,198 @@ Application services
 - Amazon Simple Workflow Service (Amazon SWF)
 - Amazon Simple Queue Service (Amazon SQS)
 
+### Summary
+The term “cloud computing” refers to the on-demand delivery of IT resources via the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining data centers and servers, organizations can acquire technology such as compute power, storage, databases, and other services on an as-needed basis. With cloud computing, AWS manages and maintains the technology infrastructure in a secure environment and businesses access these resources via the Internet to develop and run their applications. Capacity can grow or shrink instantly and businesses pay only for what they use.
+
+Cloud computing introduces a revolutionary shift in how technology is obtained, used, and managed, and how organizations budget and pay for technology services. While each organization experiences a unique journey to the cloud with numerous benefits, six advantages become apparent time and time again. Understanding these advantages allows architects to shape solutions that deliver continuous benefits to organizations.
+
+AWS provides a highly available technology infrastructure platform with multiple locations worldwide. These locations are composed of regions and Availability Zones. This enables organizations to place resources and data in multiple locations around the globe. Helping to protect the confidentiality, integrity, and availability of systems and data is of the utmost importance to AWS, as is maintaining the trust and confidence of organizations around the world.
+
+AWS offers a broad set of global compute, storage, database, analytics, application, and deployment services that help organizations move faster, lower IT costs, and scale applications. Having a broad understanding of these services allows solutions architects to design effective distributed applications and systems on the AWS platform.
+
 ### Exam Essentials
-Topics | Description
--------|------------
-Understand the global infrastructure | Highly available infrastructure with multiple locations. Locations = regions + Availability Zones
-Understand regions | independent, isolated from the other regions. Resources aren't replicated across regions
-Understand Availability Zones | data centers, isolated from failures in other Availability Zones
-Understand the hybrid deployment model | between cloud-based resources and existing resources that are not located in the cloud
+**Understand the global infrastructure.**
+Highly available infrastructure with multiple locations. Locations = regions + Availability Zones
+
+**Understand regions.**
+independent, isolated from the other regions. Resources aren't replicated across regions
+
+**Understand Availability Zones.**
+data centers, isolated from failures in other Availability Zones
+
+**Understand the hybrid deployment model.**
+between cloud-based resources and existing resources that are not located in the cloud
 
 ### Review Questions
-Q | A
---|--
-1 | 4 - region
-2 | 1 - Availability Zones
-3 | 2 - Hybrid deployment
-4 | 3 - Amazon CloudWatch
-5 | 2 - Amazon DynamoDB
-6 | 1 - Auto Scaling
-7 | ~~3 - AWS Storage Gateway~~ -> 4. CloudFront
-8 | ~~3 - Amazon Glacier~~ -> 1. EBS
-9 | 3 - VPC
-10 | 2 - SQS
+- physical location
+- Availabiljity Zones
+- CloudWatch
+- Auto Scaling
+- CloudFront
+- EBS
+- VPC
+- SQS
 
 ## Chapter 2: Amazon Simple Storage Service (Amazon S3) and Amazon Glacier Storage
+### Summary
+Amazon S3 is the core object storage service on AWS, allowing you to store an unlimited amount of data with very high durability.
+
+Common Amazon S3 use cases include backup and archive, web content, big data analytics, static website hosting, mobile and cloud-native application hosting, and disaster recovery.
+
+Amazon S3 is integrated with many other AWS cloud services, including AWS IAM, AWS KMS, Amazon EC2, Amazon EBS, Amazon EMR, Amazon DynamoDB, Amazon Redshift, Amazon SQS, AWS Lambda, and Amazon CloudFront.
+
+Object storage differs from traditional block and file storage. Block storage manages data at a device level as addressable blocks, while file storage manages data at the operating system level as files and folders. Object storage manages data as objects that contain both data and metadata, manipulated by an API.
+
+Amazon S3 buckets are containers for objects stored in Amazon S3. Bucket names must be globally unique. Each bucket is created in a specific region, and data does not leave the region unless explicitly copied by the user.
+
+Amazon S3 objects are files stored in buckets. Objects can be up to 5TB and can contain any kind of data. Objects contain both data and metadata and are identified by keys. Each Amazon S3 object can be addressed by a unique URL formed by the web services endpoint, the bucket name, and the object key.
+
+Amazon S3 has a minimalistic API—create/delete a bucket, read/write/delete objects, list keys in a bucket—and uses a REST interface based on standard HTTP verbs—GET, PUT, POST, and DELETE. You can also use SDK wrapper libraries, the AWS CLI, and the AWS Management Console to work with Amazon S3.
+
+Amazon S3 is highly durable and highly available, designed for 11 nines of durability of objects in a given year and four nines of availability.
+
+Amazon S3 is eventually consistent, but offers read-after-write consistency for new object PUTs.
+
+Amazon S3 objects are private by default, accessible only to the owner. Objects can be marked public readable to make them accessible on the web. Controlled access may be provided to others using ACLs and AWS IAM and Amazon S3 bucket policies.
+
+Static websites can be hosted in an Amazon S3 bucket.
+
+Prefixes and delimiters may be used in key names to organize and navigate data hierarchically much like a traditional file system.
+
+Amazon S3 offers several storage classes suited to different use cases: Standard is designed for general-purpose data needing high performance and low latency. Standard-IA is for less frequently accessed data. RRS offers lower redundancy at lower cost for easily reproduced data. Amazon Glacier offers low-cost durable storage for archive and long-term backups that can are rarely accessed and can accept a three- to five-hour retrieval time.
+
+Object lifecycle management policies can be used to automatically move data between storage classes based on time.
+
+Amazon S3 data can be encrypted using server-side or client-side encryption, and encryption keys can be managed with Amazon KMS.
+
+Versioning and MFA Delete can be used to protect against accidental deletion.
+
+Cross-region replication can be used to automatically copy new objects from a source bucket in one region to a target bucket in another region.
+
+Pre-signed URLs grant time-limited permission to download objects and can be used to protect media and other web content from unauthorized “web scraping.”
+
+Multipart upload can be used to upload large objects, and Range GETs can be used to download portions of an Amazon S3 object or Amazon Glacier archive.
+
+Server access logs can be enabled on a bucket to track requestor, object, action, and response.
+
+Amazon S3 event notifications can be used to send an Amazon SQS or Amazon SNS message or to trigger an AWS Lambda function when an object is created or deleted.
+
+Amazon Glacier can be used as a standalone service or as a storage class in Amazon S3.
+
+Amazon Glacier stores data in archives, which are contained in vaults. You can have up to 1,000 vaults, and each vault can store an unlimited number of archives.
+
+Amazon Glacier vaults can be locked for compliance purposes.
+
 ### Exam Essentials
-Topics | Description
--------|------------
-Know what amazon S3 is and what it is commonly used for | secure, durable, and highly scalable cloud storage. Common use cases include backup and archive, content storage and distribution, big data analytics, static website hosting, cloud-native application hosting, and disaster recovery.
-Understand how object storage differs from block and file storage | cloud object storage manages data at the application level as objects using a REST API built on HTTP. Block storage manages data at the operating system level as numbered addressable blocks. File storage manages data as shared files
-Understand the basics of Amazon S3 | S3 stores data in objects that contain data and metadata. Objects are identified by a user-defined key and are stored in a simple flat folder called a bucket
-Understand the durability, availability, and data consistency model of Amazon S3 | Amazon S3 standard storage is designed for 11 nines durability and four nines availability of objects over a year. S3 is eventually consistent, but offers read-after-write consistency for PUTs to new objects.
-Know how to enable static website hosting on Amazon S3 | create a bucket with the website hostname, upload your static content and make it public, enable static website hosting on the bucket, and indicate the index and error page objects.
-Know how to protect your data on Amazon S3 | Encrypt data in flight using HTTPS and at rest using SSE or client-side encryption. Enable versioning to keep multiple versions of an object in a bucket. Enable MFA Delete to protect against accidental deletion. Use ACLs Amazon S3 bucket policies and AWS IAM policies for access control. Use pre-signed URLs for time-limited download access. Use cross-region replication to automatically replicate data to another region.
-Know the use case for each of the Amazon S3 storage classes | Standard - high durability, high performance, and low latency access. Standard-IA - less frequently accessed, but that needs the same performance and availability when accessed. RRS - lower durability at lower cost for easily replicated data. Glacier - storing rarely accessed archival data at lowest cost, when three- to five-hour retrieval time is acceptable.
-Know how to use lifecycle configuration rules | Lifecycle configuration rules define actions to transition objects from one storage class to another based on time.
-Know how to use Amazon S3 event notifications | set at the bucket level and can trigger a message in Amazon SNS or Amazon SQS or an action in AWS Lambda in response to an upload or a delete of an object.
-Know the basics of amazon glacier as a standalone service | Data is stored in encrypted archives that can be as large as 40TB. Archives typically contain TAR or ZIP files. Vaults are containers for archives, and vaults can be locked for compliance.
+**Know what amazon S3 is and what it is commonly used for.**
+secure, durable, and highly scalable cloud storage.
+
+Common use cases include
+- backup and archive
+- content storage and distribution
+- big data analytics
+- static website hosting
+- cloud-native application hosting
+- disaster recovery
+
+**Understand how object storage differs from block and file storage.**
+- **Cloud object** storage manages data at the application level as objects using a REST API built on HTTP.
+- **Block** storage manages data at the operating system level as numbered addressable blocks.
+- **File** storage manages data as shared files.
+
+**Understand the basics of Amazon S3.**
+S3 stores data in objects that contain data and metadata. Objects are identified by a user-defined key and are stored in a simple flat folder called a bucket
+
+**Understand the durability, availability, and data consistency model of Amazon S3.**
+Amazon S3 standard storage is designed for **11 nines durability** and **four nines availability** of objects over a year. S3 is eventually consistent, but offers read-after-write consistency for PUTs to new objects.
+
+**Know how to enable static website hosting on Amazon S3.**
+- create a bucket with the website hostname
+- upload your static content and make it public
+- enable static website hosting on the bucket
+- indicate the index and error page objects
+
+**Know how to protect your data on Amazon S3.**
+- Encrypt data in flight using HTTPS and at rest using SSE or client-side encryption.
+- Enable versioning to keep multiple versions of an object in a bucket.
+- Enable MFA Delete to protect against accidental deletion.
+- Use ACLs Amazon S3 bucket policies and AWS IAM policies for access control.
+- Use pre-signed URLs for time-limited download access.
+- Use cross-region replication to automatically replicate data to another region.
+
+**Know the use case for each of the Amazon S3 storage classes.**
+- **Standard** - high durability, high performance, and low latency access.
+- **Standard-IA** - less frequently accessed, but that needs the same performance and availability when accessed.
+- **RRS** - lower durability at lower cost for easily replicated data.
+- **Glacier** - storing rarely accessed archival data at lowest cost, when three- to five-hour retrieval time is acceptable.
+
+**Know how to use lifecycle configuration rules.**
+Lifecycle configuration rules define actions to transition objects from one storage class to another based on time.
+
+**Know how to use Amazon S3 event notifications.**
+set at the bucket level and can trigger a message in Amazon SNS or Amazon SQS or an action in AWS Lambda in response to an upload or a delete of an object.
+
+**Know the basics of amazon glacier as a standalone service.**
+Data is stored in encrypted archives that can be as large as 40TB. Archives typically contain TAR or ZIP files. Vaults are containers for archives, and vaults can be locked for compliance.
 
 ### Exercises
-ID | Exercise | Status
----|----------|-------
-2.1 | Create an Amazon Simple Storage Service (Amazon S3) Bucket | DONE
-2.2 | Upload, Make Public, Rename, and Delete Objects in Your Bucket | DONE
-2.3 | Enable Version Control | DONE
-2.4 | Delete an Object and Then Restore It | DONE
-2.5 | Lifecycle Management | DONE
-2.6 | Enable Static Hosting on Your Bucket | DONE
+ID | Exercise
+---|----------
+2.1 | Create an Amazon Simple Storage Service (Amazon S3) Bucket
+2.2 | Upload, Make Public, Rename, and Delete Objects in Your Bucket
+2.3 | Enable Version Control
+2.4 | Delete an Object and Then Restore It
+2.5 | Lifecycle Management
+2.6 | Enable Static Hosting on Your Bucket
+
+References:
+1. [Getting started with Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html)
+1. [Set up a static website](http://docs.aws.amazon.com/AmazonS3/latest/dev/HostingWebsiteOnS3Setup.html)
+1. [Using versioning](http://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html)
+1. [Object Lifecycle Management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html)
 
 ### Review Questions
-Q | A
---|--
-1 | 4, 5
-2 | 2, 4
-3 | 1, 2, 4
-4 | 2, 3, 5
-5 | 1, 5 -> 3, 5
-6 | 3
-7 | 2
-8 | 3
-9 | 5 -> 3
-10 | 1, 2 -> 2, 3
-11 | 3
-12 | 2
-13 | 1, 4
-14 | 2
-15 | 2, 3, 5
-16 | 2, 3
-17 | 4, 1, 2
-18 | 2
-19 | 1, 3
-20 | 3, 4, 5
+- object vs block vs file storage
+- MFA Delete
+- use cases of S3
+- characteristics of S3
+- restrict access to S3
+- protected against inadvertent or intentional deletion
+- encryption
+- enable cross-region replication
+- storage plan
 
 ## Chapter 3: Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Elastic Block Store (Amazon EBS)
+### Summary
+Compute is the amount of computational power required to fulfill your workload. Amazon EC2 is the primary service for providing compute to customers.
+
+The instance type defines the virtual hardware supporting the instance. Available instance types vary in vCPUs, memory, storage, and network performance to address nearly any workload.
+
+An AMI defines the initial software state of the instance, both OS and applications. There are four sources of AMIs: AWS published generic OSs, partner-published AMIs in the AWS Marketplace with software packages preinstalled, customer-generated AMIs from existing Amazon EC2 instances, and uploaded AMIs from virtual servers.
+
+Instances can be addressed by public DNS name, public IP address, or elastic IP address. To access a newly launched Linux instance, use the private half of the key pair to connect to the instance via SSH. To access a newly created Windows instance, use the private half of the key pair to decrypt the randomly initialized local administrator password.
+
+Network traffic in and out of an instance can be controlled by a virtual firewall called a security group. A security group allows rules that block traffic based on direction, port, protocol, and source/destination address.
+
+Bootstrapping allows you to run a script to initialize your instance with OS configurations and applications. This feature allows instances to configure themselves upon launch. Once an instance is launched, you can change its instance type or, for Amazon VPC instances, the security groups with which it is associated.
+
+The three pricing options for instances are On-Demand, Reserved Instance, and Spot. On-Demand has the highest per hour cost, requiring no up-front commitment and giving you complete control over the lifetime of the instance. Reserved Instances require a commitment and provide a reduced overall cost over the lifetime of the reservation. Spot Instances are idle compute capacity that AWS makes available based on bid prices from customers. The savings on the per-hour cost can be significant, but instances can be shut down when the bid price exceeds the customer’s current bid.
+
+Instance stores are block storage included with the hourly cost of the instance. The amount and type of storage available varies with the instance type. Instance stores terminate when the associated instance is stopped, so they should only be used for temporary data or in architectures providing redundancy such as Hadoop’s HDFS.
+
+Amazon EBS provides durable block storage in several types. Magnetic has the lowest cost per gigabyte and delivers modest performance. General-purpose SSD is cost-effective storage that can provide up to 10,000 IOPS. Provisioned IOPS SSD has the highest cost per gigabyte and is well suited for I/O-intensive workloads sensitive to storage performance. Snapshots are incremental backups of Amazon EBS volumes stored in Amazon S3. Amazon EBS volumes can be encrypted.
+
 ### Exam Essentials
 **Know the basics of launching an Amazon EC2 instance.**
-To launch an instance, you must specify an AMI, which defines the software on the instance at launch, and an instance type, which defines the virtual hardware supporting the instance (memory, vCPUs, and so on).
+To launch an instance, you must specify an **AMI**, which defines the software on the instance at launch, and an **instance type**, which defines the virtual hardware supporting the instance (memory, vCPUs, and so on).
 
 **Know what architectures are suited for what Amazon EC2 pricing options.**
-Spot Instances are best suited for workloads that can accommodate interruption. Reserved Instances are best for consistent, long-term compute needs. On-Demand Instances provide flexible compute to respond to scaling needs.
+- **Spot** Instances are best suited for workloads that can accommodate interruption.
+- **Reserved** Instances are best for consistent, long-term compute needs.
+- **On-Demand** Instances provide flexible compute to respond to scaling needs.
 
 **Know how to combine multiple pricing options that result in cost optimization and scalability.**
-On-Demand Instances can be used to scale up a web application running on Reserved Instances in response to a temporary traffic spike. For a workload with several Reserved Instances reading from a queue, it’s possible to use Spot Instances to alleviate heavy traffic in a cost-effective way. These are just two of countless examples where a workload may use different pricing options.
+On-Demand Instances can be used to scale up a web application running on Reserved Instances in response to a temporary traffic spike. For a workload with several Reserved Instances reading from a queue, it’s possible to use Spot Instances to alleviate heavy traffic in a cost-effective way.
 
 **Know the benefits of enhanced networking.**
 Enhanced networking enables you to get significantly higher PPS performance, lower network jitter, and lower latencies.
@@ -194,13 +316,16 @@ Enhanced networking enables you to get significantly higher PPS performance, low
 VM Import/Export allows you to import existing VMs to AWS as Amazon EC2 instances or AMIs. Amazon EC2 instances that were imported through VM Import/Export can also be exported back to a virtual environment.
 
 **Know the methods for accessing an instance over the internet.**
-You can access an Amazon EC2 instance over the web via public IP address, elastic IP address, or public DNS name. There are additional ways to access an instance within an Amazon VPC, including private IP addresses and ENIs.
+You can access an Amazon EC2 instance over the web via public IP address, elastic IP address, or public DNS name.
+There are additional ways to access an instance within an Amazon VPC, including private IP addresses and ENIs.
 
 **Know the lifetime of an instance store.**
 Data on an instance store is lost when the instance is stopped or terminated. Instance store data survives an OS reboot.
 
 **Know the properties of the Amazon EC2 pricing options.**
-On-Demand Instances require no up-front commitment, can be launched any time, and are billed by the hour. Reserved Instances require an up-front commitment and vary in cost depending on whether they are paid all up front, partially up front, or not up front. Spot Instances are launched when your bid price exceeds the current spot price. Spot Instances will run until the spot price exceeds your bid price, in which case the instance will get a two-minute warning and terminate.
+- **On-Demand** Instances require no up-front commitment, can be launched any time, and are billed by the hour.
+- **Reserved** Instances require an up-front commitment and vary in cost depending on whether they are paid all up front, partially up front, or not up front.
+- **Spot** Instances are launched when your bid price exceeds the current spot price. Spot Instances will run until the spot price exceeds your bid price, in which case the instance will get a two-minute warning and terminate.
 
 **Know what determines network performance.**
 Every instance type is rated for low, moderate, high, or 10 Gbps network performance, with larger instance types generally having higher ratings. Additionally, some instance types offer enhanced networking, which provides additional improvement in network performance.
@@ -215,7 +340,9 @@ Security groups are virtual firewalls controlling traffic in and out of your Ama
 When an instance is a member of multiple security groups, the effect is a union of all the rules in all the groups.
 
 **Know the different Amazon EBS volume types, their characteristics, and their appropriate workloads.**
-Magnetic volumes provide an average performance of 100 IOPS and can be provisioned up to 1 TB. They are good for cold and infrequently accessed data. General-purpose SSD volumes provide three IOPS/GB up to 10,000 IOPS, with smaller volumes able to burst 3,000 IOPS. They can be provisioned up to 16 TB and are appropriate for dev/test environments, small databases, and so forth. Provisioned IOPS SSD can provide up to 20,000 consistent IOPS for volumes up to 16 TB. They are the best choice for workloads such as large databases executing many transactions.
+- **Magnetic** volumes provide an average performance of 100 IOPS and can be provisioned up to 1 TB. They are good for cold and infrequently accessed data.
+- **General-purpose** SSD volumes provide three IOPS/GB up to 10,000 IOPS, with smaller volumes able to burst 3,000 IOPS. They can be provisioned up to 16 TB and are appropriate for dev/test environments, small databases, and so forth.
+- **Provisioned** IOPS SSD can provide up to 20,000 consistent IOPS for volumes up to 16 TB. They are the best choice for workloads such as large databases executing many transactions.
 
 **Know how to encrypt an Amazon EBS volume.**
 Any volume type can be encrypted at launch. Encryption is based on AWS KMS and is transparent to applications on the attached instances.
@@ -239,45 +366,152 @@ ID | Exercise
 3.8 | Launch an Encrypted Volume
 3.9 | Detach a Boot Drive and Reattach to Another Instance
 
-### Review Questions
-1.
-2.
-3.
-4.
-5.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
+References
+1. [Amazon EC2 Linux](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+1. [Amazon EC2 Windows](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html)
+1. [Amazon EBS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
 
-## Chapter 5
+### Review questions
+- cost-effective way to handle a traffic pattern
+- launch EC2
+- modify an instance
+- effect of security groups
+- features of enhanced networking
+- dedicated instances
+- placement group
+- instance stores
+- features of EBS
+- snapshots
+- bootstrapping
+- VM import/export
+- access an instance
+
+## Chapter 4: Amazon Virtual Private Cloud (Amazon VPC)
+### Summary
+In this chapter, you learned that Amazon VPC is the networking layer for Amazon EC2, and it allows you to create your own private virtual network within the cloud. You can provision your own logically isolated section of AWS similar to designing and implementing a separate independent network that you’d operate in a physical data center.
+
+A VPC consists of the following components:
+- Subnets
+- Route tables
+- DHCP option sets
+- Security groups
+- Network ACLs
+
+A VPC has the following optional components:
+- IGWs
+- EIP addresses
+- Endpoints
+- Peering
+- NAT instance and NAT gateway
+- VPG, CGW, and VPN
+
+Subnets can be public, private, or VPN-only. A public subnet is one in which the associated route table directs the subnet’s traffic to the Amazon VPC’s IGW. A private subnet is one in which the associated route table does not direct the subnet’s traffic to the Amazon VPC’s IGW. A VPN-only subnet is one in which the associated route table directs the subnet’s traffic to the Amazon VPC’s VPG and does not have a route to the IGW. Regardless of the type of subnet, the internal IP address range of the subnet is always private (non-routable on the Internet).
+
+A route table is a logical construct within an Amazon VPC that contains a set of rules (called routes) that are applied to the subnet and used to determine where network traffic is directed. A route table’s routes are what permit Amazon EC2 instances within different subnets within an Amazon VPC to communicate with each other. You can modify route tables and add your own custom routes. You can also use route tables to specify which subnets are public (by directing Internet traffic to the IGW) and which subnets are private (by not having a route that directs traffic to the IGW). An IGW is a horizontally scaled, redundant, and highly available Amazon VPC component that allows communication between instances in your Amazon VPC and the Internet. IGWs are fully redundant and have no bandwidth constraints. An IGW provides a target in your Amazon VPC route tables for Internet-routable traffic, and it performs network address translation for instances that have been assigned public IP addresses.
+
+The DHCP option sets element of an Amazon VPC allows you to direct Amazon EC2 host name assignment to your own resources. In order for you to assign your own domain name to your instances, you create a custom DHCP option set and assign it to your Amazon VPC.
+
+An EIP address is a static, public IP address in the pool for the region that you can allocate to your account (pull from the pool) and release (return to the pool). EIPs allow you to maintain a set of IP addresses that remain fixed while the underlying infrastructure may change over time.
+
+An Amazon VPC endpoint enables you to create a private connection between your Amazon VPC and another AWS service without requiring access over the Internet or through a NAT instance, VPN connection, or AWS Direct Connect. You can create multiple endpoints for a single service, and you can use different route tables to enforce different access policies from different subnets to the same service.
+
+An Amazon VPC peering connection is a networking connection between two Amazon VPCs that enables instances in either Amazon VPC to communicate with each other as if they were within the same network. You can create an Amazon VPC peering connection between your own Amazon VPCs or with an Amazon VPC in another AWS account within a single region. A peering connection is neither a gateway nor a VPN connection and does not introduce a single point of failure for communication.
+
+A security group is a virtual stateful firewall that controls inbound and outbound traffic to Amazon EC2 instances. When you first launch an Amazon EC2 instance into an Amazon VPC, you must specify the security group with which it will be associated. AWS provides a default security group for your use, which has rules that allow all instances associated with the security group to communicate with each other and allow all outbound traffic. You may change the rules for the default security group, but you may not delete the default security group.
+
+A network ACL is another layer of security that acts as a stateless firewall on a subnet level. Amazon VPCs are created with a modifiable default network ACL associated with every subnet that allows all inbound and outbound traffic. If you want to create a custom network ACL, its initial configuration will deny all inbound and outbound traffic until you create a rule that states otherwise.
+
+A NAT instance is a customer-managed instance that is designed to accept traffic from instances within a private subnet, translate the source IP address to the public IP address of the NAT instance, and forward the traffic to the IGW. In addition, the NAT instance maintains the state of the forwarded traffic in order to return response traffic from the Internet to the proper instance in the private subnet.
+
+A NAT gateway is an AWS-managed service that is designed to accept traffic from instances within a private subnet, translate the source IP address to the public IP address of the NAT gateway, and forward the traffic to the IGW. In addition, the NAT gateway maintains the state of the forwarded traffic in order to return response traffic from the Internet to the proper instance in the private subnet.
+
+A VPG is the VPN concentrator on the AWS side of the VPN connection between the two networks. A CGW is a physical device or a software application on the customer’s side of the VPN connection. After these two elements of an Amazon VPC have been created, the last step is to create a VPN tunnel. The VPN tunnel is established after traffic is generated from the customer’s side of the VPN connection.
+
 ### Exam Essentials
-#### Understand what the Elastic Load Balancing service provides.
+**Understand what a VPC is and its core and optional components.**
+An Amazon VPC is a logically isolated network in the AWS Cloud.
+
+An Amazon VPC is made up of the following core elements: subnets (public, private, and VPN-only), route tables, DHCP option sets, security groups, and network ACLs.
+
+Optional elements include an IGW, EIP addresses, endpoints, peering connections, NAT instances, VPGs, CGWs, and VPN connections.
+
+**Understand the purpose of a subnet.**
+A subnet is a segment of an Amazon VPC’s IP address range where you can place groups of isolated resources. Subnets are defined by CIDR blocks—for example, 10.0.1.0/24 and 10.0.2.0/24—and are contained within an Availability Zone.
+
+**Identify the difference between a public subnet, a private subnet, and a VPN-Only subnet.**
+- If a subnet’s traffic is routed to an IGW, the subnet is known as a **public** subnet.
+- If a subnet doesn’t have a route to the IGW, the subnet is known as a **private** subnet.
+- If a subnet doesn’t have a route to the IGW, but has its traffic routed to a VPG, the subnet is known as a **VPN-only** subnet.
+
+**Understand the purpose of a route table.**
+A route table is a set of rules (called routes) that are used to determine where network traffic is directed. A route table allows Amazon EC2 instances within different subnets to communicate with each other (within the same Amazon VPC). The Amazon VPC router also enables subnets, IGWs, and VPGs to communicate with each other.
+
+**Understand the purpose of an IGW.**
+An IGW is a horizontally scaled, redundant, and highly available Amazon VPC component that allows communication between instances in your Amazon VPC and the Internet. IGWs are fully redundant and have no bandwidth constraints. An IGW provides a target in your Amazon VPC route tables for Internet-routable traffic and performs network address translation for instances that have been assigned public IP addresses.
+
+**Understand what DHCP option sets provide to an Amazon VPC.**
+The DHCP option sets element of an Amazon VPC allows you to direct Amazon EC2 host name assignment to your own resources. You can specify the domain name for instances within an Amazon VPC and identify the IP addresses of custom DNS servers, NTP servers, and NetBIOS servers.
+
+**Know the difference between an Amazon VPC public IP address and an EIP address.**
+- A public IP address is an AWS-owned IP that can be automatically assigned to instances launched within a subnet.
+- An EIP address is an AWS-owned public IP address that you allocate to your account and assign to instances or network interfaces on demand.
+
+**Understand what endpoints provide to an Amazon VPC.**
+An Amazon VPC endpoint enables you to create a private connection between your Amazon VPC and another AWS service without requiring access over the Internet or through a NAT instance, a VPN connection, or AWS Direct Connect. Endpoints support services within the region only.
+
+**Understand Amazon VPC peering.**
+An Amazon VPC peering connection is a networking connection between two Amazon VPCs that enables instances in either Amazon VPC to communicate with each other as if they are within the same network. Peering connections are created through a request/accept protocol. Transitive peering is not supported, and peering is only available between Amazon VPCs within the same region.
+
+**Know the difference between a security group and a network ACL.**
+A security group applies at the **instance level**. You can have multiple instances in multiple subnets that are members of the same security groups. Security groups are **stateful**, which means that return traffic is automatically allowed, regardless of any outbound rules. A network ACL is applied on a **subnet level**, and traffic is **stateless**. You need to allow both inbound and outbound traffic on the network ACL in order for Amazon EC2 instances in a subnet to be able to communicate over a particular protocol.
+
+**Understand what a NAT provides to an Amazon VPC.**
+A NAT instance or NAT gateway enables instances in a private subnet to initiate outbound traffic to the Internet. This allows outbound Internet communication to download patches and updates, for example, but prevents the instances from receiving inbound traffic initiated by someone on the Internet.
+
+**Understand the components needed to establish a VPN connection from a network to an Amazon VPC.**
+A VPG is the VPN concentrator on the AWS side of the VPN connection between the two networks. A CGW represents a physical device or a software application on the customer’s side of the VPN connection. The VPN connection must be initiated from the CGW side, and the connection consists of two IPSec tunnels.
+
+### Exercises
+1. Create a Custom Amazon VPC
+1. Create Two Subnets for Your Custom Amazon VPC
+1. Connect Your Custom Amazon VPC to the Internet and Establish Routing
+1. Launch an Amazon EC2 Instance and Test the Connection to the Internet
+
+References:
+- [Amazon VPC User Guide](http://aws.amazon.com/documentation/vpc/)
+
+### Review Questions
+- minimum/maximum size subnet
+- numbers of IGW's to attach to an Amazon VPC
+- peering connections
+- default limit for the number of Amazon VPCs that a customer may have in a region
+- VPG, CGW, IGW
+- VPC endpoint
+
+## Chapter 5: Elastic Load Balancing, Amazon CloudWatch, and Auto Scaling
+### Summary
+This chapter introduced three services:
+- Elastic Load Balancing, which is used to distribute traffic across a group of Amazon EC2 instances in one or more Availability Zones to achieve greater levels of fault tolerance for your applications.
+- Amazon CloudWatch, which monitors resources and applications. Amazon CloudWatch is used to collect and track metrics, create alarms that send notifications, and make changes to resources being monitored based on rules you define.
+- Auto Scaling, which allows you to automatically scale your Amazon EC2 capacity out and in using criteria that you define.
+
+These three services can be used very effectively together to create a highly available application with a resilient architecture on AWS.
+
+### Exam Essentials
+**Understand what the Elastic Load Balancing service provides.**
 Elastic Load Balancing is a highly available service that distributes traffic across Amazon EC2 instances and includes options that provide flexibility and control of incoming requests to Amazon EC2 instances.
 
-#### Know the types of load balancers the Elastic Load Balancing service provides and when to use each one.
+**Know the types of load balancers the Elastic Load Balancing service provides and when to use each one.**
 An **Internet-facing** load balancer is, as the name implies, a load balancer that takes requests from clients over the Internet and distributes them to Amazon EC2 instances that are registered with the load balancer.
 
 An **internal** load balancer is used to route traffic to your Amazon EC2 instances in VPCs with private subnets.
 
 An **HTTPS** load balancer is used when you want to encrypt data between your load balancer and the clients that initiate HTTPS sessions and for connections between your load balancer and your back-end instances.
 
-#### Know the types of listeners the Elastic Load Balancing service provides and the use case and requirements for using each one.
+**Know the types of listeners the Elastic Load Balancing service provides and the use case and requirements for using each one.**
 A listener is a process that checks for connection requests. It is configured with a protocol and a port for front-end (client to load balancer) connections and a protocol and a port for back-end (load balancer to back-end instance) connections.
 
-#### Understand the configuration options for Elastic Load Balancing.
+**Understand the configuration options for Elastic Load Balancing.**
 Elastic Load Balancing allows you to configure many aspects of the load balancer, including
 - idle connection timeout,
 - cross-zone load balancing,
@@ -286,85 +520,69 @@ Elastic Load Balancing allows you to configure many aspects of the load balancer
 - sticky sessions,
 - and health checks.
 
-#### Know what an Elastic Load Balancing health check is and why it is important.
+**Know what an Elastic Load Balancing health check is and why it is important.**
 Elastic Load Balancing supports health checks to test the status of the Amazon EC2 instances behind an Elastic Load Balancing load balancer.
 
-#### Understand what the amazon CloudWatch service provides and what use cases there are for using it.
+**Understand what the amazon CloudWatch service provides and what use cases there are for using it.**
 Amazon CloudWatch is a service that you can use to
 - monitor your AWS resources and your applications in real time
-- collect and track metrics,
-- create alarms that send notifications,
-- and make changes to the resources being monitored based on rules you define.
+- collect and track metrics
+- create alarms that send notifications
+- and make changes to the resources being monitored based on rules you define
 
-#### Know the differences between the two types of monitoring—basic and detailed—for Amazon CloudWatch.
-Amazon CloudWatch offers basic or detailed monitoring for supported AWS products.
-
+**Know the differences between the two types of monitoring—basic and detailed—for Amazon CloudWatch.**
 **Basic** monitoring sends data points to Amazon CloudWatch every five minutes for a limited number of preselected metrics at no charge.
 
 **Detailed** monitoring sends data points to Amazon CloudWatch every minute and allows data aggregation for an additional charge. If you want to use detailed monitoring, you must enable it—basic is the default.
 
-#### Understand Auto Scaling and why it is an important advantage of the AWS Cloud.
+**Understand Auto Scaling and why it is an important advantage of the AWS Cloud.**
 A distinct advantage of deploying applications to the cloud is the ability to launch and then release servers in response to variable workloads. Provisioning servers on demand and then releasing them when they are no longer needed can provide significant **cost savings** for workloads that are not steady state.
 
-#### Know when and why to use Auto Scaling.
+**Know when and why to use Auto Scaling.**
 Auto Scaling is a service that allows you to scale your Amazon EC2 capacity automatically by scaling out and scaling in according to criteria that you define. With Auto Scaling, you can ensure that the number of running Amazon EC2 instances increases during demand spikes or peak demand periods to maintain application performance and decreases automatically during demand lulls or troughs to minimize costs.
 
-#### Know the supported Auto Scaling plans.
+**Know the supported Auto Scaling plans.**
 Auto Scaling has several schemes or plans that you can use to control how you want Auto Scaling to perform. The Auto Scaling plans are named
 - Maintain Current Instant Levels,
 - Manual Scaling,
 - Scheduled Scaling,
 - and Dynamic Scaling.
 
-#### Understand how to build an Auto Scaling launch configuration and an Auto Scaling group and what each is used for.
+**Understand how to build an Auto Scaling launch configuration and an Auto Scaling group and what each is used for.**
 A launch configuration is the **template** that Auto Scaling uses to create new instances and is composed of the configuration name, AMI, Amazon EC2 instance type, security group, and instance key pair.
 
-#### Know what a scaling policy is and what use cases to use it for.
+**Know what a scaling policy is and what use cases to use it for.**
 A scaling policy is used by Auto Scaling with CloudWatch alarms to **determine when** your Auto Scaling group should scale out or scale in. Each CloudWatch alarm watches a single metric and sends messages to Auto Scaling when the metric breaches a threshold that you specify in your policy.
 
-#### Understand how Elastic Load Balancing, amazon CloudWatch, and Auto Scaling are used together to provide dynamic scaling.
+**Understand how Elastic Load Balancing, amazon CloudWatch, and Auto Scaling are used together to provide dynamic scaling.**
 Elastic Load Balancing, Amazon CloudWatch, and Auto Scaling can be used together to create a highly available application with a resilient architecture on AWS.
 
 ### Exercises
+1. Create an Elastic Load Balancing Load Balancer
+1. Use an Amazon CloudWatch Metric
+1. Create a Custom Amazon CloudWatch Metric
+1. Create a Launch Configuration and Auto Scaling Group
+1. Create a Scaling Policy
+1. Create a Web Application That Scales
+
 References
 - [Elastic Load Balancing Developer Guide](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html)
 - [Amazon CloudWatch Developer Guide](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html)
 - [Auto Scaling User Guide](http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html)
 
-ID | Exercise
----|---------
-5.1 | Create an Elastic Load Balancing Load Balancer
-5.2 | Use an Amazon CloudWatch Metric
-5.3 | Create a Custom Amazon CloudWatch Metric
-5.4 | Create a Launch Configuration and Auto Scaling Group
-5.5 | Create a Scaling Policy
-5.6 | Create a Web Application That Scales
-
 ### Review Questions
-Q | A
---|--
-1 | 3, 4 -> 1,4
-2 | 2
-3 | 4
-4 | 3 -> 1
-5 | 2
-6 | 3
-7 | 4
-8 | 3 -> 1
-9 | 3
-10 | 2 -> 4
-11 | 3
-12 | 1 -> 2
-13 | 1,2,6 -> 2,4,5
-14 | 4
-15 | 1,5 -> 1,3
-16 | 1,6
-17 | 1,3,5 -> 1,3,4
-18 | 2,5 -> 2,3
-19 | 2,5,6
-20 | 2,4,5
+- elements of an Auto Scaling group
+- CloudWatch keep metric data
+- create an Auto Scaling launch configuration
+- default Amazon EC2 capacity (20) for the new region
+- health check
+- characteristics of the Auto Scaling service
+- instance types an Auto Scaling group may use
+- monitoring plans
+- types of load balancers
+- plans for Auto Scaling groups
 
-## Chapter 6 - IAM
+## Chapter 6: AWS Identity and Access Management (IAM)
 ### Summary
 IAM is a powerful service that gives you the ability to control which people and applications can access your AWS account at a very granular level. Because the root user in an AWS account cannot be limited, you should set up IAM users and temporary security tokens for your people and processes to interact with AWS.
 
@@ -375,7 +593,6 @@ Common use cases for IAM roles include federating identities from external IdPs,
 IAM user accounts can be further secured by rotating keys, implementing MFA, and adding conditions to policies. MFA ensures that authentication is based on something you have in addition to something you know, and conditions can add further restrictions such as limiting client IP address ranges or setting a particular time interval.
 
 ### Exam Essentials
-
 Know the different principals in IAM. The three principals that can authenticate and interact with AWS resources are the root user, IAM users, and roles. The root user is associated with the actual AWS account and cannot be restricted in any way. IAM users are persistent identities that can be controlled through IAM. Roles allow people or processes the ability to operate temporarily with a different identity. People or processes assume a role by being granted a temporary security token that will expire after a specified period of time.
 
 Know how principals are authenticated in IAM. When you log in to the AWS Management Console as an IAM user or root user, you use a user name/password combination. A program that accesses the API with an IAM user or root user uses a two-part access key. A temporary security token authenticates with an access key plus an additional session token unique to that temporary security token.
@@ -395,30 +612,20 @@ Roles are the basis for federating external IdPs with AWS. You configure an IAM 
 Know how to resolve conflicting permissions. Resolving multiple permissions is relatively straightforward. If an action on a resource has not been explicitly allowed by a policy, it is denied. If two policies contradict each other; that is, if one policy allows an action on a resource and another policy denies that action, the action is denied. While this sounds improbable, it may occur due to scope differences in a policy. One policy may expose an entire fleet of Amazon EC2 instances, and a second policy may explicitly lock down one particular instance.
 
 ### Exercises
+1. Create an IAM Group
+1. Create a Customized Sign-In Link and Password Policy
+1. Create an IAM User
+1. Create and Use an IAM Role
+1. Rotate Keys
+1. Set Up MFA
+1. Resolve Conflicting Permissions
+
 References
 - [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
-1 | Create an IAM Group
-2 | Create a Customized Sign-In Link and Password Policy
-3 | Create an IAM User
-4 | Create and Use an IAM Role
-5 | Rotate Keys
-6 | Set Up MFA
-7 | Resolve Conflicting Permissions
-
 ### Review Questions
-1 | 1
-2 | 1
-3 | 1
-4 | 1
-5 | 1
-6 | 1
-7 | 1
-8 | 1
-9 | 1
-10 | 1
 
-## Chapter 7 - AWS databases
+## Chapter 7: Databases and AWS
 ### Summary
 In this chapter, you learned the basic concepts of relational databases, data warehouses, and NoSQL databases. You also learned about the benefits and features of AWS managed database services Amazon RDS, Amazon Redshift, and Amazon DynamoDB.
 
@@ -480,29 +687,7 @@ Remember that Amazon Redshift is AWS data warehouse service. You should remember
 4 | Read and Write from a DynamoDB Table
 5 | Launch a Redshift Cluster
 
-### Review Questions
-1 | 1
-2 | 1
-3 | 1
-4 | 1
-5 | 1
-6 | 1
-7 | 1
-8 | 1
-9 | 1
-10 | 1
-11 | 1
-12 | 1
-13 | 1
-14 | 1
-15 | 1
-16 | 1
-17 | 1
-18 | 1
-19 | 1
-20 | 1
-
-## Chapter 8 - SNS, SQS, SWF
+## Chapter 8: SQS, SWF, and SNS
 ### Summary
 In this chapter, you learned about the core application and mobile services that you will be tested on in your AWS Certified Solutions Architect – Associate exam.
 
@@ -557,29 +742,17 @@ Know the different protocols used with Amazon SNS. You can use the following pro
 4 | Create Queue
 5 | Subscribe Queue to SNS Topic
 
-### Review Questions
-1 | 1
-2 | 1
-3 | 1
-4 | 1
-5 | 1
-6 | 1
-7 | 1
-8 | 1
-9 | 1
-10 | 1
-11 | 1
-12 | 1
-13 | 1
-14 | 1
-15 | 1
-16 | 1
-17 | 1
-18 | 1
-19 | 1
-20 | 1
+## Chapter 9: Domain Name System (DNS) and Amazon Route 53
 
-## Chapter 14 - AWS Best practices
+## Chapter 10: Amazon ElastiCache
+
+## Chapter 11: Additional Key Services
+
+## Chapter 12: Security on AWS
+
+## Chapter 13: AWS Risk and Compliance
+
+## Chapter 14: Architecture Best Practices
 ### Summary
 Typically, production systems come with defined or implicit requirements in terms of uptime. A system is highly available when it can withstand the failure of an individual or multiple components. If you design architectures around the assumption that any component will eventually fail, systems won’t fail when an individual component does.
 
@@ -630,55 +803,4 @@ Understand the different storage options in AWS. AWS offers a broad range of sto
 13 | Create an Alias A Record
 14 | Test Your Configuration
 
-### Review Questions
-1 | 1
-2 | 1
-3 | 1
-4 | 1
-5 | 1
-6 | 1
-7 | 1
-8 | 1
-9 | 1
-10 | 1
-11 | 1
-12 | 1
-13 | 1
-14 | 1
-15 | 1
-16 | 1
-17 | 1
-18 | 1
-19 | 1
-20 | 1
-
-## Chapter 4: Amazon Virtual Private Cloud (Amazon VPC)
-
-## Chapter 5: Elastic Load Balancing, Amazon CloudWatch, and Auto Scaling
-
-## Chapter 6: AWS Identity and Access Management (IAM)
-
-## Chapter 7: Databases and AWS
-
-## Chapter 8: SQS, SWF, and SNS
-
-## Chapter 9: Domain Name System (DNS) and Amazon Route 53
-
-## Chapter 10: Amazon ElastiCache
-
-## Chapter 11: Additional Key Services
-
-## Chapter 12: Security on AWS
-
-## Chapter 13: AWS Risk and Compliance
-
-## Chapter 14: Architecture Best Practices
-
 ## References
-1. [Getting started with Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html)
-1. [Set up a static website](http://docs.aws.amazon.com/AmazonS3/latest/dev/HostingWebsiteOnS3Setup.html)
-1. [Using versioning](http://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html)
-1. [Object Lifecycle Management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html)
-1. [Amazon EC2 Linux](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
-1. [Amazon EC2 Windows](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html)
-1. [Amazon EBS](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)
