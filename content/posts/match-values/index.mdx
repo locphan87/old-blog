@@ -1,6 +1,6 @@
 ---
-title: "Pattern matching in JavaScript"
-date: "2019-11-02"
+title: 'Pattern matching in JavaScript'
+date: '2019-11-02'
 tags:
   - pattern-matching
   - javascript
@@ -31,7 +31,7 @@ const pattern = {
   h2: 18,
   title: 16,
   description: 14,
-  _: 13
+  _: 13,
 }
 match('h1', pattern) // 20
 match('h2', pattern) // 18
@@ -48,7 +48,7 @@ import match from 'match-values'
 const handleError = match(error, {
   NOT_FOUND: () => showErrorMessage('Page not found'),
   TIMEOUT: () => showErrorMessage('Page has timed out'),
-  _: NOOP
+  _: NOOP,
 })
 handleError()
 ```
@@ -65,7 +65,7 @@ const pattern = {
   h2: 18,
   title: 16,
   description: 14,
-  _: 13
+  _: 13,
 }
 
 // EXAMPLE 1
@@ -74,12 +74,12 @@ const fontSizes = ['h1', 'h2', 'x'].map(lazyMatch(pattern))
 
 // EXAMPLE 2
 const getFinalFontSize = compose(
-  size => size + 1,
+  (size) => size + 1,
   lazyMatch(pattern),
-  font => font.size
+  (font) => font.size
 )
 getFinalFontSize({
-  size: 'description'
+  size: 'description',
 }) // 15
 ```
 
@@ -93,7 +93,7 @@ const pattern = [
   [inputs[0], 'x1'],
   [inputs[1], 'x2'],
   [inputs[2], 'x3'],
-  ['_', 'default']
+  ['_', 'default'],
 ]
 match([1], pattern) // 'x1'
 match([1, 2], pattern) // 'x2'
@@ -111,9 +111,10 @@ const pattern = [
   [inputs[0], 'y1'],
   [inputs[1], 'y2'],
   [inputs[2], 'y3'],
-  ['_', 'default']
+  ['_', 'default'],
 ]
 match({ a: 1 }, pattern) // 'y1'
 match({ a: 1, b: 2 }, pattern) // 'y2'
 match({ a: 1, b: 2, c: 3 }, pattern) // 'y3'
 match({}, pattern) // 'default'
+```

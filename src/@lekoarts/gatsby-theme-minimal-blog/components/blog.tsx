@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Heading, Link as TLink } from 'theme-ui'
-import { Link } from 'gatsby'
+import { LocalizedLink } from 'gatsby-theme-i18n'
 import { Flex } from '@theme-ui/components'
 import Layout from './layout'
 import Listing from './listing'
@@ -41,7 +41,7 @@ const Blog = ({ posts }: PostsProps) => {
           Blog
         </Heading>
         <TLink
-          as={Link}
+          as={LocalizedLink}
           sx={{ variant: `links.secondary`, marginY: 2 }}
           to={replaceSlashes(`/${basePath}/${tagsPath}`)}
         >

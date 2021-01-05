@@ -4,10 +4,11 @@ import HomepageComponent from '../components/homepage'
 export default HomepageComponent
 
 export const query = graphql`
-  query($formatString: String!) {
+  query($locale: String!, $formatString: String!) {
     allPost(
       filter: {
         display: { ne: HIDDEN }
+        fields: { locale: { eq: $locale } }
         tags: { elemMatch: { slug: { nin: ["project", "summary"] } } }
       }
       sort: { fields: date, order: DESC }

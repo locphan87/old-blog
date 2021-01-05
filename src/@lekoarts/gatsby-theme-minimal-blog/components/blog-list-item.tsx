@@ -2,7 +2,7 @@
 import React from 'react'
 import { jsx, Link as TLink } from 'theme-ui'
 import { Box } from '@theme-ui/components'
-import { Link } from 'gatsby'
+import { LocalizedLink } from 'gatsby-theme-i18n'
 import ItemTags from './item-tags'
 
 type BlogListItemProps = {
@@ -23,7 +23,11 @@ type BlogListItemProps = {
 
 const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
   <Box mb={4}>
-    <TLink as={Link} to={post.slug} sx={{ fontSize: [1, 2, 3], color: `text` }}>
+    <TLink
+      as={LocalizedLink}
+      to={post.slug}
+      sx={{ fontSize: [1, 2, 3], color: `text` }}
+    >
       {post.title}
     </TLink>
     <p

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { LocalizedLink, LocalesList } from 'gatsby-theme-i18n'
-import { Link } from 'gatsby'
+import { LocalizedLink } from 'gatsby-theme-i18n'
 import Layout from './layout'
 import Title from './title'
 import Listing from './listing'
@@ -46,15 +45,11 @@ const Homepage = ({ posts }: PostsProps) => {
         }}
       >
         <Hero />
-        <LocalesList />
-        <LocalizedLink to="/resume" language="vi">
-          Resume
-        </LocalizedLink>
       </section>
       <Title text="Latest Posts">
-        <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>
+        <LocalizedLink to={replaceSlashes(`/${basePath}/${blogPath}`)}>
           Read all posts
-        </Link>
+        </LocalizedLink>
       </Title>
       <Listing posts={posts} showTags={false} />
     </Layout>

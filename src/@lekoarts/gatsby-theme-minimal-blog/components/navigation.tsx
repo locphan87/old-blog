@@ -2,6 +2,7 @@
 import React from 'react'
 import { jsx, Link as TLink } from 'theme-ui'
 import { Link } from 'gatsby'
+import { LocalizedLink } from 'gatsby-theme-i18n'
 import useMinimalBlogConfig from '../hooks/use-minimal-blog-config'
 import replaceSlashes from '../utils/replaceSlashes'
 
@@ -28,7 +29,7 @@ const Navigation = ({ nav }: NavigationProps) => {
           {nav.map((item) => (
             <TLink
               key={item.slug}
-              as={Link}
+              as={LocalizedLink}
               activeClassName="active"
               to={replaceSlashes(`/${basePath}/${item.slug}`)}
             >

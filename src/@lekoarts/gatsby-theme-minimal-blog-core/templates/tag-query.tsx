@@ -4,10 +4,13 @@ import TagComponent from '../components/tag'
 export default TagComponent
 
 export const query = graphql`
-  query($slug: String!, $formatString: String!) {
+  query($locale: String!, $slug: String!, $formatString: String!) {
     allPost(
       sort: { fields: date, order: DESC }
-      filter: { tags: { elemMatch: { slug: { eq: $slug } } } }
+      filter: {
+        fields: { locale: { eq: $locale } }
+        tags: { elemMatch: { slug: { eq: $slug } } }
+      }
     ) {
       nodes {
         slug

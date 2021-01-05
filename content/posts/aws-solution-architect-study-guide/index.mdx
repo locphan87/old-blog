@@ -31,6 +31,9 @@ This study guide covers the basics of AWS services and concepts within the scope
 | 5       | 13.5/20 | 18.2/20 |
 | 6       | 8.2/10  |
 | 7       | 15.7/20 |
+| 8       | 14/20   |
+| 9       | 16/20   |
+| 10      | 8.2/10  |
 
 ## Chapter 1: Introduction to AWS
 
@@ -822,42 +825,51 @@ Amazon SWF allows you to create applications that coordinate work across distrib
 
 You must be familiar with the following Amazon SWF components and the lifecycle of a workflow execution:
 
-Workers, starters, and deciders
-Workflows
-Workflow history
-Actors
-Tasks
-Domains
-Object identifiers
-Task lists
-Workflow execution closure
-Long polling
+- Workers, starters, and deciders
+- Workflows
+- Workflow history
+- Actors
+- Tasks
+- Domains
+- Object identifiers
+- Task lists
+- Workflow execution closure
+- Long polling
+
 Amazon SNS is a push notification service that lets you send individual or multiple messages to large numbers of recipients. Amazon SNS consists of two types of clients: publishers and subscribers (sometimes known as producers and consumers). Publishers communicate to subscribers asynchronously by sending a message to a topic. A topic is simply a logical access point/communication channel that contains a list of subscribers and the methods used to communicate to them. When you send a message to a topic, it is automatically forwarded to each subscriber of that topic using the communication method configured for that subscriber.
 
 Amazon SNS can support a wide variety of needs, including monitoring applications, workflow systems, time-sensitive information updates, mobile applications, and any other application that generates or consumes notifications. Understand some common Amazon SNS scenarios, including:
 
-Fanout
-Application and system alerts
-Push email and text messaging
-Mobile push notifications
+- Fanout
+- Application and system alerts
+- Push email and text messaging
+- Mobile push notifications
 
 ### Exam Essentials
 
-Know how to use Amazon SQS. Amazon SQS is a unique service designed by Amazon to help you to decouple your infrastructure. Using Amazon SQS, you can store messages on reliable and scalable infrastructure as they travel between your servers. This allows you to move data between distributed components of your applications that perform different tasks without losing messages or requiring each component always to be available.
+**Know how to use Amazon SQS.**
+Amazon SQS is a unique service designed by Amazon to help you to decouple your infrastructure. Using Amazon SQS, you can store messages on reliable and scalable infrastructure as they travel between your servers. This allows you to move data between distributed components of your applications that perform different tasks without losing messages or requiring each component always to be available.
 
-Understand Amazon SQS visibility timeouts. Visibility timeout is a period of time during which Amazon SQS prevents other components from receiving and processing a message because another component is already processing it. By default, the message visibility timeout is set to 30 seconds, and the maximum that it can be is 12 hours.
+**Understand Amazon SQS visibility timeouts.**
+Visibility timeout is a period of time during which Amazon SQS prevents other components from receiving and processing a message because another component is already processing it. By default, the message visibility timeout is set to **30** seconds, and the maximum that it can be is **12** hours.
 
-Know how to use Amazon SQS long polling. Long polling allows your Amazon SQS client to poll an Amazon SQS queue. If nothing is there, ReceiveMessage waits between 1 and 20 seconds. If a message arrives in that time, it is returned to the caller as soon as possible. If a message does not arrive in that time, you need to execute the ReceiveMessage function again. This helps you avoid polling in tight loops and prevents you from burning through CPU cycles, keeping costs low.
+**Know how to use Amazon SQS long polling.**
+Long polling allows your Amazon SQS client to poll an Amazon SQS queue. If nothing is there, ReceiveMessage waits between **1 and 20 seconds**. If a message arrives in that time, it is returned to the caller as soon as possible. If a message does not arrive in that time, you need to execute the ReceiveMessage function again. This helps you avoid polling in tight loops and prevents you from burning through CPU cycles, keeping costs low.
 
-Know how to use Amazon SWF. Amazon SWF allows you to make applications that coordinate work across distributed components. Amazon SWF is driven by tasks, which are logical units of work that part of your application performs. To manage tasks across your application, you need to be aware of inter-task dependencies, scheduling of tasks, and using tasks concurrently. This is where Amazon SWF can help you. It gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.
+**Know how to use Amazon SWF.**
+Amazon SWF allows you to make applications that coordinate work across distributed components. Amazon SWF is driven by tasks, which are logical units of work that part of your application performs. To manage tasks across your application, you need to be aware of inter-task dependencies, scheduling of tasks, and using tasks concurrently. This is where Amazon SWF can help you. It gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.
 
-Know the basics of an Amazon SWF workflow. A workflow is a collection of activities (coordinated by logic) that carry out a specific goal. For example, a workflow receives a customer order and takes whatever actions are necessary to fulfill it. Each workflow runs in an AWS resource called a domain, which controls the scope of the workflow. An AWS account can have multiple domains, each of which can contain multiple workflows, but workflows in different domains cannot interact.
+**Know the basics of an Amazon SWF workflow.**
+A workflow is a collection of activities (coordinated by logic) that carry out a specific goal. For example, a workflow receives a customer order and takes whatever actions are necessary to fulfill it. Each workflow runs in an AWS resource called a domain, which controls the scope of the workflow. An AWS account can have multiple domains, each of which can contain multiple workflows, but workflows in different domains cannot interact.
 
-Understand the different Amazon SWF actors. Amazon SWF interacts with a number of different types of programmatic actors. Actors can be activity workers, workflow starters, or deciders.
+**Understand the different Amazon SWF actors.**
+Amazon SWF interacts with a number of different types of programmatic actors. Actors can be activity workers, workflow starters, or deciders.
 
-Understand Amazon SNS basics. Amazon SNS is a push notification service that lets you send individual or multiple messages to large numbers of recipients. Amazon SNS consists of two types of clients: publishers and subscribers (sometimes known as producers and consumers). Publishers communicate to subscribers asynchronously by sending a message to a topic.
+**Understand Amazon SNS basics.**
+Amazon SNS is a push notification service that lets you send individual or multiple messages to large numbers of recipients. Amazon SNS consists of two types of clients: publishers and subscribers (sometimes known as producers and consumers). Publishers communicate to subscribers asynchronously by sending a message to a topic.
 
-Know the different protocols used with Amazon SNS. You can use the following protocols with Amazon SNS: HTTP, HTTPS, SMS, email, email-JSON, Amazon SQS, and AWS Lambda.
+**Know the different protocols used with Amazon SNS.**
+You can use the following protocols with Amazon SNS: HTTP, HTTPS, SMS, email, email-JSON, Amazon SQS, and AWS Lambda.
 
 ### Exercises
 
@@ -866,6 +878,15 @@ Know the different protocols used with Amazon SNS. You can use the following pro
 1. Publish to a Topic
 1. Create Queue
 1. Subscribe Queue to SNS Topic
+
+### Review Questions
+
+- different protocols used with Amazon SNS
+- features of SNS
+- visibility timeout
+- actors
+- fanout
+- message retention period
 
 ## Chapter 9: Domain Name System (DNS) and Amazon Route 53
 
@@ -879,39 +900,63 @@ DNS names are registered with a domain registrar. A registrar is an authority th
 
 DNS consists of a number of different record types, including but not limited to the following:
 
-A
-AAAA
-CNAME
-MX
-NS
-PTR
-SOA
-SPF
-TXT
+- A
+- AAAA
+- CNAME
+- MX
+- NS
+- PTR
+- SOA
+- SPF
+- TXT
+
 Amazon Route 53 is a highly available and highly scalable AWS-provided DNS service. Amazon Route 53 connects user requests to infrastructure running on AWS (for example, Amazon EC2 instances and Elastic Load Balancing load balancers). It can also be used to route users to infrastructure outside of AWS.
 
 With Amazon Route 53, your DNS records are organized into hosted zones that you configure with the Amazon Route 53 API. A hosted zone simply stores records for your domain. These records can consist of A, CNAME, MX, and other supported record types.
 
 Amazon Route 53 allows you to have several different routing policies, including the following:
 
-Simple—Most commonly used when you have a single resource that performs a given function for your domain
-Weighted—Used when you want to route a percentage of your traffic to one particular resource or resources
-Latency-Based—Used to route your traffic based on the lowest latency so that your users get the fastest response times
-Failover—Used for DR and to route your traffic from your resources in a primary location to a standby location
-Geolocation—Used to route your traffic based on your end user’s location
+- **Simple** — Most commonly used when you have a **single** resource that performs a given function for your domain
+- **Weighted** — Used when you want to route a **percentage** of your traffic to one particular resource or resources
+- **Latency-Based** — Used to route your traffic based on the **lowest latency** so that your users get the fastest response times
+- **Failover** — Used for DR and to route your traffic from your resources in a primary location to a **standby** location
+- **Geolocation** — Used to route your traffic based on your **end user’s location**
+
 Remember to pull these concepts together to build an application that is highly available and resilient to failures. Use Elastic Load Balancing load balancers across Availability Zones with connection draining enabled, use health checks defined to ensure that the application delegates requests only to healthy Amazon EC2 instances, and use a latency-based routing policy with Elastic Load Balancing health checks to ensure requests are routed with minimal latency to clients. Use Amazon CloudFront edge locations to spread content all over the world with minimal client latency. Deploy the application in multiple AWS regions, protecting it from a regional outage.
 
 ### Exam Essentials
 
-Understand what DNS is. DNS is the methodology that computers use to convert human-friendly domain names (for example, amazon.com) into IP addresses (such as 192.0.2.1).
+**Understand what DNS is.**
+DNS is the methodology that computers use to convert human-friendly domain names (for example, amazon.com) into IP addresses (such as 192.0.2.1).
 
-Know how DNS registration works. Domains are registered with domain registrars that in turn register the domain name with InterNIC, a service of ICANN. ICANN enforces uniqueness of domain names across the Internet. Each domain name becomes registered in a central database known as the WhoIS database. Domains are defined by their TLDs. TLDs are controlled by IANA in a root zone database, which is essentially a database of all available TLDs.
+**Know how DNS registration works.**
+Domains are registered with domain registrars that in turn register the domain name with InterNIC, a service of ICANN. ICANN enforces uniqueness of domain names across the Internet. Each domain name becomes registered in a central database known as the WhoIS database. Domains are defined by their TLDs. TLDs are controlled by IANA in a root zone database, which is essentially a database of all available TLDs.
 
-Remember the steps involved in DNS resolution. Your browser asks the resolving DNS server what the IP address is for amazon.com. The resolving server does not know the address, so it asks a root server the same question. There are 13 root servers around the world, and these are managed by ICANN. The root server replies that it does not know the answer to this, but it can give an address to a TLD server that knows about .com domain names. The resolving server then contacts the TLD server. The TLD server does not know the address of the domain name either, but it does know the address of the resolving name server. The resolving server then queries the resolving name server. The resolving name server contains the authoritative records and sends these to the resolving server, which then saves these records locally so it does not have to perform these steps again in the near future. The resolving name server returns this information to the user’s web browser, which also caches the information.
+**Remember the steps involved in DNS resolution.**
+Your browser asks the resolving DNS server what the IP address is for amazon.com. The resolving server does not know the address, so it asks a root server the same question. There are 13 root servers around the world, and these are managed by ICANN. The root server replies that it does not know the answer to this, but it can give an address to a TLD server that knows about .com domain names. The resolving server then contacts the TLD server. The TLD server does not know the address of the domain name either, but it does know the address of the resolving name server. The resolving server then queries the resolving name server. The resolving name server contains the authoritative records and sends these to the resolving server, which then saves these records locally so it does not have to perform these steps again in the near future. The resolving name server returns this information to the user’s web browser, which also caches the information.
 
-Remember the different record types. DNS consists of the following different record types: A (address record), AAAA (IPv6 address record), CNAME (canonical name record or alias), MX (mail exchange record), NS (name server record), PTR (pointer record), SOA (start of authority record), SPF (sender policy framework), SRV (service locator), and TXT (text record). You should know the differences among each record type.
+**Remember the different record types.**
+DNS consists of the following different record types:
 
-Remember the different routing policies. With Amazon Route 53, you can have different routing policies. The simple routing policy is most commonly used when you have a single resource that performs a given function for your domain. Weighted routing is used when you want to route a percentage of your traffic to a particular resource or resources. Latency-based routing is used to route your traffic based on the lowest latency so that your users get the fastest response times. Failover routing is used for DR and to route your traffic from a primary resource to a standby resource. Geolocation routing is used to route your traffic based on your end user’s location.
+- A (address record)
+- AAAA (IPv6 address record)
+- CNAME (canonical name record or alias)
+- MX (mail exchange record)
+- NS (name server record)
+- PTR (pointer record)
+- SOA (start of authority record)
+- SPF (sender policy framework)
+- SRV (service locator)
+- TXT (text record)
+
+**Remember the different routing policies.**
+With Amazon Route 53, you can have different routing policies.
+
+- The simple routing policy is most commonly used when you have a single resource that performs a given function for your domain.
+- Weighted routing is used when you want to route a percentage of your traffic to a particular resource or resources.
+- Latency-based routing is used to route your traffic based on the lowest latency so that your users get the fastest response times.
+- Failover routing is used for DR and to route your traffic from a primary resource to a standby resource.
+- Geolocation routing is used to route your traffic based on your end user’s location.
 
 ### Exercises
 
@@ -924,6 +969,15 @@ Remember the different routing policies. With Amazon Route 53, you can have diff
 References:
 
 - [Amazon Route 53](http://aws.amazon.com/route53/)
+
+### Review Questions
+
+- type of record
+- register a domain name
+- routing policy
+- DNS port
+- DNS protocol
+- hosted zones
 
 ## Chapter 10: Amazon ElastiCache
 
@@ -943,21 +997,34 @@ You should analyze your data usage patterns and identify frequently run queries 
 
 ### Exam Essentials
 
-Know how to use Amazon ElastiCache. Improve the performance of your application by deploying Amazon ElastiCache clusters as part of your application and offloading read requests for frequently accessed data. Use the cache-aside pattern in your application first to check the cache for your query results before checking the database.
+**Know how to use Amazon ElastiCache.**
+Improve the performance of your application by deploying Amazon ElastiCache clusters as part of your application and offloading read requests for frequently accessed data. Use the cache-aside pattern in your application first to check the cache for your query results before checking the database.
 
-Understand when to use a specific cache engine. Amazon ElastiCache gives you the choice of cache engine to suit your requirements. Use Memcached when you need a simple, in-memory object store that can be easily partitioned and scaled horizontally. Use Redis when you need to back up and restore your data, need many clones or read replicas, or are looking for advanced functionality like sort and rank or leaderboards that Redis natively supports.
+**Understand when to use a specific cache engine.**
+Amazon ElastiCache gives you the choice of cache engine to suit your requirements.
 
-Understand how to scale a Redis cluster horizontally. An Amazon ElastiCache cluster running Redis can be scaled horizontally first by creating a replication group, then by creating additional clusters and adding them to the replication group.
+- Use Memcached when you need a simple, in-memory object store that can be easily partitioned and scaled horizontally.
+- Use Redis when you need to back up and restore your data, need many clones or read replicas, or are looking for advanced functionality like sort and rank or leaderboards that Redis natively supports.
 
-Understand how to scale a Memcached cluster horizontally. An Amazon ElastiCache cluster running Memcached can be scaled horizontally by adding or removing additional cache nodes to the cluster. The Amazon ElastiCache client library supports Auto Discovery and can discover new nodes added or removed from the cluster without having to hardcode the list of nodes.
+**Understand how to scale a Redis cluster horizontally.**
+An Amazon ElastiCache cluster running Redis can be scaled horizontally first by creating a replication group, then by creating additional clusters and adding them to the replication group.
 
-Know how to back up your Amazon ElastiCache cluster. You can create a snapshot to back up your Amazon ElastiCache clusters running the Redis engine. Snapshots can be created automatically on a daily basis or manually on demand. Amazon ElastiCache clusters running Memcached do not support backup and restore natively.
+**Understand how to scale a Memcached cluster horizontally.**
+An Amazon ElastiCache cluster running Memcached can be scaled horizontally by adding or removing additional cache nodes to the cluster. The Amazon ElastiCache client library supports Auto Discovery and can discover new nodes added or removed from the cluster without having to hardcode the list of nodes.
+
+**Know how to back up your Amazon ElastiCache cluster.**
+You can create a snapshot to back up your Amazon ElastiCache clusters running the Redis engine. Snapshots can be created automatically on a daily basis or manually on demand. Amazon ElastiCache clusters running Memcached do not support backup and restore natively.
 
 ### Exercises
 
 1. Create an Amazon ElastiCache Cluster Running Memcached
 1. Expand the Size of a Memcached Cluster
 1. Create an Amazon ElastiCache Cluster and Redis Replication Group
+
+### Review Questions
+
+- number of nodes
+- cache engines
 
 ## Chapter 11: Additional Key Services
 
@@ -983,106 +1050,146 @@ The key additional services covered in this chapter will help you form a knowled
 
 ### Exam Essentials
 
-Know the basic use cases for amazon CloudFront. Know when to use Amazon CloudFront (for popular static and dynamic content with geographically distributed users) and when not to (all users at a single location or connecting through a corporate VPN).
+**Know the basic use cases for amazon CloudFront.**
+Know when to use Amazon CloudFront (for popular static and dynamic content with geographically distributed users) and when not to (all users at a single location or connecting through a corporate VPN).
 
-Know how amazon CloudFront works. Amazon CloudFront optimizes downloads by using geolocation to identify the geographical location of users, then serving and caching content at the edge location closest to each user to maximize performance.
+**Know how amazon CloudFront works.**
+Amazon CloudFront optimizes downloads by using geolocation to identify the geographical location of users, then serving and caching content at the edge location closest to each user to maximize performance.
 
-Know how to create an amazon CloudFront distribution and what types of origins are supported. To create a distribution, you specify an origin and the type of distribution, and Amazon CloudFront creates a new domain name for the distribution. Origins supported include Amazon S3 buckets or static Amazon S3 websites and HTTP servers located in Amazon EC2 or in your own data center.
+**Know how to create an amazon CloudFront distribution and what types of origins are supported.**
+To create a distribution, you specify an origin and the type of distribution, and Amazon CloudFront creates a new domain name for the distribution. Origins supported include Amazon S3 buckets or static Amazon S3 websites and HTTP servers located in Amazon EC2 or in your own data center.
 
-Know how to use amazon CloudFront for dynamic content and multiple origins. Understand how to specify multiple origins for different types of content and how to use cache behaviors and path strings to control what content is served by which origin.
+**Know how to use amazon CloudFront for dynamic content and multiple origins.**
+Understand how to specify multiple origins for different types of content and how to use cache behaviors and path strings to control what content is served by which origin.
 
-Know what mechanisms are available to serve private content through amazon CloudFront. Amazon CloudFront can serve private content using Amazon S3 Origin Access Identifiers, signed URLs, and signed cookies.
+**Know what mechanisms are available to serve private content through amazon CloudFront.**
+Amazon CloudFront can serve private content using Amazon S3 Origin Access Identifiers, signed URLs, and signed cookies.
 
-Know the three configurations of AWS storage gateway and their use cases. Gateway-Cached volumes expand your on-premises storage into Amazon S3 and cache frequently used files locally. Gateway-Stored values keep all your data available locally at all times and also replicate it asynchronously to Amazon S3. Gateway-VTL enables you to keep your current backup tape software and processes while eliminating physical tapes by storing your data in the cloud.
+**Know the three configurations of AWS storage gateway and their use cases.**
+Gateway-Cached volumes expand your on-premises storage into Amazon S3 and cache frequently used files locally. Gateway-Stored values keep all your data available locally at all times and also replicate it asynchronously to Amazon S3. Gateway-VTL enables you to keep your current backup tape software and processes while eliminating physical tapes by storing your data in the cloud.
 
-Understand the value of AWS Directory Service. AWS Directory Service is designed to reduce identity management tasks, thereby allowing you to focus more of your time and resources on your business.
+**Understand the value of AWS Directory Service.**
+AWS Directory Service is designed to reduce identity management tasks, thereby allowing you to focus more of your time and resources on your business.
 
-Know the AWS Directory Service Directory types. AWS Directory Service offers three directory types:
+**Know the AWS Directory Service Directory types.**
+AWS Directory Service offers three directory types:
 
-AWS Directory Service for Microsoft Active Directory (Enterprise Edition), also referred to as Microsoft AD
-Simple AD
-AD Connector
-Know when you should use AWS Directory Service for Microsoft Active Directory. You should use Microsoft Active Directory if you have more than 5,000 users or need a trust relationship set up between an AWS hosted directory and your on-premises directories.
+- AWS Directory Service for Microsoft Active Directory (Enterprise Edition), also referred to as Microsoft AD
+- Simple AD
+- AD Connector
 
-Understand key management. Key management is the management of cryptographic keys within a cryptosystem. This includes dealing with the generation, exchange, storage, use, and replacement of keys.
+**Know when you should use AWS Directory Service for Microsoft Active Directory.**
+You should use Microsoft Active Directory if you have more than 5,000 users or need a trust relationship set up between an AWS hosted directory and your on-premises directories.
 
-Understand when you should use AWS KMS. AWS KMS is a managed service that makes it easy for you to create and control the symmetric encryption keys used to encrypt your data. AWS KMS lets you create keys that can never be exported from the service and which can be used to encrypt and decrypt data based on policies you define.
+**Understand key management.**
+Key management is the management of cryptographic keys within a cryptosystem. This includes dealing with the generation, exchange, storage, use, and replacement of keys.
 
-Understand when you should use AWS CloudHSM. AWS CloudHSM helps you meet corporate, contractual, and regulatory compliance requirements for data security by using dedicated hardware security module appliances within the AWS cloud.
+**Understand when you should use AWS KMS.**
+AWS KMS is a managed service that makes it easy for you to create and control the symmetric encryption keys used to encrypt your data. AWS KMS lets you create keys that can never be exported from the service and which can be used to encrypt and decrypt data based on policies you define.
 
-Understand the value of AWS CloudTrail. AWS CloudTrail provides visibility into user activity by recording API calls made on your account. This helps you to track changes made to your AWS resources and to troubleshoot operational issues. AWS CloudTrail makes it easier to ensure compliance with internal policies and regulatory standards.
+**Understand when you should use AWS CloudHSM.**
+AWS CloudHSM helps you meet corporate, contractual, and regulatory compliance requirements for data security by using dedicated hardware security module appliances within the AWS cloud.
 
-Know the three services of Amazon kinesis and their use cases. Amazon Kinesis Firehose allows you to load massive volumes of streaming data into AWS. Amazon Kinesis Analytics enables you to easily analyze streaming data real time with standard SQL. Amazon Kinesis Streams enables you to build custom applications that process or analyze streaming data real time for specialized needs.
+**Understand the value of AWS CloudTrail.**
+AWS CloudTrail provides visibility into user activity by recording API calls made on your account. This helps you to track changes made to your AWS resources and to troubleshoot operational issues. AWS CloudTrail makes it easier to ensure compliance with internal policies and regulatory standards.
 
-Know what service Amazon EMR provides. Amazon EMR provides a managed Hadoop service on AWS that allows you to spin up large Hadoop clusters in minutes.
+**Know the three services of Amazon kinesis and their use cases.**
+Amazon Kinesis Firehose allows you to load massive volumes of streaming data into AWS. Amazon Kinesis Analytics enables you to easily analyze streaming data real time with standard SQL. Amazon Kinesis Streams enables you to build custom applications that process or analyze streaming data real time for specialized needs.
 
-Know the difference between persistent and transient clusters. Persistent clusters run continuously, so they do not lose data stored on instance-based HDFS. Transient clusters are launched for a specific task, then terminated, so they access data on Amazon S3 via EMRFS.
+**Know what service Amazon EMR provides.**
+Amazon EMR provides a managed Hadoop service on AWS that allows you to spin up large Hadoop clusters in minutes.
 
-Know the use cases for Amazon EMR. Amazon EMR is useful for big data analytics in virtually any industry, including, but not limited to, log processing, clickstream analysis, and genomics and life sciences.
+**Know the difference between persistent and transient clusters.**
+Persistent clusters run continuously, so they do not lose data stored on instance-based HDFS. Transient clusters are launched for a specific task, then terminated, so they access data on Amazon S3 via EMRFS.
 
-Know the use cases for AWS data pipeline. AWS Data Pipeline can manage batch ETL processes at scale on the cloud, accessing data both in AWS and on-premises. It can take advantage of AWS cloud services by spinning up resources required for the process, such as Amazon EC2 instances or Amazon EMR clusters.
+**Know the use cases for Amazon EMR.**
+Amazon EMR is useful for big data analytics in virtually any industry, including, but not limited to, log processing, clickstream analysis, and genomics and life sciences.
 
-Know the types of AWS import/export services and the possible sources/destinations of each. AWS Snowball is Amazon shippable appliances supplied ready to ship. It can transfer data to and from your on-premises storage and to and from Amazon S3. AWS Import/Export Disk uses your storage devices and, in addition to transferring data in and out of your on-premises storage, can import data to Amazon S3, Amazon EBS, and Amazon S3; it can only export data from Amazon S3.
+**Know the use cases for AWS data pipeline.**
+AWS Data Pipeline can manage batch ETL processes at scale on the cloud, accessing data both in AWS and on-premises. It can take advantage of AWS cloud services by spinning up resources required for the process, such as Amazon EC2 instances or Amazon EMR clusters.
 
-Understand the basics of AWS opsworks. AWS OpsWorks is a configuration management service that helps you configure and operate applications of all shapes and sizes using Chef. You can define an application’s architecture and the specification of each component including package installation, software configuration, and resources such as storage.
+**Know the types of AWS import/export services and the possible sour**ces/destinations of each.
+AWS Snowball is Amazon shippable appliances supplied ready to ship. It can transfer data to and from your on-premises storage and to and from Amazon S3. AWS Import/Export Disk uses your storage devices and, in addition to transferring data in and out of your on-premises storage, can import data to Amazon S3, Amazon EBS, and Amazon S3; it can only export data from Amazon S3.
 
-Understand the value of AWS cloudformation. AWS CloudFormation is a service that helps you model and set up your AWS resources. AWS CloudFormation allows organizations to deploy, modify, and update resources in a controlled and predictable way, in effect applying version control to AWS infrastructure the same way you would do with software.
+**Understand the basics of AWS opsworks.**
+AWS OpsWorks is a configuration management service that helps you configure and operate applications of all shapes and sizes using Chef. You can define an application’s architecture and the specification of each component including package installation, software configuration, and resources such as storage.
 
-Understand the value of AWS elastic beanstalk. AWS Elastic Beanstalk is the fastest and simplest way to get an application up and running on AWS. Developers can simply upload their application code, and the service automatically handles all the details such as resource provisioning, load balancing, Auto Scaling, and monitoring.
+**Understand the value of AWS cloudformation.**
+AWS CloudFormation is a service that helps you model and set up your AWS resources. AWS CloudFormation allows organizations to deploy, modify, and update resources in a controlled and predictable way, in effect applying version control to AWS infrastructure the same way you would do with software.
 
-Understand the components of AWS elastic beanstalk. An AWS Elastic Beanstalk application is the logical collection of environments, versions, and environment configurations. In AWS Elastic Beanstalk, an application is conceptually similar to a folder.
+**Understand the value of AWS elastic beanstalk.**
+AWS Elastic Beanstalk is the fastest and simplest way to get an application up and running on AWS. Developers can simply upload their application code, and the service automatically handles all the details such as resource provisioning, load balancing, Auto Scaling, and monitoring.
 
-Understand the value of AWS config. AWS Config is a fully managed service that provides organizations with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance. With AWS Config, organizations can discover existing and deleted AWS resources, determine their overall compliance against rules and dive into configuration details of a resource at any point in time. These capabilities enable compliance auditing, security analysis, resource change tracking, and troubleshooting.
+**Understand the components of AWS elastic beanstalk.**
+An AWS Elastic Beanstalk application is the logical collection of environments, versions, and environment configurations. In AWS Elastic Beanstalk, an application is conceptually similar to a folder.
+
+**Understand the value of AWS config.**
+AWS Config is a fully managed service that provides organizations with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance. With AWS Config, organizations can discover existing and deleted AWS resources, determine their overall compliance against rules and dive into configuration details of a resource at any point in time. These capabilities enable compliance auditing, security analysis, resource change tracking, and troubleshooting.
 
 ## Chapter 12: Security on AWS
 
 ### Exam Essentials
 
-Understand the shared responsibility model. AWS is responsible for securing the underlying infrastructure that supports the cloud, and you’re responsible for anything you put on the cloud or connect to the cloud.
+**Understand the shared responsibility model.**
+AWS is responsible for securing the underlying infrastructure that supports the cloud, and you’re responsible for anything you put on the cloud or connect to the cloud.
 
-Understand regions and Availability Zones. Each region is completely independent. Each region is designed to be completely isolated from the other regions. This achieves the greatest possible fault tolerance and stability. Regions are a collection of Availability Zones. Each Availability Zone is isolated, but the Availability Zones in a region are connected through low-latency links.
+**Understand regions and Availability Zones.**
+Each region is completely independent. Each region is designed to be completely isolated from the other regions. This achieves the greatest possible fault tolerance and stability. Regions are a collection of Availability Zones. Each Availability Zone is isolated, but the Availability Zones in a region are connected through low-latency links.
 
-Understand High-Availability System Design within AWS. You should architect your AWS usage to take advantage of multiple regions and Availability Zones. Distributing applications across multiple Availability Zones provides the ability to remain resilient in the face of most failure modes, including natural disasters or system failures.
+**Understand High-Availability System Design within AWS.**
+You should architect your AWS usage to take advantage of multiple regions and Availability Zones. Distributing applications across multiple Availability Zones provides the ability to remain resilient in the face of most failure modes, including natural disasters or system failures.
 
-Understand the network security of AWS. Network devices, including firewall and other boundary devices, are in place to monitor and control communications at the external boundary of the network and at key internal boundaries within the network. These boundary devices employ rule sets, ACLs, and configurations to enforce the flow of information to specific information system services.
+**Understand the network security of AWS.**
+Network devices, including firewall and other boundary devices, are in place to monitor and control communications at the external boundary of the network and at key internal boundaries within the network. These boundary devices employ rule sets, ACLs, and configurations to enforce the flow of information to specific information system services.
 
-AWS has strategically placed a limited number of access points to the cloud to allow for a more comprehensive monitoring of inbound and outbound communications and network traffic. These customer access points are called API endpoints, and they allow HTTPS access, which allows you to establish a secure communication session with your storage or compute instances within AWS.
+AWS has strategically placed a limited number of access points to the cloud to allow for a more comprehensive monitoring of inbound and outbound communications and network traffic.
 
-Amazon EC2 instances cannot send spoofed network traffic. The AWS-controlled, host-based firewall infrastructure will not permit an instance to send traffic with a source IP or MAC address other than its own.
+These customer access points are called API endpoints, and they allow HTTPS access, which allows you to establish a secure communication session with your storage or compute instances within AWS.
 
-Unauthorized port scans by Amazon EC2 customers are a violation of the AWS Acceptable Use Policy. Violations of the AWS Acceptable Use Policy are taken seriously, and every reported violation is investigated.
+**Amazon EC2 instances cannot send spoofed network traffic.**
+The AWS-controlled, host-based firewall infrastructure will not permit an instance to send traffic with a source IP or MAC address other than its own.
+
+**Unauthorized port scans by Amazon EC2 customers are a violation of the AWS Acceptable Use Policy.**
+Violations of the AWS Acceptable Use Policy are taken seriously, and every reported violation is investigated.
 
 It is not possible for an Amazon EC2 instance running in promiscuous mode to receive or “sniff” traffic that is intended for a different virtual instance.
 
-Understand the use of credentials on AWS. AWS employs several credentials in order to positively identify a person or authorize an API call to the platform. Credentials include:
+**Understand the use of credentials on AWS.**
+AWS employs several credentials in order to positively identify a person or authorize an API call to the platform. Credentials include:
 
-Passwords
-AWS root account or IAM user account login to the AWS Management Console
-Multi-Factor Authentication (MFA)
-AWS root account or IAM user account login to the AWS Management Console
-Access Keys
-Digitally signed requests to AWS APIs (using the AWS SDK, CLI, or REST/Query APIs)
-Understand the proper use of access keys. Because access keys can be misused if they fall into the wrong hands, AWS encourages you to save them in a safe place and not to embed them in your code. For customers with large fleets of elastically-scaling Amazon EC2 instances, the use of IAM roles can be a more secure and convenient way to manage the distribution of access keys.
+- Passwords
+- AWS root account or IAM user account login to the AWS Management Console
+- Multi-Factor Authentication (MFA)
+- AWS root account or IAM user account login to the AWS Management Console
+- Access Keys
+- Digitally signed requests to AWS APIs (using the AWS SDK, CLI, or REST/Query APIs)
 
-Understand the value of AWS CloudTrail. AWS CloudTrail is a web service that records API calls made on your account and delivers log files to your Amazon S3 bucket. AWS CloudTrail’s benefit is visibility into account activity by recording API calls made on your account.
+**Understand the proper use of access keys.**
+Because access keys can be misused if they fall into the wrong hands, AWS encourages you to save them in a safe place and not to embed them in your code. For customers with large fleets of elastically-scaling Amazon EC2 instances, the use of IAM roles can be a more secure and convenient way to manage the distribution of access keys.
 
-Understand the security features of Amazon EC2. Amazon EC2 uses public-key cryptography to encrypt and decrypt login information. Public-key cryptography uses a public key to encrypt a piece of data, such as a password, and then the recipient uses the private key to decrypt the data. The public and private keys are known as a key pair.
+**Understand the value of AWS CloudTrail.**
+AWS CloudTrail is a web service that records API calls made on your account and delivers log files to your Amazon S3 bucket. AWS CloudTrail’s benefit is visibility into account activity by recording API calls made on your account.
+
+**Understand the security features of Amazon EC2.**
+Amazon EC2 uses public-key cryptography to encrypt and decrypt login information. Public-key cryptography uses a public key to encrypt a piece of data, such as a password, and then the recipient uses the private key to decrypt the data. The public and private keys are known as a key pair.
 
 To log in to your instance, you must create a key pair, specify the name of the key pair when you launch the instance, and provide the private key when you connect to the instance. Linux instances have no password, and you use a key pair to log in using SSH. With Windows instances, you use a key pair to obtain the administrator password and then log in using RDP.
 
 A security group acts as a virtual firewall that controls the traffic for one or more instances. When you launch an instance, you associate one or more security groups with the instance. You add rules to each security group that allow traffic to or from its associated instances. You can modify the rules for a security group at any time; the new rules are automatically applied to all instances that are associated with the security group.
 
-Understand AWS use of encryption of data in transit. All service endpoints support encryption of data in transit via HTTPS.
+**Understand AWS use of encryption of data in transit.**
+All service endpoints support encryption of data in transit via HTTPS.
 
-Know which services offer encryption of data at rest as a feature. The following services offer a feature to encrypt data at rest:
+**Know which services offer encryption of data at rest as a feature.**
+The following services offer a feature to encrypt data at rest:
 
-Amazon S3
-Amazon EBS
-Amazon Glacier
-AWS Storage Gateway
-Amazon RDS
-Amazon Redshift
-Amazon WorkSpaces
+- Amazon S3
+- Amazon EBS
+- Amazon Glacier
+- AWS Storage Gateway
+- Amazon RDS
+- Amazon Redshift
+- Amazon WorkSpaces
 
 ## Chapter 13: AWS Risk and Compliance
 
@@ -1090,9 +1197,10 @@ Amazon WorkSpaces
 
 AWS communicates with customers regarding its security and control environment through the following mechanisms:
 
-Obtaining industry certifications and independent third-party attestations
-Publishing information about security and AWS control practices via the website, whitepapers, and blogs
-Directly providing customers with certificates, reports, and other documentation (under NDA in some cases)
+- Obtaining industry certifications and independent third-party attestations
+- Publishing information about security and AWS control practices via the website, whitepapers, and blogs
+- Directly providing customers with certificates, reports, and other documentation (under NDA in some cases)\*
+
 The shared responsibility model is not just limited to security considerations; it also extends to IT controls. The management, operation, and verification of IT controls are shared between AWS and the customer. AWS manages these controls where it relates to the physical infrastructure, and the customer manages these controls for the guest operating systems and upward (depending on the service).
 
 It is the customer’s responsibility to maintain adequate governance over the entire IT control environment, regardless of how their IT is deployed (on-premises, cloud, or hybrid). By deploying to the AWS Cloud, customers have different options for applying different types of controls and various verification methods that align with their business requirements.
@@ -1103,44 +1211,51 @@ AWS provides documentation about its risk and compliance program. This documenta
 
 AWS has achieved a number of internationally recognized certifications and accreditations that demonstrate AWS compliance with third-party assurance frameworks, including:
 
-FedRAMP
-FIPS 140–2
-FISMA and DIACAP
-HIPAA
-ISO 9001
-ISO 27001
-ITAR
-PCI DSS Level 1
-SOC 1/ISAE 3402
-SOC 2
-SOC 3
+- FedRAMP
+- FIPS 140–2
+- FISMA and DIACAP
+- HIPAA
+- ISO 9001
+- ISO 27001
+- ITAR
+- PCI DSS Level 1
+- SOC 1/ISAE 3402
+- SOC 2
+- SOC 3
+
 AWS is constantly listening to customers and examining other certifications for the future.
 
 ### Exam Essentials
 
-Understand the shared responsibility model. The shared responsibility model is not just limited to security considerations; it also extends to IT controls. For example, the management, operation, and verification of IT controls are shared between AWS and the customer. AWS manages these controls where it relates to physical infrastructure.
+**Understand the shared responsibility model.**
+The shared responsibility model is not just limited to security considerations; it also extends to IT controls. For example, the management, operation, and verification of IT controls are shared between AWS and the customer. AWS manages these controls where it relates to physical infrastructure.
 
-Remember that IT governance is the customer’s responsibility. It is the customer’s responsibility to maintain adequate governance over the entire IT control environment, regardless of how its IT is deployed (on-premises, cloud, or hybrid).
+**Remember that IT governance is the customer’s responsibility.**
+It is the customer’s responsibility to maintain adequate governance over the entire IT control environment, regardless of how its IT is deployed (on-premises, cloud, or hybrid).
 
-Understand how AWS provides control information. AWS provides IT control information to customers in two ways: via specific control definition and through a more general control standard compliance.
+**Understand how AWS provides control information.**
+AWS provides IT control information to customers in two ways: via specific control definition and through a more general control standard compliance.
 
-Remember that AWS is very proactive about risk management. AWS takes risk management very seriously, so it has developed a business plan to identify any risks and to implement controls to mitigate or manage those risks. An AWS management team reevaluates the business risk plan at least twice a year. As a part of this process, management team members are required to identify risks within their specific areas of responsibility and then implement controls designed to address and perhaps even eliminate those risks.
+**Remember that AWS is very proactive about risk management.**
+AWS takes risk management very seriously, so it has developed a business plan to identify any risks and to implement controls to mitigate or manage those risks. An AWS management team reevaluates the business risk plan at least twice a year. As a part of this process, management team members are required to identify risks within their specific areas of responsibility and then implement controls designed to address and perhaps even eliminate those risks.
 
-Remember that the control environment is not just about technology. The AWS control environment consists of policies, processes, and control activities. This control environment includes people, processes, and technology.
+**Remember that the control environment is not just about technology.**
+The AWS control environment consists of policies, processes, and control activities. This control environment includes people, processes, and technology.
 
-Remember the key reports, certifications, and third-party attestations. The key reports, certifications, and third-party attestations include, but are not limited to, the following:
+**Remember the key reports, certifications, and third-party attestations.**
+The key reports, certifications, and third-party attestations include, but are not limited to, the following:
 
-FedRAMP
-FIPS 140–2
-FISMA and DIACAP
-HIPAA
-ISO 9001
-ISO 27001
-ITAR
-PCI DSS Level 1
-SOC 1/ISAE 3402
-SOC 2
-SOC 3
+- FedRAMP
+- FIPS 140–2
+- FISMA and DIACAP
+- HIPAA
+- ISO 9001
+- ISO 27001
+- ITAR
+- PCI DSS Level 1
+- SOC 1/ISAE 3402
+- SOC 2
+- SOC 3
 
 ## Chapter 14: Architecture Best Practices
 
@@ -1164,21 +1279,29 @@ As each use case is unique, Solutions Architects need to remain diligent in eval
 
 ### Exam Essentials
 
-Understand highly available architectures. A system is highly available when it can withstand the failure of an individual or multiple components. If you design architectures around the assumption that any component will eventually fail, systems won’t fail when an individual component does.
+**Understand highly available architectures.**
+A system is highly available when it can withstand the failure of an individual or multiple components. If you design architectures around the assumption that any component will eventually fail, systems won’t fail when an individual component does.
 
-Understand redundancy. Redundancy can be implemented in either standby or active mode. When a resource fails in standby redundancy, functionality is recovered on a secondary resource using a process called failover. The failover will typically require some time before it is completed, and during that period the resource remains unavailable. In active redundancy, requests are distributed to multiple redundant compute resources, and when one of them fails, the rest can simply absorb a larger share of the workload. Compared to standby redundancy, active redundancy can achieve better utilization and affect a smaller population when there is a failure.
+**Understand redundancy.**
+Redundancy can be implemented in either standby or active mode. When a resource fails in standby redundancy, functionality is recovered on a secondary resource using a process called failover. The failover will typically require some time before it is completed, and during that period the resource remains unavailable. In active redundancy, requests are distributed to multiple redundant compute resources, and when one of them fails, the rest can simply absorb a larger share of the workload. Compared to standby redundancy, active redundancy can achieve better utilization and affect a smaller population when there is a failure.
 
-Understand elasticity. Elastic architectures can support growth in users, traffic, or data size with no drop in performance. It is important to build elastic systems on top of a scalable architecture. These architectures should scale in a linear manner, where adding extra resources results in at least a proportional increase in ability to serve additional system load. The growth in resources should introduce economies of scale, and cost should follow the same dimension that generates business value out of that system. There are generally two ways to scale an IT architecture: vertically and horizontally.
+**Understand elasticity.**
+Elastic architectures can support growth in users, traffic, or data size with no drop in performance. It is important to build elastic systems on top of a scalable architecture. These architectures should scale in a linear manner, where adding extra resources results in at least a proportional increase in ability to serve additional system load. The growth in resources should introduce economies of scale, and cost should follow the same dimension that generates business value out of that system. There are generally two ways to scale an IT architecture: vertically and horizontally.
 
-Understand vertical scaling. Scaling vertically takes place through an increase in the specifications of an individual resource (for example, upgrading a server with a larger hard drive or a faster CPU). This way of scaling can eventually hit a limit, and it is not always a cost efficient or highly available approach.
+**Understand vertical scaling.**
+Scaling vertically takes place through an increase in the specifications of an individual resource (for example, upgrading a server with a larger hard drive or a faster CPU). This way of scaling can eventually hit a limit, and it is not always a cost efficient or highly available approach.
 
-Understand horizontal scaling. Scaling horizontally takes place through an increase in the number of resources. This is a great way to build Internet-scale applications that leverage the elasticity of cloud computing. It is important to understand the impact of stateless and stateful architectures before implementing horizontal scaling.
+**Understand horizontal scaling.**
+Scaling horizontally takes place through an increase in the number of resources. This is a great way to build Internet-scale applications that leverage the elasticity of cloud computing. It is important to understand the impact of stateless and stateful architectures before implementing horizontal scaling.
 
-Understand stateless applications. A stateless application needs no knowledge of the previous interactions and stores no session information. A stateless application can scale horizontally because any request can be serviced by any of the available system compute resources.
+**Understand stateless applications.**
+A stateless application needs no knowledge of the previous interactions and stores no session information. A stateless application can scale horizontally because any request can be serviced by any of the available system compute resources.
 
-Understand loose coupling. As application complexity increases, a desirable characteristic of an IT system is that it can be broken into smaller, loosely coupled components. This means that IT systems should be designed as “black boxes” to reduce interdependencies so that a change or a failure in one component does not cascade to other components. The more loosely system components are coupled, the larger they scale.
+**Understand loose coupling.**
+As application complexity increases, a desirable characteristic of an IT system is that it can be broken into smaller, loosely coupled components. This means that IT systems should be designed as “black boxes” to reduce interdependencies so that a change or a failure in one component does not cascade to other components. The more loosely system components are coupled, the larger they scale.
 
-Understand the different storage options in AWS. AWS offers a broad range of storage choices for backup, archiving, and disaster recovery, as well as block, file, and object storage to suit a plethora of use cases. It is important from a cost, performance, and functional aspect to leverage different storage options available in AWS for different types of datasets.
+**Understand the different storage options in AWS.**
+AWS offers a broad range of storage choices for backup, archiving, and disaster recovery, as well as block, file, and object storage to suit a plethora of use cases. It is important from a cost, performance, and functional aspect to leverage different storage options available in AWS for different types of datasets.
 
 ### Exercises
 

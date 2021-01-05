@@ -4,12 +4,17 @@ import PostComponent from '../components/post'
 export default PostComponent
 
 export const query = graphql`
-  query($id: String!, $slug: String!, $formatString: String!) {
+  query(
+    $locale: String!
+    $id: String!
+    $slug: String!
+    $formatString: String!
+  ) {
     mdx(children: { elemMatch: { id: { eq: $id } } }) {
       slug
       tableOfContents(maxDepth: 3)
     }
-    post(slug: { eq: $slug }) {
+    post(slug: { eq: $slug }, fields: { locale: { eq: $locale } }) {
       slug
       title
       date(formatString: $formatString)

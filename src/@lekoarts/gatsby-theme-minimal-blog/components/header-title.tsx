@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Link } from 'gatsby'
+import { LocalizedLink } from 'gatsby-theme-i18n'
 import { jsx } from 'theme-ui'
 import replaceSlashes from '../utils/replaceSlashes'
 import useSiteMetadata from '../hooks/use-site-metadata'
@@ -10,7 +10,7 @@ const HeaderTitle = () => {
   const { basePath } = useMinimalBlogConfig()
 
   return (
-    <Link
+    <LocalizedLink
       to={replaceSlashes(`/${basePath}`)}
       aria-label={`${siteTitle} - Back to home`}
       sx={{ color: `heading`, textDecoration: `none` }}
@@ -18,7 +18,7 @@ const HeaderTitle = () => {
       <div sx={{ my: 0, fontWeight: `medium`, fontSize: [3, 4] }}>
         {siteTitle}
       </div>
-    </Link>
+    </LocalizedLink>
   )
 }
 
