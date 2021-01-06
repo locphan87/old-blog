@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Heading } from 'theme-ui'
+import * as R from 'ramda'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import Layout from './layout'
@@ -41,9 +42,10 @@ const px = [`32px`, `16px`, `8px`, `4px`]
 const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`)
 
 const Post = ({ data: { post, mdx } }: PostProps) => {
-  const bannerSrc = post.banner
-    ? post.banner.childImageSharp.resize.src
-    : undefined
+  if (!post) {
+    return <div>This page has not been translated yet</div>
+  }
+  const bannerSrc = R.path(['banner', 'childImageSharp', 'resize', 'src'], post)
   const { tableOfContents } = mdx || {}
   return (
     <Layout>
