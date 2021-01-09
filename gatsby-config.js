@@ -30,10 +30,6 @@ module.exports = {
             slug: `/tags/project`,
           },
           {
-            title: `Book Summaries`,
-            slug: `/tags/summary`,
-          },
-          {
             title: `Resume`,
             slug: `/resume`,
           },
@@ -87,12 +83,6 @@ module.exports = {
       options: {
         defaultLang: `en`,
         configPath: require.resolve(`./i18n/config.json`),
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
     `gatsby-plugin-sitemap`,

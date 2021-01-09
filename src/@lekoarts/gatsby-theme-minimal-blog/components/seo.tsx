@@ -62,6 +62,10 @@ const SEO = ({
       <meta name="twitter:creator" content={author} />
       <meta name="gatsby-theme" content="@lekoarts/gatsby-theme-minimal-blog" />
       <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      />
+      <link
         rel="icon"
         type="image/png"
         sizes="32x32"
@@ -78,8 +82,14 @@ const SEO = ({
         sizes="180x180"
         href={withPrefix(`/apple-touch-icon.png`)}
       />
+      <link href={withPrefix(`/tailwind.css`)} rel="stylesheet" />
       {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
       {children}
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-8PH2Q03JD1"
+      ></script>
+      <script src={withPrefix(`/custom.js`)}></script>
     </Helmet>
   )
 }

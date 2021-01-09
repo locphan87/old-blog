@@ -10,7 +10,7 @@ import useSiteMetadata from '../hooks/use-site-metadata'
 import replaceSlashes from '../utils/replaceSlashes'
 import { visuallyHidden } from '../styles/utils'
 // @ts-ignore
-import Hero from '../texts/hero'
+// import Hero from '../texts/hero'
 // @ts-ignore
 // import Bottom from "../texts/bottom"
 
@@ -37,15 +37,6 @@ const Homepage = ({ posts }: PostsProps) => {
   return (
     <Layout>
       <h1 sx={visuallyHidden}>{siteTitle}</h1>
-      <section
-        sx={{
-          mb: [5, 6, 7],
-          p: { fontSize: [1, 2, 3], mt: 2 },
-          variant: `section_hero`,
-        }}
-      >
-        <Hero />
-      </section>
       <Title text="Latest Posts">
         <LocalizedLink to={replaceSlashes(`/${basePath}/${blogPath}`)}>
           Read all posts

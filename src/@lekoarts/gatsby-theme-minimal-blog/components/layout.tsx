@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React from 'react'
+import { MDXProvider } from '@mdx-js/react'
 import { Global } from '@emotion/core'
 import { Box, Container, jsx } from 'theme-ui'
 import 'typeface-ibm-plex-sans'
@@ -8,9 +9,26 @@ import Header from './header'
 import Footer from './footer'
 import CodeStyles from '../styles/code'
 import SkipNavLink from './skip-nav'
+import Experiences from '../../../components/Experiences'
+import SkillIcon from '../../../components/SkillIcon'
+import SkillIcons from '../../../components/SkillIcons'
+import SkillBars from '../../../components/SkillBars'
+import TextIcon from '../../../components/TextIcon'
+import SkillLink from '../../../components/SkillLink'
 
 type LayoutProps = { children: React.ReactNode; className?: string }
 
+const shortcodes = {
+  SkillLink,
+  SkillBars,
+  SkillIcon,
+  SkillIcons,
+  TextIcon,
+  Experiences,
+}
+const MDX = ({ children }) => {
+  return <MDXProvider components={shortcodes}>{children}</MDXProvider>
+}
 const Layout = ({ children, className = `` }: LayoutProps) => (
   <React.Fragment>
     <Global
@@ -46,11 +64,12 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
     <Container>
       <Header />
       <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>
-        {children}
+        <MDX>{children}</MDX>
       </Box>
       <Footer />
     </Container>
   </React.Fragment>
 )
 
+export { MDX }
 export default Layout

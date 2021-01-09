@@ -1,11 +1,12 @@
 ---
-title: "Resume"
-slug: "/resume"
+title: 'Resume'
+slug: '/resume'
 ---
 
-import Icon from "../../shared/Icon"
+import { Tech, SkillCategory } from '../../../src/types'
 
 ## Professional Summary
+
 <!--
 - who you are professionally
 - why you are the best person for the job
@@ -23,6 +24,7 @@ import Icon from "../../shared/Icon"
 <!--
 With over 10 years in software development, I am passionate about technologies and the art of programming. That, together with my eclectic range of interests, has laid the groundwork for my career and my education abroad, and it has ultimately led to extensive experience in some of the most interesting areas of software development.
 
+Self-motivated
 A team player with strong interpersonal skills and posses a flexible and detail oriented attitude.
 An efficient key player in challenging & creative environments with excellent capacity to adapt to new technologies and skills.
 I have a clear, logical mind with a practical approach to problem-solving and a drive to see things though to completion.
@@ -54,21 +56,17 @@ In my work, I focus on ensuring a high standard of usability, user experience, p
 -->
 
 ## Tech skills
+
 ### Front-end languages & tools
-- HTML5, CSS3, JavaScript, CoffeeScript, Flow, TypeScript, ClojureScript, Elm
-- Functional JS, Ramda, Recompose, React, React Native, Redux, Angular, Reagent, Next.js, GatsbyJS, Svelte
-- Bootstrap, Foundation, Handlebars, Twig, Jade
-- Sass, LESS, Stylus, CSS-in-JS, Emotion, Responsive Design, Styled Components, Glamorous Native, TailwindCSS
-- Axios, Apollo Client
+
+<SkillIcons category={SkillCategory.FRONTEND} />
 
 ### Back-end languages & tools
-- NodeJS, Clojure, Elixir
-- ExpressJS, HapiJS, Loopback, Koa, MeteorJS, SailsJS
-- Strapi, KeystoneJS
-- RESTful API, GraphQL, Microservices
-- Graphcool, Prisma, Hasura
+
+<SkillIcons category={SkillCategory.BACKEND} />
 
 ### Programming paradigms
+
 - Functional (JavaScript, Elm, Clojure, Elixir, ReasonML, R)
 - Object-oriented (JavaScript, C++, Java, PHP, Python, Ruby)
 - Event-driven (JavaScript, Elm)
@@ -76,45 +74,51 @@ In my work, I focus on ensuring a high standard of usability, user experience, p
 - Imperative, Structured, Procedural (C++, PHP, Python)
 
 ### Database
-MySQL, Postgres, MongoDB, Oracle, Redis, DB2
+
+<SkillIcons category={SkillCategory.DATABASE} />
 
 ### Dev tools
-Webpack, Gulp, Grunt, Browserify, ESLint, TSLint, Prettier
+
+<SkillIcons category={SkillCategory.DEV_TOOLS} />
 
 ### Testing
-- Jest, Mocha, Ava, Codecov, Cypress, Chai, Sinon
-- Enzyme, React testing Library
-- Cypress, Test Cafe
+
+<SkillIcons category={SkillCategory.TESTING} />
 
 ### Project management tools
-JIRA, Confluence, Trello, Redmine, Agile, Scrum, Kanban
+
+<SkillIcons category={SkillCategory.PROJECT_MANAGEMENT} />
 
 ### DevOps
-Docker, Bash Scripting, Logging, Monitoring, AWS, Heroku, Azure, CI/CD, Jenkins
+
+<SkillIcons category={SkillCategory.DEVOPS} />
 
 ### Version control
-Git, Github, Gitlab, Bitbucket
+
+<SkillIcons category={SkillCategory.VERSION_CONTROL} />
 
 ### OS
-Linux, Mac OS, Unix, Windows 10
+
+<SkillIcons category={SkillCategory.OS} />
 
 ### IDE & Text editor
-Vim, tmux, VS Code, Sublime Text
+
+<SkillIcons category={SkillCategory.EDITOR} />
 
 ### Design tools
-Zeplin, UML
+
+<SkillIcons category={SkillCategory.DESIGN} />
 
 ## Soft skills
+
 - Technical lead, coaching
 - Documentation, pair programming, code review
 - Work ethic, teamwork, open-mindedness, problem solving
 - Can-do attitude, adaptability, perseverance
 
 ## Experiences
-### Lead Engineer - NAB
-Nov 2019 – Present
 
-Tech: Angular, React, TypeScript, NodeJS, GraphQL, Microservices, AWS, DevOps.
+<Experiences />
 
 <!--
 4-6 bullets for duties, responsibilities, achievements
@@ -125,72 +129,8 @@ include numbers and metrics to demonstrate the value
 - Design, build, and maintain efficient, reusable, and reliable JavaScript code
 -->
 
-- Led multiple teams of 4 - 6 developers.
-- Collaborated with business stakeholders, application architects to define the best technical solutions to the business requirements, perform gap analysis and manage the scope of projects.
-- Worked directly with developers to ensure that best practices and internal coding guidelines were met.
-- Ensured the best possible security, performance, quality, accessibility and responsiveness of the applications.
-- Partnered with the DevOps team to leverage the CI/CD process for Test Automation.
-- Identified bottlenecks and bugs, and devise solutions to these problems.
-- Supported production releases and incidents.
-- Coached team members to help them grow.
-
-### Principal Frontend Developer - Pycogroup
-Feb 2017 – Nov 2019
-
-Tech: JavaScript, React, React Native, NodeJS, GraphQL, Flow, Typescript, AWS, DevOps.
-
-- Defined the overall technical architecture and coding standards.
-- Led 4 mobile & web development teams (up to 10 developers).
-- Worked with different stakeholders (SA, UI/UX, BA, QC, PO, Managers).
-- Conducted team training & pair programming sessions.
-- Automated deployment processes (CI/CD).
-- Responsible for code reviews & writing testable code.
-
-### Senior Frontend Developer - Pycogroup
-Jan 2015 – Jan 2017
-
-Tech: HTML5, CSS3, Responsive Design, JavaScript, Backbone, React, AngularJS, NodeJS, Express, SailsJS, MetorJS, MongoDB, nginx, AWS, Elasticsearch.
-
-- Developed fully functional responsive web applications based on business requirements.
-- Created HTML email templates and newsletters for e-mail marketing campaigns.
-- Tested front-end code in multiple browsers to ensure cross-browser compatibility.
-- Contributed to the first NodeJS and ReactJS projects of the company.
-- Trained ReactJS for team members and company partners.
-- A pioneer engineer in the company's first onsite project, then helping to expand the project and lead a team of 3 - 5 developers.
-
-### Senior PHP Developer - Ozerside
-Oct 2012 – Dec 2014
-
-Tech: PHP, Drupal, Wordpress, HTML, CSS, SASS, Javascript, CoffeeScript.
-
-- Created and deployed complex, fully-featured websites using Drupal & WordPress; Integrated with third-party modules.
-- Implemented performance optimizations and refactored code to improve the maintainability.
-- Used HTML5, CSS3, JavaScript with jQuery and Ajax to build elegant user interfaces and good user experience.
-- Developed numerous games and applications using the Facebook API.
-- Optimized websites for displaying on mobile platforms.
-- Acted as a key participant in project estimating and architecture design.
-- Led the frontend development by introducing new tools/technologies (CSS preprocessors, Build tools, CoffeeScript,...).
-
-### Application Developer - IBM
-Dec 2010 – Aug 2012
-
-Tech: OS400, Adelia, CL, RPG, DB2.
-
-- Investigated requirements based on the Propositions of Solution.
-- Developed and maintained programs on OS400 using RPG, Adelia and CL programming.
-- Ensuring adherence to the development standards provided by the client.
-- Communicated with the DBA for data modifications.
-- Performed validation of completed programs including the debugging and testing of code.
-- Delivered completed programs to the integration environment.
-- Investigated and fixed bugs in the process of SLA.
-- Trained technical skills from the base of OS400 and CL to advanced Adelia programming.
-
-## Hobbies
-- Travelling
-- Reading
-- Coding
-
 ## References
+
 - [My profile](https://www.linkedin.com/in/loc-phan/)
 - [My projects](/tags/project)
 - [My repositories](https://github.com/locphan87)
