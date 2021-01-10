@@ -1,5 +1,4 @@
 import React from 'react'
-import Avatar from '@material-ui/core/Avatar'
 
 import skillList from '../fixtures/skills'
 import links from '../fixtures/links'
@@ -22,9 +21,9 @@ const colors = skillList.reduce((acc, x) => {
 const SkillIcon: React.FC<IProps> = ({ id }) => {
   const { component: C, name, bg, color, avatar = name } = findSkill(id) || {}
   const link = links[id]
-  const className = {
-    color,
-  }
+  // const className = {
+  //   color,
+  // }
   const linkStyle = bg
     ? {
         backgroundColor: bg,
@@ -46,9 +45,9 @@ const SkillIcon: React.FC<IProps> = ({ id }) => {
       {!!C ? (
         <C color={colors[id]} size="3rem" />
       ) : (
-        <Avatar variant="square" className={className}>
+        <div className="p-4 text-gray-900 font-medium tracking-wide">
           {avatar}
-        </Avatar>
+        </div>
       )}
     </a>
   )

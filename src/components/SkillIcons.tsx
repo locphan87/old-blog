@@ -12,7 +12,6 @@ const findIcons = (category: SkillCategory): Skill[] => {
 }
 const Icons: React.FC<IProps> = ({ category }) => {
   const icons = findIcons(category)
-  console.log(category, { icons })
   return (
     <div className="flex flex-wrap mt-4 items-center">
       {icons.map(({ id }) => (

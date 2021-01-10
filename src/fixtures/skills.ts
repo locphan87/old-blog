@@ -208,7 +208,7 @@ const skills: Skill[] = [
     color: 'black',
     level: EXPERT,
     category: SkillCategory.FRONTEND,
-    avatar: 'FunJS',
+    avatar: 'FuntionalJS',
   },
   {
     id: Tech.RAMDA,
