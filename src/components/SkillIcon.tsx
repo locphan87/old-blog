@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import skillList from '../fixtures/skills'
 import links from '../fixtures/links'
@@ -21,14 +22,13 @@ const colors = skillList.reduce((acc, x) => {
 const SkillIcon: React.FC<IProps> = ({ id }) => {
   const { component: C, name, bg, color, avatar = name } = findSkill(id) || {}
   const link = links[id]
-  // const className = {
-  //   color,
-  // }
-  const linkStyle = bg
-    ? {
-        backgroundColor: bg,
-      }
-    : {}
+  const { showIcon } = useSelector((x) => x)
+  const linkStyle =
+    bg && showIcon
+      ? {
+          backgroundColor: bg,
+        }
+      : {}
 
   if (!link) {
     return <span>{name}</span>
@@ -42,10 +42,10 @@ const SkillIcon: React.FC<IProps> = ({ id }) => {
       target="_blank"
       style={linkStyle}
     >
-      {!!C ? (
+      {!!C && showIcon ? (
         <C color={colors[id]} size="3rem" />
       ) : (
-        <div className="p-4 text-gray-900 font-medium tracking-wide">
+        <div className="p-2 text-gray-900 font-medium tracking-wide">
           {avatar}
         </div>
       )}

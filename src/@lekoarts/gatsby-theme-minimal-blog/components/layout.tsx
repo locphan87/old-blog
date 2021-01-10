@@ -10,6 +10,7 @@ import Footer from './footer'
 import CodeStyles from '../styles/code'
 import SkipNavLink from './skip-nav'
 import Experiences from '../../../components/Experiences'
+import ResumeSetting from '../../../components/ResumeSetting'
 import SkillIcon from '../../../components/SkillIcon'
 import SkillIcons from '../../../components/SkillIcons'
 import SkillBars from '../../../components/SkillBars'
@@ -23,6 +24,7 @@ const shortcodes = {
   SkillBars,
   SkillIcon,
   SkillIcons,
+  ResumeSetting,
   TextIcon,
   Experiences,
 }
