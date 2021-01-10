@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React from 'react'
+import { jsx } from 'theme-ui'
 import { useSelector } from 'react-redux'
 
 import skillList from '../fixtures/skills'
@@ -36,7 +38,11 @@ const SkillIcon: React.FC<IProps> = ({ id }) => {
 
   return (
     <a
-      className="flex no-underline mr-4 mb-2"
+      sx={{
+        variant: `links.secondary`,
+        color: `primary`,
+      }}
+      className={showIcon ? `flex mr-4 mb-2` : ''}
       title={name}
       href={link}
       target="_blank"
@@ -45,9 +51,7 @@ const SkillIcon: React.FC<IProps> = ({ id }) => {
       {!!C && showIcon ? (
         <C color={colors[id]} size="3rem" />
       ) : (
-        <div className="p-2 text-gray-900 font-medium tracking-wide">
-          {avatar}
-        </div>
+        <div className="p-2 font-medium tracking-wide">{avatar}</div>
       )}
     </a>
   )
