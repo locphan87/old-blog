@@ -9,7 +9,7 @@ export const query = graphql`
       sort: { fields: date, order: DESC }
       filter: {
         fields: { locale: { eq: $locale } }
-        tags: { elemMatch: { slug: { eq: $slug } } }
+        tags: { elemMatch: { slug: { eq: $slug, nin: ["summary"] } } }
       }
     ) {
       nodes {
