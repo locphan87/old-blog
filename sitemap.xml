@@ -84,8 +84,6 @@
 <url> <loc>https://locphan87.github.io/vi/tags/banking</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/charity</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/charity</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/tags/clear</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/tags/clear</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/cms</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/cms</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/coffee</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -96,14 +94,10 @@
 <url> <loc>https://locphan87.github.io/vi/tags/disease</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/donation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/donation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/tags/driver</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/tags/driver</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/dzone</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/dzone</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/education</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/education</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/tags/f-4</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/tags/f-4</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/facebook</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/facebook</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/food-delivery</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -150,8 +144,8 @@
 <url> <loc>https://locphan87.github.io/vi/tags/project</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/pyco</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/pyco</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/tags/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/tags/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/tags/racing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/tags/racing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/react-native</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/react-native</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/react-native-web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -184,8 +178,6 @@
 <url> <loc>https://locphan87.github.io/vi/tags/unicef</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/vim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/vim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/tags/web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/tags/web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/workshop</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/workshop</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/writing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
