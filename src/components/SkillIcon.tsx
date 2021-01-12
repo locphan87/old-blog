@@ -49,7 +49,7 @@ const SkillIcon: React.FC<IProps> = ({ id }) => {
       style={linkStyle}
     >
       {!!C && showIcon ? (
-        <C color={colors[id]} size="3rem" />
+        <C title={name} color={colors[id]} size="3rem" />
       ) : (
         <div className="p-2 font-medium tracking-wide">{avatar}</div>
       )}
