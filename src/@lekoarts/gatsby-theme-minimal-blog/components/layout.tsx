@@ -9,6 +9,7 @@ import Header from './header'
 import Footer from './footer'
 import CodeStyles from '../styles/code'
 import SkipNavLink from './skip-nav'
+import * as AllIcons from 'react-icons/all'
 import Experiences from '../../../components/Experiences'
 import ResumeSetting from '../../../components/ResumeSetting'
 import SkillIcon from '../../../components/SkillIcon'
@@ -19,7 +20,12 @@ import SkillLink from '../../../components/SkillLink'
 
 type LayoutProps = { children: React.ReactNode; className?: string }
 
+const Icons = ({ name, ...rest }) => {
+  const C = AllIcons[name]
+  return <C size="1rem" {...rest} />
+}
 const shortcodes = {
+  Icons,
   SkillLink,
   SkillBars,
   SkillIcon,
