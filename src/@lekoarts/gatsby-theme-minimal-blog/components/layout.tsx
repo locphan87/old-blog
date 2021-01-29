@@ -22,6 +22,7 @@ type LayoutProps = { children: React.ReactNode; className?: string }
 
 const Icons = ({ name, ...rest }) => {
   const C = AllIcons[name]
+  if (!C) return null
   return <C size="1rem" {...rest} />
 }
 const shortcodes = {
