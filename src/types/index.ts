@@ -1,11 +1,5 @@
 import React from 'react'
 
-export interface Experiences {
-  title: string
-  company: string
-  role: string
-  tech: string
-}
 export enum SkillLevel {
   BEGINNER,
   AVERAGE,

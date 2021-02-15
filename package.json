@@ -17,7 +17,7 @@
     "gen:css": "npx tailwindcss-cli@latest build ./src/tailwind.css -o ./static/tailwind.css",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "format": "prettier {src,content}/**/*.{js,jsx,ts,tsx,json} --write",
+    "format": "prettier {src,content,lib}/**/*.{js,jsx,ts,tsx,json} --write",
     "clean": "gatsby clean"
   },
   "dependencies": {
@@ -34,6 +34,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
     "gatsby-remark-autolink-headers": "^2.7.0",
     "gatsby-theme-i18n": "^1.0.4",
+    "knex": "^0.21.17",
     "match-values": "^1.1.0",
     "ramda": "^0.27.1",
     "react": "^16.13.1",
@@ -42,6 +43,7 @@
     "react-redux": "^7.2.2",
     "react-skills": "^1.27.0",
     "redux": "^4.0.5",
+    "sqlite3": "^5.0.1",
     "styled-components": "^5.2.1",
     "use-onclickoutside": "^0.3.1"
   },

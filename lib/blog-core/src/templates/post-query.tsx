@@ -1,5 +1,5 @@
-import { graphql } from "gatsby"
-import PostComponent from "../components/post"
+import { graphql } from 'gatsby'
+import PostComponent from '../components/post'
 
 export default PostComponent
 

@@ -1,6 +1,12 @@
-import React from "react"
+import React from 'react'
 
-export default function Tag({ data, pageContext }: { data: any; pageContext: any }) {
+export default function Tag({
+  data,
+  pageContext,
+}: {
+  data: any
+  pageContext: any
+}) {
   return (
     <div>
       <pre>{JSON.stringify(data, null, 2)}</pre>
