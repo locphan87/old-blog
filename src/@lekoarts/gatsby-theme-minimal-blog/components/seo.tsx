@@ -87,7 +87,7 @@ const SEO = ({
       {children}
       <script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-8PH2Q03JD1"
+        src="https://www.googletagmanager.com/gtag/js?id=G-40SEM3CYT0"
       ></script>
       <script src={withPrefix(`/custom.js`)}></script>
     </Helmet>
