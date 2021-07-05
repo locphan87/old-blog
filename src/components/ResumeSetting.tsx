@@ -5,9 +5,9 @@ import Switch from '@material-ui/core/Switch'
 import { useSelector, useDispatch } from 'react-redux'
 
 const ResumeSetting: React.FC = () => {
-  const { showIcon, showLevel } = useSelector((x) => x)
+  const { showIcon } = useSelector((x) => x)
   const dispatch = useDispatch()
-  const [state, setState] = React.useState({ showIcon, showLevel })
+  const [state, setState] = React.useState({ showIcon })
   const handleToggle = (itemType: string) => (event: any) => {
     const checked = event.target.checked
     const newState = {
@@ -31,16 +31,6 @@ const ResumeSetting: React.FC = () => {
             />
           }
           label="Show Icons"
-        />
-        <FormControlLabel
-          control={
-            <Switch
-              checked={state.showLevel}
-              onChange={handleToggle('showLevel')}
-              name="showLevel"
-            />
-          }
-          label="Show Levels"
         />
       </FormGroup>
     </>

@@ -34,6 +34,8 @@ export enum Tech {
   JENKINS,
   KONG,
   AWS,
+  DESIGN_SYSTEM,
+  MICRO_FRONTEND,
   HEROKU,
   AZURE,
   BASH,

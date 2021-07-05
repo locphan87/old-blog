@@ -2,6 +2,9 @@ import { Tech, Links } from '../types'
 
 const links: Links = {
   [Tech.VIM]: 'https://www.vim.org/',
+  [Tech.DESIGN_SYSTEM]:
+    'https://storybook.js.org/tutorials/design-systems-for-developers/',
+  [Tech.MICRO_FRONTEND]: 'https://micro-frontends.org/',
   [Tech.TMUX]: 'https://github.com/tmux/tmux/wiki',
   [Tech.VSCODE]: 'https://code.visualstudio.com/',
   [Tech.SUBLIME]: 'https://www.sublimetext.com/',

@@ -4,37 +4,16 @@ import { MDXProvider } from '@mdx-js/react'
 import { Global } from '@emotion/core'
 import { Box, Container, jsx } from 'theme-ui'
 import 'typeface-ibm-plex-sans'
+
 import SEO from './seo'
 import Header from './header'
 import Footer from './footer'
 import CodeStyles from '../styles/code'
 import SkipNavLink from './skip-nav'
-import * as AllIcons from 'react-icons/all'
-import Experiences from '../../../components/Experiences'
-import ResumeSetting from '../../../components/ResumeSetting'
-import SkillIcon from '../../../components/SkillIcon'
-import SkillIcons from '../../../components/SkillIcons'
-import SkillBars from '../../../components/SkillBars'
-import TextIcon from '../../../components/TextIcon'
-import SkillLink from '../../../components/SkillLink'
+import shortcodes from './shortcodes'
 
 type LayoutProps = { children: React.ReactNode; className?: string }
 
-const Icons = ({ name, ...rest }) => {
-  const C = AllIcons[name]
-  if (!C) return null
-  return <C size="1rem" {...rest} />
-}
-const shortcodes = {
-  Icons,
-  SkillLink,
-  SkillBars,
-  SkillIcon,
-  SkillIcons,
-  ResumeSetting,
-  TextIcon,
-  Experiences,
-}
 const MDX = ({ children }) => {
   return <MDXProvider components={shortcodes}>{children}</MDXProvider>
 }

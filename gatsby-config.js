@@ -26,28 +26,11 @@ module.exports = {
             slug: `/blog`,
           },
           {
-            title: `Projects`,
-            slug: `/tags/project`,
-          },
-          {
-            title: `Resume`,
-            slug: `/resume`,
-          },
-          {
             title: `About`,
             slug: `/about`,
           },
         ],
-        externalLinks: [
-          {
-            name: `Github`,
-            url: `https://github.com/locphan87`,
-          },
-          {
-            name: `LinkedIn`,
-            url: `https://www.linkedin.com/in/loc-phan/`,
-          },
-        ],
+        externalLinks: [],
         mdx: false,
       },
     },

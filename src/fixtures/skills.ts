@@ -213,6 +213,12 @@ const backend: Skill[] = [
     level: SKILLED,
     category: SkillCategory.BACKEND,
   },
+  {
+    id: Tech.KONG,
+    name: 'Kong Gateway',
+    level: SKILLED,
+    category: SkillCategory.BACKEND,
+  },
 ]
 const frontend: Skill[] = [
   {
@@ -262,6 +268,20 @@ const frontend: Skill[] = [
     level: EXPERT,
     category: SkillCategory.FRONTEND,
     component: Si.SiTypescript,
+  },
+  {
+    id: Tech.DESIGN_SYSTEM,
+    name: 'Design System',
+    color: '#60B5CC',
+    level: SKILLED,
+    category: SkillCategory.FRONTEND,
+  },
+  {
+    id: Tech.MICRO_FRONTEND,
+    name: 'Micro Frontend',
+    color: '#60B5CC',
+    level: SKILLED,
+    category: SkillCategory.FRONTEND,
   },
   // {
   //   id: Tech.CLOJURE_SCRIPT,
@@ -468,12 +488,6 @@ const devops: Skill[] = [
     level: SKILLED,
     category: SkillCategory.DEVOPS,
     component: Si.SiDocker,
-  },
-  {
-    id: Tech.KONG,
-    name: 'Kong Gateway',
-    level: SKILLED,
-    category: SkillCategory.DEVOPS,
   },
   {
     id: Tech.AWS,
