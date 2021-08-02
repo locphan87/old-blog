@@ -56,10 +56,10 @@
 <url> <loc>https://locphan87.github.io/vi/geodis</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/phong-dep</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/phong-dep</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/adelia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/adelia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/advertising</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -176,4 +176,6 @@
 <url> <loc>https://locphan87.github.io/vi/404/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/learning/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/learning/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/portfolio/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/portfolio/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
