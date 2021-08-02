@@ -6,15 +6,10 @@ const reducer = (state, action) => {
       showIcon: action.payload,
     })
   }
-  if (action.type === `SHOW_LEVEL`) {
-    return Object.assign({}, state, {
-      showLevel: action.payload,
-    })
-  }
   return state
 }
 
-const initialState = { showIcon: true, showLevel: false }
+const initialState = { showIcon: false }
 
 const createStore = () => reduxCreateStore(reducer, initialState)
 export default createStore

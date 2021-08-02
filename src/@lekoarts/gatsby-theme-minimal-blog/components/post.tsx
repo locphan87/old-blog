@@ -6,7 +6,6 @@ import React from 'react'
 import Layout from './layout'
 import ItemTags from './item-tags'
 import SEO from './seo'
-import { TocContainer } from './toc'
 
 type PostProps = {
   data: {
@@ -46,7 +45,7 @@ const Post = ({ data: { post, mdx } }: PostProps) => {
     return <div>This page has not been translated yet</div>
   }
   const bannerSrc = R.path(['banner', 'childImageSharp', 'resize', 'src'], post)
-  const { tableOfContents } = mdx || {}
+  // const { tableOfContents } = mdx || {}
   return (
     <Layout>
       <SEO
@@ -87,7 +86,6 @@ const Post = ({ data: { post, mdx } }: PostProps) => {
           variant: `layout.content`,
         }}
       >
-        <TocContainer data={tableOfContents} />
         <MDXRenderer>{post.body}</MDXRenderer>
       </section>
     </Layout>
