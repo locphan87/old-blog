@@ -56,10 +56,12 @@
 <url> <loc>https://locphan87.github.io/vi/geodis</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/phong-dep</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/phong-dep</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/tags/pixhug</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/tags/pixhug</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/adelia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/adelia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/advertising</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -130,8 +132,6 @@
 <url> <loc>https://locphan87.github.io/vi/tags/php</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/pixel-perfect</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/pixel-perfect</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/tags/pixhug</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/tags/pixhug</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/project</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/project</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/pyco</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
