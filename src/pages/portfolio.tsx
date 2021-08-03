@@ -2,6 +2,7 @@
 import { jsx, Heading } from 'theme-ui'
 import { graphql, Link } from 'gatsby'
 import * as R from 'ramda'
+import { Event } from '@material-ui/icons'
 
 import Layout from '../@lekoarts/gatsby-theme-minimal-blog/components/layout'
 import SEO from '../@lekoarts/gatsby-theme-minimal-blog/components/seo'
@@ -42,7 +43,7 @@ const renderItem = (item) => {
   return (
     <article
       key={item.id}
-      className="p-4 shadow-lg border border-dotted border-gray-600"
+      className="p-4 shadow-lg border border-solid rounded-md border-gray-400"
     >
       <header className="flex flex-col h-full justify-center">
         <div>
@@ -58,7 +59,9 @@ const renderItem = (item) => {
             <div className="text-xl">
               <Link to={item.slug}>{item.title}</Link>
             </div>
-            <div>{item.date}</div>
+            <div className="flex justify-center">
+              <Event /> <span className="ml-2">{item.date}</span>
+            </div>
           </div>
           <div className="mt-4">{item.description}</div>
         </div>
