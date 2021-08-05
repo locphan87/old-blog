@@ -12,10 +12,10 @@
 <url> <loc>https://locphan87.github.io/vi/scrum-and-xp-from-the-trenches-summary</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/refcards</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/refcards</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/pattern-matching-in-java-script</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/pattern-matching-in-java-script</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/react-native-architecture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/react-native-architecture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/posts/pattern-matching-in-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/posts/pattern-matching-in-javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/posts/react-native-architecture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/posts/react-native-architecture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/functional-programming-in-java-script</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/functional-programming-in-java-script</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/projects/mplus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -24,6 +24,7 @@
 <url> <loc>https://locphan87.github.io/vi/projects/atlas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/projects/genvita</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/projects/genvita</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/posts/thinking-in-ramda</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/projects/jenius</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/projects/jenius</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/projects/biz-app</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -56,10 +57,10 @@
 <url> <loc>https://locphan87.github.io/vi/projects/geodis</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/projects/phong-dep</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/projects/phong-dep</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://locphan87.github.io/vi/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/pixhug</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/pixhug</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/adelia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -138,6 +139,8 @@
 <url> <loc>https://locphan87.github.io/vi/tags/pyco</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/racing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/racing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/tags/ramda</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://locphan87.github.io/vi/tags/ramda</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/react-native</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/vi/tags/react-native</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://locphan87.github.io/tags/react-native-web</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
