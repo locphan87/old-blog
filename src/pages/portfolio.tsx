@@ -8,13 +8,10 @@ import Layout from '../@lekoarts/gatsby-theme-minimal-blog/components/layout'
 import SEO from '../@lekoarts/gatsby-theme-minimal-blog/components/seo'
 
 export const query = graphql`
-  query($locale: String!) {
+  query {
     allPost(
       sort: { fields: date, order: DESC }
-      filter: {
-        fields: { locale: { eq: $locale } }
-        tags: { elemMatch: { slug: { in: ["project"] } } }
-      }
+      filter: { tags: { elemMatch: { slug: { in: ["project"] } } } }
     ) {
       nodes {
         id

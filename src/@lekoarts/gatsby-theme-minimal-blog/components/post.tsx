@@ -3,6 +3,9 @@ import { jsx, Heading } from 'theme-ui'
 import * as R from 'ramda'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
+
+import { TocContainer } from './toc'
+import Page404 from '../../../pages/404'
 import Layout from './layout'
 import ItemTags from './item-tags'
 import SEO from './seo'
@@ -42,10 +45,12 @@ const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`)
 
 const Post = ({ data: { post, mdx } }: PostProps) => {
   if (!post) {
-    return <div>This page has not been translated yet</div>
+    return (
+      <Page404 text="Oops! The page you are looking for has not been translated yet." />
+    )
   }
   const bannerSrc = R.path(['banner', 'childImageSharp', 'resize', 'src'], post)
-  // const { tableOfContents } = mdx || {}
+  const { tableOfContents } = mdx || {}
   return (
     <Layout>
       <SEO
@@ -86,6 +91,7 @@ const Post = ({ data: { post, mdx } }: PostProps) => {
           variant: `layout.content`,
         }}
       >
+        <TocContainer data={tableOfContents} />
         <MDXRenderer>{post.body}</MDXRenderer>
       </section>
     </Layout>

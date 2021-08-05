@@ -12,6 +12,7 @@ const renderSkill = (skill: any) => {
     return (
       <a
         href={link}
+        key={name}
         sx={{
           variant: `links.secondary`,
           color: `primary`,
@@ -22,7 +23,12 @@ const renderSkill = (skill: any) => {
       </a>
     )
   }
-  return <span className="pr-4">{renderName()}</span>
+
+  return (
+    <span className="pr-4" key={name}>
+      {renderName()}
+    </span>
+  )
 }
 const renderCategory = (skills: any[]) => (category: any) => {
   const skillsByCategory = skills.filter((x) => x.category === category.slug)
