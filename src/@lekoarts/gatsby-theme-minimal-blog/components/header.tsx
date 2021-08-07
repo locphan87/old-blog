@@ -2,7 +2,7 @@
 import { jsx, useColorMode } from 'theme-ui'
 import { Flex } from '@theme-ui/components'
 import useMinimalBlogConfig from '../hooks/use-minimal-blog-config'
-import ColorModeToggle from './colormode-toggle'
+// import ColorModeToggle from './colormode-toggle'
 import Navigation from './navigation'
 import HeaderTitle from './header-title'
 import HeaderExternalLinks from './header-external-links'
@@ -20,7 +20,7 @@ const Header = () => {
     <header sx={{ mb: [5, 6] }}>
       <Flex sx={{ alignItems: `center`, justifyContent: `space-between` }}>
         <HeaderTitle />
-        <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
+        {/* <ColorModeToggle isDark={isDark} toggle={toggleColorMode} /> */}
       </Flex>
       <div
         sx={{
