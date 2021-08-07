@@ -554,24 +554,6 @@
   Link: </component---src-lekoarts-gatsby-theme-minimal-blog-core-templates-post-query-tsx-1f45313a29025fe151d7.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/vi/projects/phong-dep/page-data.json>; rel=preload; as=fetch; crossorigin
-/vi/about
-  Link: </webpack-runtime-97e6749f4c44b52455ac.js>; rel=preload; as=script
-  Link: </framework-eb684e3e828ad13b3940.js>; rel=preload; as=script
-  Link: </app-3964cf1c142273006e21.js>; rel=preload; as=script
-  Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
-  Link: </5b42c8d2739fb5d84eb2dd3aca74316efa056571-3e37388402a508c3f5a1.js>; rel=preload; as=script
-  Link: </component---src-lekoarts-gatsby-theme-minimal-blog-core-templates-page-query-tsx-cf409c0f9c5cb149ceb4.js>; rel=preload; as=script
-  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/vi/about/page-data.json>; rel=preload; as=fetch; crossorigin
-/about
-  Link: </webpack-runtime-97e6749f4c44b52455ac.js>; rel=preload; as=script
-  Link: </framework-eb684e3e828ad13b3940.js>; rel=preload; as=script
-  Link: </app-3964cf1c142273006e21.js>; rel=preload; as=script
-  Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
-  Link: </5b42c8d2739fb5d84eb2dd3aca74316efa056571-3e37388402a508c3f5a1.js>; rel=preload; as=script
-  Link: </component---src-lekoarts-gatsby-theme-minimal-blog-core-templates-page-query-tsx-cf409c0f9c5cb149ceb4.js>; rel=preload; as=script
-  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/about/page-data.json>; rel=preload; as=fetch; crossorigin
 /resume
   Link: </webpack-runtime-97e6749f4c44b52455ac.js>; rel=preload; as=script
   Link: </framework-eb684e3e828ad13b3940.js>; rel=preload; as=script
@@ -590,6 +572,24 @@
   Link: </component---src-lekoarts-gatsby-theme-minimal-blog-core-templates-page-query-tsx-cf409c0f9c5cb149ceb4.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/vi/resume/page-data.json>; rel=preload; as=fetch; crossorigin
+/about
+  Link: </webpack-runtime-97e6749f4c44b52455ac.js>; rel=preload; as=script
+  Link: </framework-eb684e3e828ad13b3940.js>; rel=preload; as=script
+  Link: </app-3964cf1c142273006e21.js>; rel=preload; as=script
+  Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
+  Link: </5b42c8d2739fb5d84eb2dd3aca74316efa056571-3e37388402a508c3f5a1.js>; rel=preload; as=script
+  Link: </component---src-lekoarts-gatsby-theme-minimal-blog-core-templates-page-query-tsx-cf409c0f9c5cb149ceb4.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/about/page-data.json>; rel=preload; as=fetch; crossorigin
+/vi/about
+  Link: </webpack-runtime-97e6749f4c44b52455ac.js>; rel=preload; as=script
+  Link: </framework-eb684e3e828ad13b3940.js>; rel=preload; as=script
+  Link: </app-3964cf1c142273006e21.js>; rel=preload; as=script
+  Link: </styles-e9d24b1846c7d6eb9685.js>; rel=preload; as=script
+  Link: </5b42c8d2739fb5d84eb2dd3aca74316efa056571-3e37388402a508c3f5a1.js>; rel=preload; as=script
+  Link: </component---src-lekoarts-gatsby-theme-minimal-blog-core-templates-page-query-tsx-cf409c0f9c5cb149ceb4.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/vi/about/page-data.json>; rel=preload; as=fetch; crossorigin
 /tags/pixhug
   Link: </webpack-runtime-97e6749f4c44b52455ac.js>; rel=preload; as=script
   Link: </framework-eb684e3e828ad13b3940.js>; rel=preload; as=script
