@@ -25,28 +25,28 @@ module.exports = {
             title: `Blog`,
             slug: `/blog`,
           },
-          {
-            title: `Portfolio`,
-            slug: `/portfolio`,
-          },
-          {
-            title: `Resume`,
-            slug: `/resume`,
-          },
+          // {
+          //   title: `Portfolio`,
+          //   slug: `/portfolio`,
+          // },
+          // {
+          //   title: `Resume`,
+          //   slug: `/resume`,
+          // },
           {
             title: `About`,
             slug: `/about`,
           },
         ],
         externalLinks: [
-          {
-            name: 'LinkedIn',
-            url: 'https://www.linkedin.com/in/loc-phan/',
-          },
-          {
-            name: 'Github',
-            url: 'https://github.com/locphan87',
-          },
+          // {
+          //   name: 'LinkedIn',
+          //   url: 'https://www.linkedin.com/in/loc-phan/',
+          // },
+          // {
+          //   name: 'Github',
+          //   url: 'https://github.com/locphan87',
+          // },
         ],
         mdx: false,
       },
